@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"options":{"classes":"","read-only":"false","comment":"","warning":"true","fig-height":5,"fig-width":7,"dpi":72,"fig-cap":"","context":"interactive","message":"true","results":"markup","autorun":"","output":"true","out-width":"700px","out-height":"","label":""},"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Suma de vectores\nsuma = u + v\nprint(suma)","id":1},{"options":{"classes":"","read-only":"false","comment":"","warning":"true","fig-height":5,"fig-width":7,"dpi":72,"fig-cap":"","context":"interactive","message":"true","results":"markup","autorun":"","output":"true","out-width":"700px","out-height":"","label":""},"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Producto punto de los vectores\nproducto_punto = np.dot(u, v)\nprint(producto_punto)","id":2},{"options":{"classes":"","read-only":"false","comment":"","warning":"true","fig-height":5,"fig-width":7,"dpi":72,"fig-cap":"","context":"interactive","message":"true","results":"markup","autorun":"","output":"true","out-width":"700px","out-height":"","label":""},"code":"import numpy as np\n# Definimos el vector\nu = np.array([2, -1])\n# Norma del vector u\nnorma_u = np.linalg.norm(u)\nprint(norma_u)","id":3},{"options":{"classes":"","read-only":"false","comment":"","warning":"true","fig-height":5,"fig-width":7,"dpi":72,"fig-cap":"","context":"interactive","message":"true","results":"markup","autorun":"","output":"true","out-width":"700px","out-height":"","label":""},"code":"import numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n\n# Cálculo de la desigualdad de Cauchy–Schwarz\ncauchy_schwarz = abs(np.dot(u, v)) <= np.linalg.norm(u\n) * np.linalg.norm(v)\nprint(cauchy_schwarz)","id":4}];
+globalThis.qpyodideCellDetails = [{"id":1,"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Suma de vectores\nsuma = u + v\nprint(suma)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}},{"id":2,"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Producto punto de los vectores\nproducto_punto = np.dot(u, v)\nprint(producto_punto)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}},{"id":3,"code":"import numpy as np\n# Definimos el vector\nu = np.array([2, -1])\n# Norma del vector u\nnorma_u = np.linalg.norm(u)\nprint(norma_u)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}},{"id":4,"code":"import numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n\n# Cálculo de la desigualdad de Cauchy–Schwarz\ncauchy_schwarz = abs(np.dot(u, v)) <= np.linalg.norm(u\n) * np.linalg.norm(v)\nprint(cauchy_schwarz)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}}];
 
 
 </script>
@@ -539,7 +539,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taller4.html" class="sidebar-item-text sidebar-link">
+  <a href="./taller5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrices</span></a>
   </div>
 </li>
@@ -610,7 +610,7 @@ window.Quarto = {
 <section id="nota-pedagógica" class="level3">
 <h3 class="anchored" data-anchor-id="nota-pedagógica">Nota pedagógica</h3>
 <p>Estos ejercicios introducen las operaciones fundamentales con vectores en <span class="math inline">\(R^2\)</span> — suma, multiplicación por un escalar y producto punto — y sus propiedades algebraicas y geométricas.</p>
-<div id="d92cf59d" class="cell" data-execution_count="1">
+<div id="3a863eb8" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -658,7 +658,7 @@ window.Quarto = {
 <section id="suma-de-vectores" class="level3">
 <h3 class="anchored" data-anchor-id="suma-de-vectores">Suma de vectores</h3>
 <ol type="1">
-<li><p>Sea los vectores <span class="math inline">\(\mathbf u=(2,2)\)</span> y <span class="math inline">\(\mathbf v=(2,0)\)</span>, encuentra el resultado de la usa usando Python.</p></li>
+<li><p>Sea los vectores <span class="math inline">\(\mathbf u=(2,2)\)</span> y <span class="math inline">\(\mathbf v=(2,0)\)</span>, encuentra el resultado de la suma usando Python.</p></li>
 <li><p>Realiza las siguiente operaciones modificando el código anterior:</p>
 <ul>
 <li><span class="math inline">\(\mathbf u+2\mathbf v\)</span></li>

@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"options":{"comment":"","results":"markup","out-height":"","context":"interactive","message":"true","warning":"true","fig-height":5,"dpi":72,"out-width":"700px","autorun":"","fig-width":7,"fig-cap":"","label":"","read-only":"false","output":"true","classes":""},"code":"\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# ======== parámetros ========\np0 = np.array([1, -2])     # <--- estudiante cambia aquí -- punto por donde pasa la recta\nv  = np.array([2, 3])      # <--- estudiante cambia aquí -- vector director\n# ============================\n\nt = np.linspace(-5, 5, 200)\npts = p0[:, None] + v[:, None] * t\n\nplt.figure()\nplt.axhline(0, linewidth=0.5)\nplt.axvline(0, linewidth=0.5)\nplt.plot(pts[0], pts[1], label=\"Recta r(t) = p0 + t·v\")\nplt.quiver(p0[0], p0[1], v[0], v[1], angles='xy', scale_units='xy', scale=1,\n           color='tab:red', label=\"v (director)\")\nplt.scatter(*p0, color='k', zorder=5)\nplt.gca().set_aspect('equal')\nplt.xlim(-6, 6); plt.ylim(-6, 6)\nplt.grid(True)\nplt.legend()\nplt.show()","id":1},{"options":{"comment":"","results":"markup","out-height":"","context":"interactive","message":"true","warning":"true","fig-height":5,"dpi":72,"out-width":"700px","autorun":"","fig-width":7,"fig-cap":"","label":"","read-only":"false","output":"true","classes":""},"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# --- PARÁMETROS ---\nu = np.array([1, 2])          # <--- estudiante cambia aquí\nk = 2                         # <--- estudiante cambia aquí (escala)\nv = k * u                     # v es múltiplo de u\n# ------------------\n\nprint(\"u =\", u, \"  v =\", v)\nprint(\"¿Son linealmente dependientes?\", np.allclose(np.cross(np.append(u,0), np.append(v,0)), 0))\n\nplt.figure()\nplt.quiver(0, 0, u[0], u[1], angles='xy', scale_units='xy', scale=1, color='black', label='u')\nplt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='red', label='v = k·u')\nplt.axhline(0); plt.axvline(0); plt.grid(True)\nplt.xlim(-5, 5); plt.ylim(-5, 5)\nplt.legend(); plt.title('Vectores linealmente dependientes: v = k·u')\nplt.show()","id":2},{"options":{"comment":"","results":"markup","out-height":"","context":"interactive","message":"true","warning":"true","fig-height":5,"dpi":72,"out-width":"700px","autorun":"","fig-width":7,"fig-cap":"","label":"","read-only":"false","output":"true","classes":""},"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# --- PARÁMETROS ---\nu = np.array([1, 2])          # <--- estudiante cambia aquí\nv = np.array([2, -1])         # <--- estudiante cambia aquí\n# ------------------\n\ndet = np.linalg.det(np.column_stack((u, v)))\nindep = det != 0\nprint(\"Determinante =\", det)\nprint(\"¿Son linealmente independientes?\", indep)\n\nplt.figure()\nplt.quiver(0, 0, u[0], u[1], angles='xy', scale_units='xy', scale=1, color='black', label='u')\nplt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='red', label='v')\n# Paralelogramo generado por u y v\npar = np.array([[0,0], u, u+v, v, [0,0]])\nplt.fill(par[:,0], par[:,1], alpha=0.1)\nplt.axhline(0); plt.axvline(0); plt.grid(True)\nplt.xlim(-5, 5); plt.ylim(-5, 5)\nplt.legend(); plt.title('Vectores linealmente independientes')\nplt.show()","id":3}];
+globalThis.qpyodideCellDetails = [{"code":"\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# ======== parámetros ========\np0 = np.array([1, -2])     # <--- estudiante cambia aquí -- punto por donde pasa la recta\nv  = np.array([2, 3])      # <--- estudiante cambia aquí -- vector director\n# ============================\n\nt = np.linspace(-5, 5, 200)\npts = p0[:, None] + v[:, None] * t\n\nplt.figure()\nplt.axhline(0, linewidth=0.5)\nplt.axvline(0, linewidth=0.5)\nplt.plot(pts[0], pts[1], label=\"Recta r(t) = p0 + t·v\")\nplt.quiver(p0[0], p0[1], v[0], v[1], angles='xy', scale_units='xy', scale=1,\n           color='tab:red', label=\"v (director)\")\nplt.scatter(*p0, color='k', zorder=5)\nplt.gca().set_aspect('equal')\nplt.xlim(-6, 6); plt.ylim(-6, 6)\nplt.grid(True)\nplt.legend()\nplt.show()","id":1,"options":{"message":"true","comment":"","warning":"true","read-only":"false","out-width":"700px","label":"","autorun":"","context":"interactive","fig-cap":"","dpi":72,"classes":"","fig-width":7,"out-height":"","fig-height":5,"output":"true","results":"markup"}},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# --- PARÁMETROS ---\nu = np.array([1, 2])          # <--- estudiante cambia aquí\nk = 2                         # <--- estudiante cambia aquí (escala)\nv = k * u                     # v es múltiplo de u\n# ------------------\n\nprint(\"u =\", u, \"  v =\", v)\nprint(\"¿Son linealmente dependientes?\", np.allclose(np.cross(np.append(u,0), np.append(v,0)), 0))\n\nplt.figure()\nplt.quiver(0, 0, u[0], u[1], angles='xy', scale_units='xy', scale=1, color='black', label='u')\nplt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='red', label='v = k·u')\nplt.axhline(0); plt.axvline(0); plt.grid(True)\nplt.xlim(-5, 5); plt.ylim(-5, 5)\nplt.legend(); plt.title('Vectores linealmente dependientes: v = k·u')\nplt.show()","id":2,"options":{"message":"true","comment":"","warning":"true","read-only":"false","out-width":"700px","label":"","autorun":"","context":"interactive","fig-cap":"","dpi":72,"classes":"","fig-width":7,"out-height":"","fig-height":5,"output":"true","results":"markup"}},{"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# --- PARÁMETROS ---\nu = np.array([1, 2])          # <--- estudiante cambia aquí\nv = np.array([2, -1])         # <--- estudiante cambia aquí\n# ------------------\n\ndet = np.linalg.det(np.column_stack((u, v)))\nindep = det != 0\nprint(\"Determinante =\", det)\nprint(\"¿Son linealmente independientes?\", indep)\n\nplt.figure()\nplt.quiver(0, 0, u[0], u[1], angles='xy', scale_units='xy', scale=1, color='black', label='u')\nplt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='red', label='v')\n# Paralelogramo generado por u y v\npar = np.array([[0,0], u, u+v, v, [0,0]])\nplt.fill(par[:,0], par[:,1], alpha=0.1)\nplt.axhline(0); plt.axvline(0); plt.grid(True)\nplt.xlim(-5, 5); plt.ylim(-5, 5)\nplt.legend(); plt.title('Vectores linealmente independientes')\nplt.show()","id":3,"options":{"message":"true","comment":"","warning":"true","read-only":"false","out-width":"700px","label":"","autorun":"","context":"interactive","fig-cap":"","dpi":72,"classes":"","fig-width":7,"out-height":"","fig-height":5,"output":"true","results":"markup"}}];
 
 
 </script>
@@ -483,7 +483,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.qmd.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contenido</span></a>
   </div>
 </li>
@@ -539,7 +539,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taller4.html" class="sidebar-item-text sidebar-link">
+  <a href="./taller5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrices</span></a>
   </div>
 </li>
@@ -555,7 +555,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rectas-en-r2-paralelismo-perpendicularidad-e-independencia-lineal" id="toc-rectas-en-r2-paralelismo-perpendicularidad-e-independencia-lineal" class="nav-link active" data-scroll-target="#rectas-en-r2-paralelismo-perpendicularidad-e-independencia-lineal">Rectas en $R^2$, paralelismo, perpendicularidad e independencia lineal”</a></li>
+  <li><a href="#rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal" id="toc-rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal" class="nav-link active" data-scroll-target="#rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal">Rectas en <span class="math inline">\(\mathbb R^2\)</span>, paralelismo, perpendicularidad e independencia lineal</a></li>
   <li><a href="#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad" id="toc-ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad" class="nav-link" data-scroll-target="#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad">Ecuación de la recta y relaciones de paralelismo/perpendicularidad</a>
   <ul class="collapse">
   <li><a href="#nota-pedagógica" id="toc-nota-pedagógica" class="nav-link" data-scroll-target="#nota-pedagógica">Nota pedagógica</a></li>
@@ -603,8 +603,8 @@ window.Quarto = {
 </header>
 
 
-<section id="rectas-en-r2-paralelismo-perpendicularidad-e-independencia-lineal" class="level2">
-<h2 class="anchored" data-anchor-id="rectas-en-r2-paralelismo-perpendicularidad-e-independencia-lineal">Rectas en $R^2$, paralelismo, perpendicularidad e independencia lineal”</h2>
+<section id="rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal" class="level2">
+<h2 class="anchored" data-anchor-id="rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal">Rectas en <span class="math inline">\(\mathbb R^2\)</span>, paralelismo, perpendicularidad e independencia lineal</h2>
 </section>
 <section id="ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad" class="level2">
 <h2 class="anchored" data-anchor-id="ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad">Ecuación de la recta y relaciones de paralelismo/perpendicularidad</h2>
@@ -612,7 +612,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="nota-pedagógica">Nota pedagógica</h3>
 <p>Este taller introduce los conceptos fundamentales de las rectas en el plano, el paralelismo y la perpendicularidad desde la óptica de la pendiente y la forma vectorial. Asimismo, conecta estos conceptos con la independencia lineal y la noción de base, destacando su interpretación geométrica.</p>
 <hr>
-<div id="6aefd58e" class="cell" data-execution_count="1">
+<div id="e84a4f3c" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -621,20 +621,20 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p><strong>Figura&nbsp;1.</strong> Dos rectas paralelas y una recta perpendicular en $R^2$.</p>
+<p><strong>Figura&nbsp;1.</strong> Dos rectas paralelas y una recta perpendicular en <span class="math inline">\(\mathbb R^2\)</span>.</p>
 </section>
 <section id="ejercicios" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicios">Ejercicios</h3>
-<p><strong>Problema 1</strong> Determine la ecuación de la recta que pasa por los puntos $A(2,-1)$ y $B(5,7)$.&nbsp;</p>
-<p><strong>Problema 2</strong> Halle una ecuación paramétrica y las intersecciones con los ejes de la recta $3x-2y+4=0$.&nbsp;</p>
-<p><strong>Problema 3</strong> Compruebe si las rectas $y=(3,5)t+(1,4)$ y $3y-2x-1=0$ son paralelas.&nbsp;</p>
-<p><strong>Problema 4</strong> Encuentre la ecuación de la recta perpendicular a $4x+2y-7=0$ que pasa por el punto $(-1,3)$ y exprésela paramétricamente.&nbsp;</p>
-<p><strong>Problema 5</strong> Dados los vectores $u=(2,1)$ y $v=(4,2)$, explique geométricamente por qué las rectas que ellos generan en $R^2$ son coincidentes.&nbsp;</p>
-<p><strong>Problema 6</strong> Decida si el conjunto ${(1,2),(3,6)}$ es linealmente independiente y describa la subregión del plano que generan.&nbsp;Justifique con un criterio geométrico.&nbsp;</p>
-<p><strong>Problema 8</strong> Para los vectores $a=(1,-2)$ y $b=(2,1)$, determine si forman un par linealmente independiente y describa la subregión del plano que generan.&nbsp;</p>
-<p><strong>Problema 9</strong> Sea $B={(1,0),(0,1)}$. Explique por qué $B$ es una base de $R^2$ y relacione cada vector con la orientación de los ejes.</p>
-<p><strong>Problema 10</strong> Construya una base ortonormal de $R^2$ a partir del vector $w=(4,3)$.</p>
-<p><strong>Problema 11</strong> Exprese el vector $p=(5,-1)$ como combinación lineal de la base ${(2,1),(1,-1)}$ y discuta la unicidad de la representación.&nbsp;</p>
+<p><strong>Problema 1</strong> Determine la ecuación de la recta que pasa por los puntos <span class="math inline">\(A(2,-1)\)</span> y <span class="math inline">\(B(5,7)\)</span>.</p>
+<p><strong>Problema 2</strong> Halle una ecuación paramétrica y las intersecciones con los ejes de la recta <span class="math inline">\(3x-2y+4=0\)</span>.&nbsp;</p>
+<p><strong>Problema 3</strong> Compruebe si las rectas <span class="math inline">\(y=(3,5)t+(1,4)\)</span> y <span class="math inline">\(3y-2x-1=0\)</span> son paralelas.&nbsp;</p>
+<p><strong>Problema 4</strong> Encuentre la ecuación de la recta perpendicular a <span class="math inline">\(4x+2y-7=0\)</span> que pasa por el punto <span class="math inline">\((-1,3)\)</span> y exprésela paramétricamente.&nbsp;</p>
+<p><strong>Problema 5</strong> Dados los vectores <span class="math inline">\(\mathbf u=(2,1)\)</span> y <span class="math inline">\(\mathbf v=(4,2)\)</span>, explique geométricamente por qué las rectas que ellos generan en <span class="math inline">\(\mathbb R^2\)</span> son coincidentes.&nbsp;</p>
+<p><strong>Problema 6</strong> Decida si el conjunto <span class="math inline">\({(1,2),(3,6)}\)</span> es linealmente independiente y describa la subregión del plano que generan.&nbsp;Justifique con un criterio geométrico.&nbsp;</p>
+<p><strong>Problema 8</strong> Para los vectores <span class="math inline">\(\mathbf a=(1,-2)\)</span> y <span class="math inline">\(\mathbf b=(2,1)\)</span>, determine si forman un par linealmente independiente y describa la subregión del plano que generan.&nbsp;</p>
+<p><strong>Problema 9</strong> Sea <span class="math inline">\(B={(1,0),(0,1)}\)</span>. Explique por qué <span class="math inline">\(B\)</span> es una base de <span class="math inline">\(\mathbb R^2\)</span> y relacione cada vector con la orientación de los ejes.</p>
+<p><strong>Problema 10</strong> Construya una base ortonormal de <span class="math inline">\(\mathbb R^2\)</span> a partir del vector <span class="math inline">\(\mathbf w=(4,3)\)</span>.</p>
+<p><strong>Problema 11</strong> Exprese el vector <span class="math inline">\(\mathbf p=(5,-1)\)</span> como combinación lineal de la base <span class="math inline">\({(2,1),(1,-1)}\)</span> y discuta la unicidad de la representación.&nbsp;</p>
 <hr>
 <blockquote class="blockquote">
 <p><strong>Nota pedagógica final:</strong> Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial <span class="math inline">\(R^2\)</span> y vincularlas con interpretaciones geométricas y físicas.</p>

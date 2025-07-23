@@ -95,7 +95,7 @@ Ejercicios:
 
 ### Suma de vectores
 
-1. Sea los  vectores $\mathbf u=(2,2)$ y $\mathbf v=(2,0)$, encuentra el resultado de la usa usando Python.
+1. Sea los  vectores $\mathbf u=(2,2)$ y $\mathbf v=(2,0)$, encuentra el resultado de la suma usando Python.
 
 2. Realiza las siguiente operaciones modificando el código anterior:
    - $\mathbf u+2\mathbf v$
