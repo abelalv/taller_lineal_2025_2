@@ -1,0 +1,150 @@
+---
+title: Taller 1 - Vectores en $R^2$
+format: html
+bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
+csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+
+
+## Guía de Ejercicios: Vectores en $R^2$ 
+## Vectores en $R^2$
+
+### Nota pedagógica
+
+Estos ejercicios introducen las operaciones fundamentales con vectores en $R^2$ — suma, multiplicación por un escalar y producto punto — y sus propiedades algebraicas y geométricas.
+
+
+
+```{python}
+#|echo: false
+import matplotlib.pyplot as plt
+
+u = [2, -1]
+v = [1, 3]
+w = [u[0]+v[0], u[1]+v[1]]
+
+plt.quiver([0,0,0], [0,0,0], [u[0], v[0], w[0]], [u[1], v[1], w[1]], angles='xy', scale_units='xy', scale=1)
+plt.text(u[0], u[1], 'u'); plt.text(v[0], v[1], 'v'); plt.text(w[0], w[1], 'u+v')
+plt.xlim(-1,4); plt.ylim(-2,4); plt.grid(); plt.title('Adición de vectores en $R^2$');
+plt.show()
+```
+
+La figura ilustra la ley del paralelogramo: el vector $\mathbf u+\mathbf v$ se obtiene al trasladar $\mathbf v$ al extremo de $\mathbf u$.
+
+
+
+### Problemas
+
+1. **Problema 1** Sea $\mathbf u=(2,-1)$ y $\mathbf v=(1,3)$. Calcule $\mathbf u+\mathbf v$.\
+   
+
+2. **Problema 2** Represente gráficamente los vectores del problema anterior y el vector suma. Describa la construcción geométrica utilizada.
+
+3. **Problema 3** Verifique experimentalmente la conmutatividad y la asociatividad de la suma de vectores en $R^2$ usando $\mathbf u=(4,0)$, $\mathbf v=(-1,5)$ y $\mathbf w=(3,-2)$.\
+   
+
+4. **Problema 4** Para $\mathbf a=(3,-4)$ determine $3\mathbf a$, $-\tfrac12\mathbf a$ y describa el efecto geométrico de cada multiplicación.
+
+5. **Problema 5** Demuestre con ejemplos numéricos que la multiplicación por escalar es distributiva respecto de la suma: $c(\mathbf u+\mathbf v)=c\mathbf u+c\mathbf v$ con $c=2$, $\mathbf u=(1,2)$ y $\mathbf v=(0,-3)$.\
+   
+
+6. **Problema 6** Sea $\mathbf p=(1,4)$ y $\mathbf q=(5,-2)$. Calcule el producto punto $\mathbf p\cdot\mathbf q$, las magnitudes $\lVert\mathbf p\rVert$, $\lVert\mathbf q\rVert$ y el ángulo entre ellos.\
+   
+
+7. **Problema 7** Compruebe la desigualdad de Cauchy–Schwarz para los vectores del problema anterior y analice cuándo se alcanza la igualdad.
+
+8. **Problema 8** Encuentre el valor de $k\in\mathbb R$ tal que $\mathbf u+k\mathbf v$ sea ortogonal a $\mathbf v$, donde $\mathbf u=(2,1)$ y $\mathbf v=(3,-1)$.\
+   
+
+9. **Problema 9** Verifique numéricamente la propiedad distributiva del producto punto sobre la suma: $\mathbf u\cdot(\mathbf v+\mathbf w)=\mathbf u\cdot\mathbf v+\mathbf u\cdot\mathbf w$ para $\mathbf u=(1,2)$, $\mathbf v=(0,5)$ y $\mathbf w=(-2,1)$.   
+
+10. **Problema 10** Un objeto se desplaza $\mathbf d=(6,2)$ m bajo la acción de una fuerza constante $\mathbf F=(10,3)$ N. Calcule el trabajo realizado y explique el significado físico del producto punto en este contexto.\
+    
+
+---
+
+> **Nota pedagógica final:** Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial $R^2$ y vincularlas con interpretaciones geométricas y físicas.
+
+---
+
+## Comprobación Computacional |
+
+
+En esta sección vamos a comprobar computacionalmente algunos ejercicios usando Python, el siguiente código nos permite sumar dos vectores usando la librería NumPy.
+
+Para este ejemplo vamos a sumar los vectores $\mathbf{u}=(2,-1)$ y $\mathbf{v}=(1,3)$.
+
+```{pyodide-python}
+
+import numpy as np
+# Definimos los vectores
+u = np.array([2, -1])
+v = np.array([1, 3])
+# Suma de vectores
+suma = u + v
+print(suma)
+```
+
+
+Ejercicios:
+
+
+
+### Suma de vectores
+
+1. Sea los  vectores $\mathbf u=(2,2)$ y $\mathbf v=(2,0)$, encuentra el resultado de la usa usando Python.
+
+2. Realiza las siguiente operaciones modificando el código anterior:
+   - $\mathbf u+2\mathbf v$
+   - $3\mathbf u-\mathbf v$
+
+### Producto punto
+
+Para realizar el producto punto de dos vectores podemos usar la función `np.dot` de la librería NumPy, por ejemplo para los vectores $\mathbf{u}=(2,-1)$ y $\mathbf{v}=(1,3)$:
+
+```{pyodide-python}
+
+import numpy as np
+# Definimos los vectores
+u = np.array([2, -1])
+v = np.array([1, 3])
+# Producto punto de los vectores
+producto_punto = np.dot(u, v)
+print(producto_punto)
+```
+
+### Norma de un vector
+
+Para calcular la norma de un vector en Python podemos usar la función `np.linalg.norm`, por ejemplo para el vector $\mathbf{u}=(2,-1)$:
+```{pyodide-python}
+import numpy as np
+# Definimos el vector
+u = np.array([2, -1])
+# Norma del vector u
+norma_u = np.linalg.norm(u)
+print(norma_u)
+```
+
+3.  En el siguiente código comprobamos la desigualdad de Cauchy–Schwarz para los vectores $\mathbf{u}=(2,-1)$ y $\mathbf{v}=(1,3)$ usando Python.
+
+Recuerda que la desigualdad de Cauchy–Schwarz dice que $|\mathbf{u}\cdot\mathbf{v}| \leq \|\mathbf{u}\| \|\mathbf{v}\|$.
+
+
+```{pyodide-python}
+import numpy as np
+# Definimos los vectores
+u = np.array([2, -1])
+v = np.array([1, 3])
+
+# Cálculo de la desigualdad de Cauchy–Schwarz
+cauchy_schwarz = abs(np.dot(u, v)) <= np.linalg.norm(u
+) * np.linalg.norm(v)
+print(cauchy_schwarz)
+```
+
+Encuentra el un vector $\mathbf{u}$  para que obtenga la igualdad de Cauchy–Schwarz, es decir, que se cumpla que $|\mathbf{u}\cdot\mathbf{v}| = \|\mathbf{u}\| \|\mathbf{v}\|$, justifica tu respuesta.
+
+

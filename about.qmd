@@ -1,0 +1,20 @@
+---
+title: Temas
+format: html
+bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
+csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+
+Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, @anton2010,@grossman2018,
+@kolman2004. Esta lista de  ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.
+
+
+## Contenido
+
+- [Taller 1 - Vectores en $R^2$](taller1.qmd)
+- [Taller 2 - Rectas en $R^2$](taller2.qmd)
+- [Taller 3 - Vectores, Rectas y Planos en $R^3$](taller3.qmd)
+- [Taller 4 - Subespacios, proyecciones, norma y distancia $\mathbb{R}^2$](taller4.qmd) 

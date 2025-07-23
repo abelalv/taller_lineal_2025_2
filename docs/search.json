@@ -1,0 +1,157 @@
+[
+  {
+    "objectID": "taller4.html",
+    "href": "taller4.html",
+    "title": "Taller 4 - Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^2\\), incluyendo subespacios, proyecciones, norma y distancia. Se hace hincapié en la interpretación geométrica de estos conceptos y su aplicación en la resolución de problemas.\nProblema 1\nDemuestre que el conjunto \\(H_1=\\{(x,y)\\in\\mathbf R^2\\mid y=\\tfrac12x\\}\\) es un subespacio y describa su representación gráfica.\nProblema 2\nSea \\(H_2=\\{(x,y)\\in\\mathbf R^2\\mid x-y=0\\}\\). Determine si \\(H_2\\) es un subespacio de \\(\\mathbf R^2\\) e interprete el resultado geométricamente.\nProblema 3\nConsidere \\(H_3=\\{(x,y)\\in\\mathbf R^2\\mid x^2+y^2=1\\}\\). ¿Es \\(H_3\\) un subespacio? Justifique mediante las reglas de cerradura.\nProblema 4\nSea \\(U=\\{(x,y)\\in\\mathbf R^2 : y=3x\\}\\) y \\(V=\\{(x,y)\\in\\mathbf R^2 : y=-x\\}\\). Muestre que \\(U\\cap V=\\{\\mathbf 0\\}\\) y explique por qué esta intersección sigue siendo un subespacio.\nProblema 5\nSea \\(W=\\operatorname{span}\\{(2,1),(1,-1)\\}\\). Determine si \\(W=\\mathbf R^2\\) o una recta por el origen y explique su conclusión.\nProblema 6\nCalcule \\(\\operatorname{proy}_{(1,1)}(2,3)\\) y verifique que el residuo \\(\\mathbf u-\\operatorname{proy}_{\\mathbf v}\\mathbf u\\) es ortogonal a \\(\\mathbf v\\).\nProblema 7\nSea \\(\\mathbf u=(a,b)\\) y \\(\\mathbf v=(1,-1)\\) en \\(\\mathbf R^2\\). Determine todos los valores de \\((a,b)\\) para los cuales \\(\\operatorname{proy}_{\\mathbf v}\\mathbf u=\\mathbf 0\\). Interprete el resultado.\nProblema 8\nCalcule la norma de los vectores \\(\\mathbf v_1=(3,4)\\) y \\(\\mathbf v_2=(-1,7)\\) y verifique la desigualdad triangular \\(\\lVert \\mathbf v_1+\\mathbf v_2\\rVert\\le\\lVert \\mathbf v_1\\rVert+\\lVert \\mathbf v_2\\rVert\\). ¿Cómo podemos interpretar geométricamente esta desigualdad?\nProblema  9\nDado el triángulo de vértices \\(A(2,3)\\), \\(B(5,-1)\\) y \\(C(-1,4)\\), calcule sus tres lados y determine si es isósceles, equilátero o escaleno.\nProblema 10 Sea \\(P_1(1,2)\\) y \\(P_2(4,6)\\). Calcule la distancia entre estos puntos y verifique que es igual a la norma del vector \\(\\mathbf v=P_2-P_1\\).",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 4"
+    ]
+  },
+  {
+    "objectID": "taller4.html#subespacios-proyecciones-norma-y-distancia-mathbbr2",
+    "href": "taller4.html#subespacios-proyecciones-norma-y-distancia-mathbbr2",
+    "title": "Taller 4 - Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^2\\), incluyendo subespacios, proyecciones, norma y distancia. Se hace hincapié en la interpretación geométrica de estos conceptos y su aplicación en la resolución de problemas.\nProblema 1\nDemuestre que el conjunto \\(H_1=\\{(x,y)\\in\\mathbf R^2\\mid y=\\tfrac12x\\}\\) es un subespacio y describa su representación gráfica.\nProblema 2\nSea \\(H_2=\\{(x,y)\\in\\mathbf R^2\\mid x-y=0\\}\\). Determine si \\(H_2\\) es un subespacio de \\(\\mathbf R^2\\) e interprete el resultado geométricamente.\nProblema 3\nConsidere \\(H_3=\\{(x,y)\\in\\mathbf R^2\\mid x^2+y^2=1\\}\\). ¿Es \\(H_3\\) un subespacio? Justifique mediante las reglas de cerradura.\nProblema 4\nSea \\(U=\\{(x,y)\\in\\mathbf R^2 : y=3x\\}\\) y \\(V=\\{(x,y)\\in\\mathbf R^2 : y=-x\\}\\). Muestre que \\(U\\cap V=\\{\\mathbf 0\\}\\) y explique por qué esta intersección sigue siendo un subespacio.\nProblema 5\nSea \\(W=\\operatorname{span}\\{(2,1),(1,-1)\\}\\). Determine si \\(W=\\mathbf R^2\\) o una recta por el origen y explique su conclusión.\nProblema 6\nCalcule \\(\\operatorname{proy}_{(1,1)}(2,3)\\) y verifique que el residuo \\(\\mathbf u-\\operatorname{proy}_{\\mathbf v}\\mathbf u\\) es ortogonal a \\(\\mathbf v\\).\nProblema 7\nSea \\(\\mathbf u=(a,b)\\) y \\(\\mathbf v=(1,-1)\\) en \\(\\mathbf R^2\\). Determine todos los valores de \\((a,b)\\) para los cuales \\(\\operatorname{proy}_{\\mathbf v}\\mathbf u=\\mathbf 0\\). Interprete el resultado.\nProblema 8\nCalcule la norma de los vectores \\(\\mathbf v_1=(3,4)\\) y \\(\\mathbf v_2=(-1,7)\\) y verifique la desigualdad triangular \\(\\lVert \\mathbf v_1+\\mathbf v_2\\rVert\\le\\lVert \\mathbf v_1\\rVert+\\lVert \\mathbf v_2\\rVert\\). ¿Cómo podemos interpretar geométricamente esta desigualdad?\nProblema  9\nDado el triángulo de vértices \\(A(2,3)\\), \\(B(5,-1)\\) y \\(C(-1,4)\\), calcule sus tres lados y determine si es isósceles, equilátero o escaleno.\nProblema 10 Sea \\(P_1(1,2)\\) y \\(P_2(4,6)\\). Calcule la distancia entre estos puntos y verifique que es igual a la norma del vector \\(\\mathbf v=P_2-P_1\\).",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 4"
+    ]
+  },
+  {
+    "objectID": "taller4.html#proyección-ortogonal-de-un-vector-sobre-otro",
+    "href": "taller4.html#proyección-ortogonal-de-un-vector-sobre-otro",
+    "title": "Taller 4 - Vectores en \\(R^2\\)",
+    "section": "Proyección ortogonal de un vector sobre otro",
+    "text": "Proyección ortogonal de un vector sobre otro\n\nAlgunas formulas\nUn subespacio \\(H\\) de \\(\\mathbf R^2\\) es un conjunto no vacío que cumple las propiedades de cerradura bajo suma y multiplicación por escalares. Los subespacios son importantes porque permiten entender la estructura de \\(\\mathbf R^2\\) en términos de combinaciones lineales.\nLa proyección de \\(\\mathbf u\\) sobre \\(\\mathbf v\\) se define como \\[\\operatorname{proy}_{\\mathbf v}\\mathbf u=\\dfrac{\\mathbf u\\cdot \\mathbf v}{\\mathbf v\\cdot \\mathbf v}\\,\\mathbf v,\\qquad \\mathbf v\\neq \\mathbf 0.\\] Esta construcción descompone \\(\\mathbf u\\) en una parte paralela a \\(\\mathbf v\\) y otra ortogonal.\nLa norma de \\(\\mathbf v=(x,y)\\) es \\(\\lVert \\mathbf v\\rVert=\\sqrt{x^2+y^2}\\) y la distancia entre \\(P_1(x_1,y_1)\\) y \\(P_2(x_2,y_2)\\) se calcula mediante \\(d(P_1,P_2)=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\\).\nLa desigualdad triangular establece que para cualquier \\(\\mathbf u,\\mathbf v\\in\\mathbf R^2\\) se cumple \\(\\lVert \\mathbf u+\\mathbf v\\rVert\\leq \\lVert \\mathbf u\\rVert+\\lVert \\mathbf v\\rVert\\).",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 4"
+    ]
+  },
+  {
+    "objectID": "taller4.html#problemas-computacionales",
+    "href": "taller4.html#problemas-computacionales",
+    "title": "Taller 4 - Vectores en \\(R^2\\)",
+    "section": "Problemas computacionales",
+    "text": "Problemas computacionales\n\nInstrucciones generales\nModifique únicamente las líneas marcadas con # &lt;-- modifique aquí y ejecute el bloque. Analice la salida y responda las preguntas que siguen.\nProblema computacional 1\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n¿Cuáles son las coordenadas del vector directriz de la recta?\n¿Para qué valores de b la recta es un subespacio de \\(\\mathbf R^2\\)?\nExplique por qué su respuesta concuerda con la definición de subespacio.\n\nProblema Computacional 2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nConceptual\na. Determine con el código cuándo la proyección es el vector cero.\nb. Formule la condición algebraica equivalente y relacione con la ortogonalidad de \\(u\\) y \\(v\\).\nc. Explique geométricamente por qué la proyección es cero en esos casos.\nProblema computacional 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nBusque un par de vectores donde la desigualdad sea estricta y otro donde sea igualdad.\nExplique geométricamente por qué existe igualdad solo en casos particulares.\n\nProblema Computacional 4\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCambie las coordenadas para obtener un triángulo equilátero.\nJustifique algebraicamente su elección usando las distancias.\n\nProblema Computacional 5 En el siguiente código se define un subespacio generado por los vectores \\(b_1\\) y \\(b_2\\). Modifique las coordenadas del vector \\(b_1\\) y \\(p\\). En el programa establece si el vector \\(p\\) pertenece o no al subespacio generado por \\(b_1\\) y \\(b_2\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n¿Qué significa que el vector \\(p\\) pertenezca al subespacio generado por \\(b_1\\) y \\(b_2\\)? ¿Qué condiciones deben cumplirse?\nExplique que condiciones se deben tener \\(b_1\\) y \\(b_2\\) para que el subespacio sea \\(\\mathbb{R}^2\\).\nDescriba geométricamente el caso en que \\(p\\) queda fuera del subespacio.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 4"
+    ]
+  },
+  {
+    "objectID": "taller1.html#vectores-en-r2",
+    "href": "taller1.html#vectores-en-r2",
+    "title": "Taller 1 - Vectores en \\(R^2\\)",
+    "section": "Vectores en \\(R^2\\)",
+    "text": "Vectores en \\(R^2\\)\n\nNota pedagógica\nEstos ejercicios introducen las operaciones fundamentales con vectores en \\(R^2\\) — suma, multiplicación por un escalar y producto punto — y sus propiedades algebraicas y geométricas.\n\n\n\n\n\n\n\n\n\nLa figura ilustra la ley del paralelogramo: el vector \\(\\mathbf u+\\mathbf v\\) se obtiene al trasladar \\(\\mathbf v\\) al extremo de \\(\\mathbf u\\).\n\n\nProblemas\n\nProblema 1 Sea \\(\\mathbf u=(2,-1)\\) y \\(\\mathbf v=(1,3)\\). Calcule \\(\\mathbf u+\\mathbf v\\).\n\nProblema 2 Represente gráficamente los vectores del problema anterior y el vector suma. Describa la construcción geométrica utilizada.\nProblema 3 Verifique experimentalmente la conmutatividad y la asociatividad de la suma de vectores en \\(R^2\\) usando \\(\\mathbf u=(4,0)\\), \\(\\mathbf v=(-1,5)\\) y \\(\\mathbf w=(3,-2)\\).\n\nProblema 4 Para \\(\\mathbf a=(3,-4)\\) determine \\(3\\mathbf a\\), \\(-\\tfrac12\\mathbf a\\) y describa el efecto geométrico de cada multiplicación.\nProblema 5 Demuestre con ejemplos numéricos que la multiplicación por escalar es distributiva respecto de la suma: \\(c(\\mathbf u+\\mathbf v)=c\\mathbf u+c\\mathbf v\\) con \\(c=2\\), \\(\\mathbf u=(1,2)\\) y \\(\\mathbf v=(0,-3)\\).\n\nProblema 6 Sea \\(\\mathbf p=(1,4)\\) y \\(\\mathbf q=(5,-2)\\). Calcule el producto punto \\(\\mathbf p\\cdot\\mathbf q\\), las magnitudes \\(\\lVert\\mathbf p\\rVert\\), \\(\\lVert\\mathbf q\\rVert\\) y el ángulo entre ellos.\n\nProblema 7 Compruebe la desigualdad de Cauchy–Schwarz para los vectores del problema anterior y analice cuándo se alcanza la igualdad.\nProblema 8 Encuentre el valor de \\(k\\in\\mathbb R\\) tal que \\(\\mathbf u+k\\mathbf v\\) sea ortogonal a \\(\\mathbf v\\), donde \\(\\mathbf u=(2,1)\\) y \\(\\mathbf v=(3,-1)\\).\n\nProblema 9 Verifique numéricamente la propiedad distributiva del producto punto sobre la suma: \\(\\mathbf u\\cdot(\\mathbf v+\\mathbf w)=\\mathbf u\\cdot\\mathbf v+\\mathbf u\\cdot\\mathbf w\\) para \\(\\mathbf u=(1,2)\\), \\(\\mathbf v=(0,5)\\) y \\(\\mathbf w=(-2,1)\\).\nProblema 10 Un objeto se desplaza \\(\\mathbf d=(6,2)\\) m bajo la acción de una fuerza constante \\(\\mathbf F=(10,3)\\) N. Calcule el trabajo realizado y explique el significado físico del producto punto en este contexto.\n\n\n\n\nNota pedagógica final: Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial \\(R^2\\) y vincularlas con interpretaciones geométricas y físicas.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 1"
+    ]
+  },
+  {
+    "objectID": "taller1.html#comprobación-computacional",
+    "href": "taller1.html#comprobación-computacional",
+    "title": "Taller 1 - Vectores en \\(R^2\\)",
+    "section": "Comprobación Computacional |",
+    "text": "Comprobación Computacional |\nEn esta sección vamos a comprobar computacionalmente algunos ejercicios usando Python, el siguiente código nos permite sumar dos vectores usando la librería NumPy.\nPara este ejemplo vamos a sumar los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nEjercicios:\n\nSuma de vectores\n\nSea los vectores \\(\\mathbf u=(2,2)\\) y \\(\\mathbf v=(2,0)\\), encuentra el resultado de la usa usando Python.\nRealiza las siguiente operaciones modificando el código anterior:\n\n\\(\\mathbf u+2\\mathbf v\\)\n\\(3\\mathbf u-\\mathbf v\\)\n\n\n\n\nProducto punto\nPara realizar el producto punto de dos vectores podemos usar la función np.dot de la librería NumPy, por ejemplo para los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nNorma de un vector\nPara calcular la norma de un vector en Python podemos usar la función np.linalg.norm, por ejemplo para el vector \\(\\mathbf{u}=(2,-1)\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nEn el siguiente código comprobamos la desigualdad de Cauchy–Schwarz para los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\) usando Python.\n\nRecuerda que la desigualdad de Cauchy–Schwarz dice que \\(|\\mathbf{u}\\cdot\\mathbf{v}| \\leq \\|\\mathbf{u}\\| \\|\\mathbf{v}\\|\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nEncuentra el un vector \\(\\mathbf{u}\\) para que obtenga la igualdad de Cauchy–Schwarz, es decir, que se cumpla que \\(|\\mathbf{u}\\cdot\\mathbf{v}| = \\|\\mathbf{u}\\| \\|\\mathbf{v}\\|\\), justifica tu respuesta.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 1"
+    ]
+  },
+  {
+    "objectID": "Enganche_1.html",
+    "href": "Enganche_1.html",
+    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
+    "section": "",
+    "text": "Un jugador situado en \\((1,1)\\) dispara un proyectil láser que viaja según el vector de dirección \\(\\vec d=(4,3)\\). Un enemigo 2D se modela como un círculo de radio \\(r=2\\) centrado en \\((13,11)\\).\nNuestro objetivo es decidir si el proyectil golpea al enemigo, usando únicamente conceptos elementales de geometría analítica y álgebra lineal."
+  },
+  {
+    "objectID": "Enganche_1.html#tu-misión-15-minutos",
+    "href": "Enganche_1.html#tu-misión-15-minutos",
+    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
+    "section": "Tu misión (15 minutos)",
+    "text": "Tu misión (15 minutos)\nSin usar herramientas de geometría avanzada ni fórmulas que no conozcas, ¿cómo podrías determinar si el proyectil golpeará al enemigo?\nInstrucciones:\n\nPiensa en una estrategia, un método o un “algoritmo” para responder a la pregunta: ¿hay colisión?\nDescribe tu idea de la manera más clara posible.\nPuedes usar dibujos, diagramas o explicar los pasos que seguirías."
+  },
+  {
+    "objectID": "taller3.html",
+    "href": "taller3.html",
+    "title": "Taller 3- Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "crumbs": [
+      "Plano",
+      "Taller 3"
+    ]
+  },
+  {
+    "objectID": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
+    "href": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
+    "title": "Taller 3- Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "crumbs": [
+      "Plano",
+      "Taller 3"
+    ]
+  },
+  {
+    "objectID": "taller2.html#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad",
+    "href": "taller2.html#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad",
+    "title": "Taller 2 - Rectas en \\(R^2\\)",
+    "section": "Ecuación de la recta y relaciones de paralelismo/perpendicularidad",
+    "text": "Ecuación de la recta y relaciones de paralelismo/perpendicularidad\n\nNota pedagógica\nEste taller introduce los conceptos fundamentales de las rectas en el plano, el paralelismo y la perpendicularidad desde la óptica de la pendiente y la forma vectorial. Asimismo, conecta estos conceptos con la independencia lineal y la noción de base, destacando su interpretación geométrica.\n\n\n\n\n\n\n\n\n\n\nFigura 1. Dos rectas paralelas y una recta perpendicular en $R^2$.\n\n\nEjercicios\nProblema 1 Determine la ecuación de la recta que pasa por los puntos $A(2,-1)$ y $B(5,7)$. \nProblema 2 Halle una ecuación paramétrica y las intersecciones con los ejes de la recta $3x-2y+4=0$. \nProblema 3 Compruebe si las rectas $y=(3,5)t+(1,4)$ y $3y-2x-1=0$ son paralelas. \nProblema 4 Encuentre la ecuación de la recta perpendicular a $4x+2y-7=0$ que pasa por el punto $(-1,3)$ y exprésela paramétricamente. \nProblema 5 Dados los vectores $u=(2,1)$ y $v=(4,2)$, explique geométricamente por qué las rectas que ellos generan en $R^2$ son coincidentes. \nProblema 6 Decida si el conjunto ${(1,2),(3,6)}$ es linealmente independiente y describa la subregión del plano que generan. Justifique con un criterio geométrico. \nProblema 8 Para los vectores $a=(1,-2)$ y $b=(2,1)$, determine si forman un par linealmente independiente y describa la subregión del plano que generan. \nProblema 9 Sea $B={(1,0),(0,1)}$. Explique por qué $B$ es una base de $R^2$ y relacione cada vector con la orientación de los ejes.\nProblema 10 Construya una base ortonormal de $R^2$ a partir del vector $w=(4,3)$.\nProblema 11 Exprese el vector $p=(5,-1)$ como combinación lineal de la base ${(2,1),(1,-1)}$ y discuta la unicidad de la representación. \n\n\nNota pedagógica final: Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial \\(R^2\\) y vincularlas con interpretaciones geométricas y físicas.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 2"
+    ]
+  },
+  {
+    "objectID": "taller2.html#comprobación-computacional",
+    "href": "taller2.html#comprobación-computacional",
+    "title": "Taller 2 - Rectas en \\(R^2\\)",
+    "section": "Comprobación Computacional |",
+    "text": "Comprobación Computacional |\n\nEjercicio 1\nEn este script se grafica la recta que pasa por un punto \\(p_0\\) con vector director \\(\\mathbf v\\). Solo debes cambiar los valores de p0 y v donde se indica y ejecutar. Tras observar la gráfica, responde:\nConclusión ¿Con qué condición sobre \\(\\mathbf v\\) la recta resulta perpendicular a \\(y = 2x + 1\\)?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nEjercicio 2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Qué observas cuando cambias k? Describe la relación entre \\(\\mathbf  u\\) y \\(\\mathbf  v\\) y su implicación en el determinante.\n\n\nEjercicio 3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Cómo se relaciona el área del paralelogramo (|determinante|) con la independencia lineal de \\(\\mathbf  u\\) y \\(\\mathbf  v\\)?",
+    "crumbs": [
+      "Plano",
+      "Taller 2"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Temas",
+    "section": "",
+    "text": "Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, Anton (2010),Grossman (2018), Kolman & Hill (2004). Esta lista de ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
+    "objectID": "about.html#contenido",
+    "href": "about.html#contenido",
+    "title": "Temas",
+    "section": "Contenido",
+    "text": "Contenido\n\nTaller 1 - Vectores en \\(R^2\\)\nTaller 2 - Rectas en \\(R^2\\)\nTaller 3 - Vectores, Rectas y Planos en \\(R^3\\)\nTaller 4 - Subespacios, proyecciones, norma y distancia \\(\\mathbb{R}^2\\)",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
+    "objectID": "taller2.html#problemas-computacionales",
+    "href": "taller2.html#problemas-computacionales",
+    "title": "Taller 2 - Rectas en \\(R^2\\)",
+    "section": "Problemas computacionales",
+    "text": "Problemas computacionales\n\nInstrucciones generales\nModifique únicamente las líneas marcadas con # &lt;-- modifique aquí y ejecute el bloque. Analice la salida y responda las preguntas que siguen.\n\n\nEjercicio Computacional 1\nEn este script se gráfica la recta que pasa por un punto \\(p_0\\) con vector director \\(\\mathbf v\\). Solo debes cambiar los valores de \\(p_0\\) y \\(\\mathbf v\\) donde se indica y ejecutar. Tras observar la gráfica, responde:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Con qué condición sobre \\(\\mathbf v\\) la recta resulta perpendicular a \\(y = 2x + 1\\)?\n\n\nEjercicio Computacional 2\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Qué observas cuando cambias \\(k\\)? Describe la relación entre \\(\\mathbf  u\\) y \\(\\mathbf  v\\)?.\n\n\nEjercicio Computacional3\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Cómo se relaciona el área del paralelogramo con la independencia lineal de \\(\\mathbf  u\\) y \\(\\mathbf  v\\)?",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 2"
+    ]
+  }
+]

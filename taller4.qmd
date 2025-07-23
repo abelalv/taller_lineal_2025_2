@@ -1,0 +1,210 @@
+---
+title: Taller 4 - Vectores en $R^2$
+format: html
+bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
+csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+
+
+
+
+
+## Subespacios, proyecciones, norma y distancia $\mathbb{R}^2$
+
+
+### Nota pedagógica
+
+Estos ejercicios repasan los conceptos fundamentales de vectores en $\mathbb{R}^2$, incluyendo subespacios, proyecciones, norma y distancia. Se hace hincapié en la interpretación geométrica de estos conceptos y su aplicación en la resolución de problemas.
+
+**Problema 1**  
+Demuestre que el conjunto $H_1=\{(x,y)\in\mathbf R^2\mid y=\tfrac12x\}$ es un subespacio y describa su representación gráfica.  
+
+
+**Problema 2**  
+Sea $H_2=\{(x,y)\in\mathbf R^2\mid x-y=0\}$. Determine si $H_2$ es un subespacio de $\mathbf R^2$ e interprete el resultado geométricamente. 
+
+**Problema 3**  
+Considere $H_3=\{(x,y)\in\mathbf R^2\mid x^2+y^2=1\}$. ¿Es $H_3$ un subespacio? Justifique mediante las reglas de cerradura.  
+
+**Problema 4**  
+Sea $U=\{(x,y)\in\mathbf R^2 : y=3x\}$ y $V=\{(x,y)\in\mathbf R^2 : y=-x\}$. Muestre que $U\cap V=\{\mathbf 0\}$ y explique por qué esta intersección sigue siendo un subespacio.  
+
+
+**Problema 5**  
+Sea $W=\operatorname{span}\{(2,1),(1,-1)\}$. Determine si $W=\mathbf R^2$ o una recta por el origen y explique su conclusión.  
+
+
+
+
+
+**Problema 6**  
+Calcule $\operatorname{proy}_{(1,1)}(2,3)$ y verifique que el residuo $\mathbf u-\operatorname{proy}_{\mathbf v}\mathbf u$ es ortogonal a $\mathbf v$.  
+
+**Problema 7**  
+Sea $\mathbf u=(a,b)$ y $\mathbf v=(1,-1)$ en $\mathbf R^2$. Determine todos los valores de $(a,b)$ para los cuales $\operatorname{proy}_{\mathbf v}\mathbf u=\mathbf 0$. Interprete el resultado.  
+
+
+
+
+
+
+
+**Problema 8**  
+Calcule la norma de los vectores $\mathbf v_1=(3,4)$ y $\mathbf v_2=(-1,7)$ y verifique la desigualdad triangular $\lVert \mathbf v_1+\mathbf v_2\rVert\le\lVert \mathbf v_1\rVert+\lVert \mathbf v_2\rVert$.  ¿Cómo podemos interpretar geométricamente esta desigualdad?
+
+
+**Problema  9**  
+Dado el triángulo de vértices $A(2,3)$, $B(5,-1)$ y $C(-1,4)$, calcule sus tres lados y determine si es isósceles, equilátero o escaleno.  
+
+**Problema 10**
+Sea $P_1(1,2)$ y $P_2(4,6)$. Calcule la distancia entre estos puntos y verifique que es igual a la norma del vector $\mathbf v=P_2-P_1$.
+
+
+
+
+## Proyección ortogonal de un vector sobre otro
+
+### Algunas formulas 
+
+Un subespacio $H$ de $\mathbf R^2$ es un conjunto no vacío que cumple las propiedades de cerradura bajo suma y multiplicación por escalares. Los subespacios son importantes porque permiten entender la estructura de $\mathbf R^2$ en términos de combinaciones lineales.
+
+La proyección de $\mathbf u$ sobre $\mathbf v$ se define como
+$$\operatorname{proy}_{\mathbf v}\mathbf u=\dfrac{\mathbf u\cdot \mathbf v}{\mathbf v\cdot \mathbf v}\,\mathbf v,\qquad \mathbf v\neq \mathbf 0.$$
+Esta construcción descompone $\mathbf u$ en una parte paralela a $\mathbf v$ y otra ortogonal.
+
+La **norma** de $\mathbf v=(x,y)$ es $\lVert \mathbf v\rVert=\sqrt{x^2+y^2}$ y la **distancia** entre $P_1(x_1,y_1)$ y $P_2(x_2,y_2)$ se calcula mediante $d(P_1,P_2)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$. 
+
+La **desigualdad triangular** establece que para cualquier $\mathbf u,\mathbf v\in\mathbf R^2$ se cumple $\lVert \mathbf u+\mathbf v\rVert\leq \lVert \mathbf u\rVert+\lVert \mathbf v\rVert$.
+
+
+## Problemas computacionales
+
+### Instrucciones generales
+Modifique únicamente las líneas marcadas con `# <-- modifique aquí` y ejecute el bloque. Analice la salida y responda las preguntas que siguen.
+
+**Problema computacional 1**
+
+
+```{pyodide-python}
+import numpy as np
+import matplotlib.pyplot as plt
+a=2
+b= 0  # <-- modifique aquí
+m = 1/2 # <-- modifique aquí
+t = np.linspace(-4, 4, 100)
+x = t + a
+y = m*t+b
+
+plt.figure(figsize=(4,4))
+plt.plot(x, y, label=f'y = {m}x')
+plt.scatter([0], [0], color='red')
+plt.axhline(0); plt.axvline(0); plt.gca().set_aspect('equal')
+plt.legend(); plt.grid(True)
+plt.title('Visualización de la recta')
+plt.show()
+```
+
+ 
+a. ¿Cuáles son las coordenadas del vector directriz de la recta?
+
+b. ¿Para qué valores de `b` la recta es un subespacio de $\mathbf R^2$?  
+
+c. Explique por qué su respuesta concuerda con la definición de subespacio.  
+
+
+**Problema Computacional 2**
+
+
+```{pyodide-python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+u = np.array([3, 2])   # <-- modifique aquí
+v = np.array([1, -1])  # <-- modifique aquí
+
+proj = (u @ v) / (v @ v) * v
+
+plt.figure(figsize=(4,4))
+for vec, col, lab in [(u, None, 'u'), (v, None, 'v'), (proj, 'red', 'proy_v u')]:
+    plt.quiver(0, 0, vec[0], vec[1], angles='xy', scale_units='xy', scale=1, color=col, label=lab)
+plt.xlim(-5,5); plt.ylim(-5,5); plt.gca().set_aspect('equal'); plt.grid(True); plt.legend()
+plt.title('Proyección de u sobre v')
+plt.show()
+```
+
+**Conceptual**  
+a. Determine con el código cuándo la proyección es el vector cero.  
+b. Formule la condición algebraica equivalente y relacione con la ortogonalidad de $u$ y $v$.  
+c. Explique geométricamente por qué la proyección es cero en esos casos.
+
+**Problema computacional 3**
+
+
+```{pyodide-python}
+import numpy as np
+
+v1 = np.array([3, 4])   # <-- modifique aquí
+v2 = np.array([-1, 7])  # <-- modifique aquí
+
+lhs = np.linalg.norm(v1 + v2)
+rhs = np.linalg.norm(v1) + np.linalg.norm(v2)
+print(f'||v1+v2|| = {lhs:.3f},  ||v1|| + ||v2|| = {rhs:.3f}')
+```
+
+
+a. Busque un par de vectores donde la desigualdad sea estricta y otro donde sea igualdad.  
+
+b. Explique geométricamente por qué existe igualdad solo en casos particulares.  
+
+
+**Problema Computacional 4**
+
+
+```{pyodide-python}
+import numpy as np
+
+A = np.array([2, 3])   # <-- modifique aquí
+B = np.array([5, -1])  # <-- modifique aquí
+C = np.array([-1, 4])  # <-- modifique aquí
+
+dAB = np.linalg.norm(A - B)
+dBC = np.linalg.norm(B - C)
+dCA = np.linalg.norm(C - A)
+print(f'dAB = {dAB:.2f}, dBC = {dBC:.2f}, dCA = {dCA:.2f}')
+```
+
+  
+a. Cambie las coordenadas para obtener un triángulo equilátero.  
+
+b. Justifique algebraicamente su elección usando las distancias.  
+
+
+**Problema Computacional 5**
+En el siguiente código se define un subespacio generado por los vectores $b_1$ y $b_2$. Modifique las coordenadas del vector $b_1$ y $p$. En el programa establece si el vector $p$ pertenece o no al subespacio generado por $b_1$ y $b_2$.
+
+```{pyodide-python}
+import numpy as np
+
+b1 = np.array([2, 1])  # <-- modifique aquí
+b2 = np.array([1, -1]) # <-- modifique aquí
+p  = np.array([3, 0])  # <-- modifique aquí
+
+B = np.column_stack((b1, b2))
+try:
+    coeffs = np.linalg.solve(B, p)
+    print('p pertenece al subespacio; coeficientes:', coeffs)
+except np.linalg.LinAlgError:
+    print('p NO pertenece al subespacio generado por b1 y b2')
+```
+
+ 
+a. ¿Qué significa que el vector $p$ pertenezca al subespacio generado por $b_1$ y $b_2$? ¿Qué condiciones deben cumplirse?
+
+b. Explique que condiciones se deben tener $b_1$ y $b_2$ para que el subespacio sea $\mathbb{R}^2$.
+
+c. Describa geométricamente el caso en que $p$ queda fuera del subespacio.  
+
+

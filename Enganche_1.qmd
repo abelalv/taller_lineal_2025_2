@@ -1,0 +1,75 @@
+---
+title: Actividad motivacional  - Álgebra Lineal en los Videojuegos
+format: html
+bibliography: referencias.bib        # o una 
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+
+
+### Escenario
+
+Un jugador situado en $(1,1)$ dispara un proyectil láser que viaja según el vector de dirección $\vec d=(4,3)$. Un enemigo 2D se modela como un **círculo** de radio $r=2$ centrado en $(13,11)$.  
+
+Nuestro objetivo es decidir si el proyectil golpea al enemigo, usando únicamente conceptos elementales de geometría analítica y álgebra lineal.
+
+
+### Visualización (ejecuta antes de leer la explicación)
+
+```{python}
+#|echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Datos del problema
+P0 = np.array([1, 1])           # Posición inicial del proyectil
+v  = np.array([4, 3])           # Vector de dirección (no normalizado)
+C  = np.array([13, 11])         # Centro del círculo (enemigo)
+r  = 2                          # Radio del círculo
+
+# Trayectoria paramétrica  P(t)=P0 + t*v, 0≤t≤T
+T = 4                           # tiempo máximo de dibujo (arbitrario)
+t = np.linspace(0, T, 250)
+traj = P0[:, None] + v[:, None] * t
+
+fig, ax = plt.subplots()
+ax.plot(*traj, lw=1.5, label='Trayectoria del proyectil')
+ax.scatter(*P0, color='green', zorder=5, label='Jugador $(1,1)$')
+
+# Círculo del enemigo
+circle = plt.Circle(C, r, ec='red', fc='none', lw=2, label='Enemigo (radio 2)')
+ax.add_patch(circle)
+ax.scatter(*C, color='red', zorder=5)
+
+# Ajustes de la figura para cuadrícula
+ax.set_aspect('equal')
+ax.set_xlabel('$x$')
+ax.set_ylabel('$y$')
+ax.set_title('Escena de colisión')
+ax.legend(loc='upper left')
+ax.set_xticks(np.arange(0, 18, 1))
+ax.set_yticks(np.arange(0, 16, 1))
+ax.set_xlim(0, 17)
+ax.set_ylim(0, 15)
+ax.grid(True, which='both', linestyle='-', linewidth=0.7, alpha=0.8)
+plt.tight_layout()
+```
+
+# El escenario
+
+Tu personaje se encuentra en la posición $(1,1)$ y dispara un proyectil.
+
+* El proyectil viaja en la dirección indicada por el vector $\vec d = (4,3)$.
+  Esto significa que por cada 4 unidades que avanza hacia la derecha, sube 3 unidades.
+* El enemigo es un círculo con centro en $(13,11)$ y radio $2$.
+
+## Tu misión (15 minutos)
+
+Sin usar herramientas de geometría avanzada ni fórmulas que no conozcas, ¿cómo podrías determinar si el proyectil golpeará al enemigo?
+
+**Instrucciones:**
+
+* Piensa en una estrategia, un método o un “algoritmo” para responder a la pregunta: **¿hay colisión?**
+* Describe tu idea de la manera más clara posible.
+* Puedes usar dibujos, diagramas o explicar los pasos que seguirías.

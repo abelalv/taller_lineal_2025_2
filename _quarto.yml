@@ -1,0 +1,34 @@
+project:
+  type: website
+
+website:
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: Contenido
+        href: about.qmd
+      - section: "Vectores en el Plano"
+        contents:
+          - href: Enganche.qmd
+            text: Actividad Inicial
+          - href: taller1.qmd
+            text: Taller 1
+          - href: taller2.qmd
+            text: Taller 2
+          - href: taller3.qmd
+            text: Taller 3
+          - href: taller4.qmd
+            text: Taller 4  
+      - section:  Matrices 2 x  2
+        contents:
+          - href: taller4.qmd
+            text: Matrices
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
