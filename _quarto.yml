@@ -10,7 +10,7 @@ website:
         href: about.qmd
       - section: "Vectores en el Plano"
         contents:
-          - href: Enganche.qmd
+          - href: Enganche_1.qmd
             text: Actividad Inicial
           - href: taller1.qmd
             text: Taller 1

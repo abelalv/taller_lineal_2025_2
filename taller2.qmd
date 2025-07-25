@@ -165,7 +165,7 @@ v = np.array([2, -1])         # <--- estudiante cambia aquí
 
 det = np.linalg.det(np.column_stack((u, v)))
 indep = det != 0
-print("Determinante =", det)
+
 print("¿Son linealmente independientes?", indep)
 
 plt.figure()

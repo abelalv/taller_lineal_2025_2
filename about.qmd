@@ -14,6 +14,7 @@ Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lin
 
 ## Contenido
 
+- [Actividad Inicial- Introducción a Python](Enganche_1.qmd)
 - [Taller 1 - Vectores en $R^2$](taller1.qmd)
 - [Taller 2 - Rectas en $R^2$](taller2.qmd)
 - [Taller 3 - Vectores, Rectas y Planos en $R^3$](taller3.qmd)
