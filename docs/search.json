@@ -1,5 +1,25 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Temas",
+    "section": "",
+    "text": "Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, Anton (2010),Grossman (2018), Kolman & Hill (2004). Esta lista de ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
+    "objectID": "about.html#contenido",
+    "href": "about.html#contenido",
+    "title": "Temas",
+    "section": "Contenido",
+    "text": "Contenido\n\nActividad Inicial- Introducción a Python\nTaller 1 - Vectores en \\(R^2\\)\nTaller 2 - Rectas en \\(R^2\\)\nTaller 3 - Vectores, Rectas y Planos en \\(R^3\\)\nTaller 4 - Subespacios, proyecciones, norma y distancia \\(\\mathbb{R}^2\\)",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
     "objectID": "taller4.html",
     "href": "taller4.html",
     "title": "Taller 4 - Vectores en \\(R^2\\)",
@@ -44,62 +64,6 @@
     ]
   },
   {
-    "objectID": "taller1.html#vectores-en-r2",
-    "href": "taller1.html#vectores-en-r2",
-    "title": "Taller 1 - Vectores en \\(R^2\\)",
-    "section": "Vectores en \\(R^2\\)",
-    "text": "Vectores en \\(R^2\\)\n\nNota pedagógica\nEstos ejercicios introducen las operaciones fundamentales con vectores en \\(R^2\\) — suma, multiplicación por un escalar y producto punto — y sus propiedades algebraicas y geométricas.\n\n\n\n\n\n\n\n\n\nLa figura ilustra la ley del paralelogramo: el vector \\(\\mathbf u+\\mathbf v\\) se obtiene al trasladar \\(\\mathbf v\\) al extremo de \\(\\mathbf u\\).\n\n\nProblemas\n\nProblema 1 Sea \\(\\mathbf u=(2,-1)\\) y \\(\\mathbf v=(1,3)\\). Calcule \\(\\mathbf u+\\mathbf v\\).\n\nProblema 2 Represente gráficamente los vectores del problema anterior y el vector suma. Describa la construcción geométrica utilizada.\nProblema 3 Verifique experimentalmente la conmutatividad y la asociatividad de la suma de vectores en \\(R^2\\) usando \\(\\mathbf u=(4,0)\\), \\(\\mathbf v=(-1,5)\\) y \\(\\mathbf w=(3,-2)\\).\n\nProblema 4 Para \\(\\mathbf a=(3,-4)\\) determine \\(3\\mathbf a\\), \\(-\\tfrac12\\mathbf a\\) y describa el efecto geométrico de cada multiplicación.\nProblema 5 Demuestre con ejemplos numéricos que la multiplicación por escalar es distributiva respecto de la suma: \\(c(\\mathbf u+\\mathbf v)=c\\mathbf u+c\\mathbf v\\) con \\(c=2\\), \\(\\mathbf u=(1,2)\\) y \\(\\mathbf v=(0,-3)\\).\n\nProblema 6 Sea \\(\\mathbf p=(1,4)\\) y \\(\\mathbf q=(5,-2)\\). Calcule el producto punto \\(\\mathbf p\\cdot\\mathbf q\\), las magnitudes \\(\\lVert\\mathbf p\\rVert\\), \\(\\lVert\\mathbf q\\rVert\\) y el ángulo entre ellos.\n\nProblema 7 Compruebe la desigualdad de Cauchy–Schwarz para los vectores del problema anterior y analice cuándo se alcanza la igualdad.\nProblema 8 Encuentre el valor de \\(k\\in\\mathbb R\\) tal que \\(\\mathbf u+k\\mathbf v\\) sea ortogonal a \\(\\mathbf v\\), donde \\(\\mathbf u=(2,1)\\) y \\(\\mathbf v=(3,-1)\\).\n\nProblema 9 Verifique numéricamente la propiedad distributiva del producto punto sobre la suma: \\(\\mathbf u\\cdot(\\mathbf v+\\mathbf w)=\\mathbf u\\cdot\\mathbf v+\\mathbf u\\cdot\\mathbf w\\) para \\(\\mathbf u=(1,2)\\), \\(\\mathbf v=(0,5)\\) y \\(\\mathbf w=(-2,1)\\).\nProblema 10 Un objeto se desplaza \\(\\mathbf d=(6,2)\\) m bajo la acción de una fuerza constante \\(\\mathbf F=(10,3)\\) N. Calcule el trabajo realizado y explique el significado físico del producto punto en este contexto.\n\n\n\n\nNota pedagógica final: Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial \\(R^2\\) y vincularlas con interpretaciones geométricas y físicas.",
-    "crumbs": [
-      "Vectores en el Plano",
-      "Taller 1"
-    ]
-  },
-  {
-    "objectID": "taller1.html#comprobación-computacional",
-    "href": "taller1.html#comprobación-computacional",
-    "title": "Taller 1 - Vectores en \\(R^2\\)",
-    "section": "Comprobación Computacional |",
-    "text": "Comprobación Computacional |\nEn esta sección vamos a comprobar computacionalmente algunos ejercicios usando Python, el siguiente código nos permite sumar dos vectores usando la librería NumPy.\nPara este ejemplo vamos a sumar los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nEjercicios:\n\nSuma de vectores\n\nSea los vectores \\(\\mathbf u=(2,2)\\) y \\(\\mathbf v=(2,0)\\), encuentra el resultado de la suma usando Python.\nRealiza las siguiente operaciones modificando el código anterior:\n\n\\(\\mathbf u+2\\mathbf v\\)\n\\(3\\mathbf u-\\mathbf v\\)\n\n\n\n\nProducto punto\nPara realizar el producto punto de dos vectores podemos usar la función np.dot de la librería NumPy, por ejemplo para los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nNorma de un vector\nPara calcular la norma de un vector en Python podemos usar la función np.linalg.norm, por ejemplo para el vector \\(\\mathbf{u}=(2,-1)\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nEn el siguiente código comprobamos la desigualdad de Cauchy–Schwarz para los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\) usando Python.\n\nRecuerda que la desigualdad de Cauchy–Schwarz dice que \\(|\\mathbf{u}\\cdot\\mathbf{v}| \\leq \\|\\mathbf{u}\\| \\|\\mathbf{v}\\|\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nEncuentra el un vector \\(\\mathbf{u}\\) para que obtenga la igualdad de Cauchy–Schwarz, es decir, que se cumpla que \\(|\\mathbf{u}\\cdot\\mathbf{v}| = \\|\\mathbf{u}\\| \\|\\mathbf{v}\\|\\), justifica tu respuesta.",
-    "crumbs": [
-      "Vectores en el Plano",
-      "Taller 1"
-    ]
-  },
-  {
-    "objectID": "Enganche_1.html",
-    "href": "Enganche_1.html",
-    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
-    "section": "",
-    "text": "Un jugador situado en \\((1,1)\\) dispara un proyectil láser que viaja según el vector de dirección \\(\\vec d=(4,3)\\). Un enemigo 2D se modela como un círculo de radio \\(r=2\\) centrado en \\((13,11)\\).\nNuestro objetivo es decidir si el proyectil golpea al enemigo, usando únicamente conceptos elementales de geometría analítica y álgebra lineal."
-  },
-  {
-    "objectID": "Enganche_1.html#tu-misión-15-minutos",
-    "href": "Enganche_1.html#tu-misión-15-minutos",
-    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
-    "section": "Tu misión (15 minutos)",
-    "text": "Tu misión (15 minutos)\nSin usar herramientas de geometría avanzada ni fórmulas que no conozcas, ¿cómo podrías determinar si el proyectil golpeará al enemigo?\nInstrucciones:\n\nPiensa en una estrategia, un método o un “algoritmo” para responder a la pregunta: ¿hay colisión?\nDescribe tu idea de la manera más clara posible.\nPuedes usar dibujos, diagramas o explicar los pasos que seguirías."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Temas",
-    "section": "",
-    "text": "Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, Anton (2010),Grossman (2018), Kolman & Hill (2004). Esta lista de ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.",
-    "crumbs": [
-      "Contenido"
-    ]
-  },
-  {
-    "objectID": "about.html#contenido",
-    "href": "about.html#contenido",
-    "title": "Temas",
-    "section": "Contenido",
-    "text": "Contenido\n\nTaller 1 - Vectores en \\(R^2\\)\nTaller 2 - Rectas en \\(R^2\\)\nTaller 3 - Vectores, Rectas y Planos en \\(R^3\\)\nTaller 4 - Subespacios, proyecciones, norma y distancia \\(\\mathbb{R}^2\\)",
-    "crumbs": [
-      "Contenido"
-    ]
-  },
-  {
     "objectID": "taller3.html",
     "href": "taller3.html",
     "title": "Taller 3- Vectores en \\(R^2\\)",
@@ -119,6 +83,50 @@
     "crumbs": [
       "Vectores en el Plano",
       "Taller 3"
+    ]
+  },
+  {
+    "objectID": "Enganche_1.html",
+    "href": "Enganche_1.html",
+    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
+    "section": "",
+    "text": "Un jugador situado en \\((1,1)\\) dispara un proyectil láser que viaja según el vector de dirección \\(\\vec d=(4,3)\\). Un enemigo 2D se modela como un círculo de radio \\(r=2\\) centrado en \\((13,11)\\).\nNuestro objetivo es decidir si el proyectil golpea al enemigo, usando únicamente conceptos elementales de geometría analítica y álgebra lineal.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Actividad Inicial"
+    ]
+  },
+  {
+    "objectID": "Enganche_1.html#tu-misión-15-minutos",
+    "href": "Enganche_1.html#tu-misión-15-minutos",
+    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
+    "section": "Tu misión (15 minutos)",
+    "text": "Tu misión (15 minutos)\nSin usar herramientas de geometría avanzada ni fórmulas que no conozcas, ¿cómo podrías determinar si el proyectil golpeará al enemigo?\nInstrucciones:\n\nPiensa en una estrategia, un método o un “algoritmo” para responder a la pregunta: ¿hay colisión?\nDescribe tu idea de la manera más clara posible.\nPuedes usar dibujos, diagramas o explicar los pasos que seguirías.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Actividad Inicial"
+    ]
+  },
+  {
+    "objectID": "taller1.html#vectores-en-r2",
+    "href": "taller1.html#vectores-en-r2",
+    "title": "Taller 1 - Vectores en \\(R^2\\)",
+    "section": "Vectores en \\(R^2\\)",
+    "text": "Vectores en \\(R^2\\)\n\nNota pedagógica\nEstos ejercicios introducen las operaciones fundamentales con vectores en \\(R^2\\) — suma, multiplicación por un escalar y producto punto — y sus propiedades algebraicas y geométricas.\n\n\n\n\n\n\n\n\n\nLa figura ilustra la ley del paralelogramo: el vector \\(\\mathbf u+\\mathbf v\\) se obtiene al trasladar \\(\\mathbf v\\) al extremo de \\(\\mathbf u\\).\n\n\nProblemas\n\nProblema 1 Sea \\(\\mathbf u=(2,-1)\\) y \\(\\mathbf v=(1,3)\\). Calcule \\(\\mathbf u+\\mathbf v\\).\n\nProblema 2 Represente gráficamente los vectores del problema anterior y el vector suma. Describa la construcción geométrica utilizada.\nProblema 3 Verifique experimentalmente la conmutatividad y la asociatividad de la suma de vectores en \\(R^2\\) usando \\(\\mathbf u=(4,0)\\), \\(\\mathbf v=(-1,5)\\) y \\(\\mathbf w=(3,-2)\\).\n\nProblema 4 Para \\(\\mathbf a=(3,-4)\\) determine \\(3\\mathbf a\\), \\(-\\tfrac12\\mathbf a\\) y describa el efecto geométrico de cada multiplicación.\nProblema 5 Demuestre con ejemplos numéricos que la multiplicación por escalar es distributiva respecto de la suma: \\(c(\\mathbf u+\\mathbf v)=c\\mathbf u+c\\mathbf v\\) con \\(c=2\\), \\(\\mathbf u=(1,2)\\) y \\(\\mathbf v=(0,-3)\\).\n\nProblema 6 Sea \\(\\mathbf p=(1,4)\\) y \\(\\mathbf q=(5,-2)\\). Calcule el producto punto \\(\\mathbf p\\cdot\\mathbf q\\), las magnitudes \\(\\lVert\\mathbf p\\rVert\\), \\(\\lVert\\mathbf q\\rVert\\) y el ángulo entre ellos.\n\nProblema 7 Compruebe la desigualdad de Cauchy–Schwarz para los vectores del problema anterior y analice cuándo se alcanza la igualdad.\nProblema 8 Encuentre el valor de \\(k\\in\\mathbb R\\) tal que \\(\\mathbf u+k\\mathbf v\\) sea ortogonal a \\(\\mathbf v\\), donde \\(\\mathbf u=(2,1)\\) y \\(\\mathbf v=(3,-1)\\).\n\nProblema 9 Verifique numéricamente la propiedad distributiva del producto punto sobre la suma: \\(\\mathbf u\\cdot(\\mathbf v+\\mathbf w)=\\mathbf u\\cdot\\mathbf v+\\mathbf u\\cdot\\mathbf w\\) para \\(\\mathbf u=(1,2)\\), \\(\\mathbf v=(0,5)\\) y \\(\\mathbf w=(-2,1)\\).\nProblema 10 Un objeto se desplaza \\(\\mathbf d=(6,2)\\) m bajo la acción de una fuerza constante \\(\\mathbf F=(10,3)\\) N. Calcule el trabajo realizado y explique el significado físico del producto punto en este contexto.\n\n\n\n\nNota pedagógica final: Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial \\(R^2\\) y vincularlas con interpretaciones geométricas y físicas.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 1"
+    ]
+  },
+  {
+    "objectID": "taller1.html#comprobación-computacional",
+    "href": "taller1.html#comprobación-computacional",
+    "title": "Taller 1 - Vectores en \\(R^2\\)",
+    "section": "Comprobación Computacional |",
+    "text": "Comprobación Computacional |\nEn esta sección vamos a comprobar computacionalmente algunos ejercicios usando Python, el siguiente código nos permite sumar dos vectores usando la librería NumPy.\nPara este ejemplo vamos a sumar los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nEjercicios:\n\nSuma de vectores\n\nSea los vectores \\(\\mathbf u=(2,2)\\) y \\(\\mathbf v=(2,0)\\), encuentra el resultado de la suma usando Python.\nRealiza las siguiente operaciones modificando el código anterior:\n\n\\(\\mathbf u+2\\mathbf v\\)\n\\(3\\mathbf u-\\mathbf v\\)\n\n\n\n\nProducto punto\nPara realizar el producto punto de dos vectores podemos usar la función np.dot de la librería NumPy, por ejemplo para los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nNorma de un vector\nPara calcular la norma de un vector en Python podemos usar la función np.linalg.norm, por ejemplo para el vector \\(\\mathbf{u}=(2,-1)\\):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nEn el siguiente código comprobamos la desigualdad de Cauchy–Schwarz para los vectores \\(\\mathbf{u}=(2,-1)\\) y \\(\\mathbf{v}=(1,3)\\) usando Python.\n\nRecuerda que la desigualdad de Cauchy–Schwarz dice que \\(|\\mathbf{u}\\cdot\\mathbf{v}| \\leq \\|\\mathbf{u}\\| \\|\\mathbf{v}\\|\\).\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nEncuentra el un vector \\(\\mathbf{u}\\) para que obtenga la igualdad de Cauchy–Schwarz, es decir, que se cumpla que \\(|\\mathbf{u}\\cdot\\mathbf{v}| = \\|\\mathbf{u}\\| \\|\\mathbf{v}\\|\\), justifica tu respuesta.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 1"
     ]
   },
   {

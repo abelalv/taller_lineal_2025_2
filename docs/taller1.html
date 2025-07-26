@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Suma de vectores\nsuma = u + v\nprint(suma)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}},{"id":2,"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Producto punto de los vectores\nproducto_punto = np.dot(u, v)\nprint(producto_punto)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}},{"id":3,"code":"import numpy as np\n# Definimos el vector\nu = np.array([2, -1])\n# Norma del vector u\nnorma_u = np.linalg.norm(u)\nprint(norma_u)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}},{"id":4,"code":"import numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n\n# Cálculo de la desigualdad de Cauchy–Schwarz\ncauchy_schwarz = abs(np.dot(u, v)) <= np.linalg.norm(u\n) * np.linalg.norm(v)\nprint(cauchy_schwarz)","options":{"comment":"","warning":"true","autorun":"","read-only":"false","dpi":72,"output":"true","message":"true","fig-width":7,"out-height":"","out-width":"700px","label":"","results":"markup","context":"interactive","fig-cap":"","classes":"","fig-height":5}}];
+globalThis.qpyodideCellDetails = [{"id":1,"options":{"warning":"true","fig-cap":"","label":"","message":"true","dpi":72,"context":"interactive","out-height":"","read-only":"false","output":"true","comment":"","results":"markup","classes":"","autorun":"","fig-width":7,"out-width":"700px","fig-height":5},"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Suma de vectores\nsuma = u + v\nprint(suma)"},{"id":2,"options":{"warning":"true","fig-cap":"","label":"","message":"true","dpi":72,"context":"interactive","out-height":"","read-only":"false","output":"true","comment":"","results":"markup","classes":"","autorun":"","fig-width":7,"out-width":"700px","fig-height":5},"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Producto punto de los vectores\nproducto_punto = np.dot(u, v)\nprint(producto_punto)"},{"id":3,"options":{"warning":"true","fig-cap":"","label":"","message":"true","dpi":72,"context":"interactive","out-height":"","read-only":"false","output":"true","comment":"","results":"markup","classes":"","autorun":"","fig-width":7,"out-width":"700px","fig-height":5},"code":"import numpy as np\n# Definimos el vector\nu = np.array([2, -1])\n# Norma del vector u\nnorma_u = np.linalg.norm(u)\nprint(norma_u)"},{"id":4,"options":{"warning":"true","fig-cap":"","label":"","message":"true","dpi":72,"context":"interactive","out-height":"","read-only":"false","output":"true","comment":"","results":"markup","classes":"","autorun":"","fig-width":7,"out-width":"700px","fig-height":5},"code":"import numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n\n# Cálculo de la desigualdad de Cauchy–Schwarz\ncauchy_schwarz = abs(np.dot(u, v)) <= np.linalg.norm(u\n) * np.linalg.norm(v)\nprint(\"Desigualdad de Cauchy–Schwarz:\", cauchy_schwarz)\n# Imprimir los valores para verificar la desigualdad\nprint(\"|u * v|=\", abs(np.dot(u, v)))\nprint(\"||u||||v||=\", np.linalg.norm(u)* np.linalg.norm(v))"}];
 
 
 </script>
@@ -461,7 +461,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche.qmd">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller1.html">Taller 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller1.html">Taller 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -498,7 +498,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Enganche.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./Enganche_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Actividad Inicial</span></a>
   </div>
 </li>
@@ -583,7 +583,7 @@ window.Quarto = {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche.qmd">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller1.html">Taller 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller1.html">Taller 1</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Taller 1 - Vectores en <span class="math inline">\(R^2\)</span></h1>
 </div>
@@ -610,7 +610,7 @@ window.Quarto = {
 <section id="nota-pedagógica" class="level3">
 <h3 class="anchored" data-anchor-id="nota-pedagógica">Nota pedagógica</h3>
 <p>Estos ejercicios introducen las operaciones fundamentales con vectores en <span class="math inline">\(R^2\)</span> — suma, multiplicación por un escalar y producto punto — y sus propiedades algebraicas y geométricas.</p>
-<div id="3a863eb8" class="cell" data-execution_count="1">
+<div id="9fce7d55" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
