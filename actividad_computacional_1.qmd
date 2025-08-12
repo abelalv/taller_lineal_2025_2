@@ -1,0 +1,130 @@
+---
+title: Taller 2 - Rectas en $R^2$
+format: html
+bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
+csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+## Escenario: Sistema de Robots de Entrega Urbana
+
+La empresa **RoboDelivery** ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.
+
+### Tu Rol como Ingeniero
+
+Como ingeniero, debes diseñar algoritmos que permitan:
+
+- Optimizar rutas entre puntos de distribución en el plano urbano.
+- Evitar obstáculos como avenidas principales y zonas peatonales.
+- Considerar fuerzas ambientales como viento lateral que afecta la estabilidad.
+- Calcular distancias precisas para la planificación de batería.
+- Determinar zonas de cobertura y rutas de respaldo.
+
+### Elementos del Sistema en $\mathbb{R}^2$
+
+- 🏥 **Centros de Distribución:** Tres puntos estratégicos en el mapa urbano:
+    - **Centro A:** Farmacia Cruz Verde (centro histórico)
+    - **Centro B:** Centro de Salud Norte (barrio El Peñón)
+    - **Centro C:** Hospital Universitario (zona sur)
+
+- 🌬️ **Fuerzas Ambientales:** Vectores que afectan la navegación:
+    - **Viento Norte:** Corriente dominante que empuja hacia el sur.
+    - **Viento Este:** Corriente transversal que empuja hacia el oeste.
+
+- 🚧 **Obstáculos Lineales:** Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.
+
+### Importancia del Álgebra Lineal en $\mathbb{R}^2$
+
+- **Vectores de posición:** Coordenadas $(x, y)$ de cada centro.
+- **Vectores de desplazamiento:** Rutas entre centros.
+- **Suma vectorial:** Combinación de movimientos y fuerzas.
+- **Producto escalar:** Análisis de direcciones favorables/desfavorables.
+- **Producto punto:** Determinación de ángulos entre rutas.
+- **Proyecciones:** Componentes útiles de fuerzas ambientales.
+- **Rectas:** Modelado de calles y obstáculos.
+- **Distancias:** Optimización energética y temporal.
+
+### Instrucciones de Trabajo
+
+:::{.callout-warning}
+⚠️ **Reglas Importantes**
+
+- SOLO modifica los valores en la sección **"PARÁMETROS DEL ESTUDIANTE"**.
+- NO cambies ninguna otra parte del código.
+- Ejecuta cada celda en orden secuencial.
+- Documenta todos tus cálculos manuales.
+- Interpreta resultados en contexto de logística urbana.
+:::
+
+
+```{pyodide-python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+centros = {
+    "A: Cruz Verde (Centro)": np.array([1.0, 8.0]),
+    "B: Centro Salud Norte (El Peñón)": np.array([6.0, 7.0]),
+    "C: Hospital Universitario (Sur)": np.array([8.0, 2.0]),
+}
+
+viento_norte = np.array([0.0, -1.0])
+viento_este = np.array([-1.0, 0.0])
+obstaculo1_y = 5.0
+obstaculo2_x = 4.5
+
+fig, ax = plt.subplots(figsize=(8, 8))
+
+for nombre, p in centros.items():
+    ax.scatter(p[0], p[1], s=80)
+    ax.text(p[0] + 0.1, p[1] + 0.1, nombre, fontsize=9)
+
+pares = [
+    ("A→B", "A: Cruz Verde (Centro)", "B: Centro Salud Norte (El Peñón)"),
+    ("B→C", "B: Centro Salud Norte (El Peñón)", "C: Hospital Universitario (Sur)"),
+    ("A→C", "A: Cruz Verde (Centro)", "C: Hospital Universitario (Sur)"),
+]
+
+def distancia(p, q):
+    return float(np.linalg.norm(q - p))
+
+line_handles = []
+for _, o_key, d_key in pares:
+    o = centros[o_key]
+    d = centros[d_key]
+    (line,) = ax.plot([o[0], d[0]], [o[1], d[1]], linewidth=2, label=f"Ruta directa {o_key[0]}→{d_key[0]}")
+    mid = (o + d) / 2
+    ax.text(mid[0], mid[1], f"{distancia(o, d):.2f} km", fontsize=8)
+    line_handles.append(line)
+
+B = centros["B: Centro Salud Norte (El Peñón)"]
+C = centros["C: Hospital Universitario (Sur)"]
+wp1 = np.array([B[0], obstaculo1_y + 0.6])
+ruta_respaldo_x = [B[0], wp1[0], C[0]]
+ruta_respaldo_y = [B[1], wp1[1], C[1]]
+(backup_line,) = ax.plot(ruta_respaldo_x, ruta_respaldo_y, linestyle="--", linewidth=2, label="Ruta de respaldo B→C")
+
+x_vals = np.linspace(0, 10, 200)
+(yline,) = ax.plot(x_vals, np.full_like(x_vals, obstaculo1_y), linewidth=2, label="Avenida bloqueada (y=5)")
+(yline2,) = ax.plot(np.full_like(x_vals, obstaculo2_x), x_vals, linewidth=2, label="Corredor bloqueado (x=4.5)")
+
+q1 = ax.quiver(0.8, 9.2, viento_norte[0], viento_norte[1], angles="xy", scale_units="xy", scale=1)
+q2 = ax.quiver(0.8, 8.4, viento_este[0], viento_este[1], angles="xy", scale_units="xy", scale=1)
+
+ax.text(1.1, 9.2, "Viento Norte (empuja hacia el Sur)")
+ax.text(1.1, 8.4, "Viento Este (empuja hacia el Oeste)")
+
+ax.set_title("Sistema de Robots de Entrega Urbana en $\\mathbb{R}^2$")
+ax.set_xlabel("x (km)")
+ax.set_ylabel("y (km)")
+ax.set_xlim(0, 10)
+ax.set_ylim(0, 10)
+ax.grid(True)
+
+handles = [*line_handles, backup_line, yline, yline2, q1, q2]
+labels = [h.get_label() if hasattr(h, "get_label") else "Elemento" for h in handles]
+ax.legend(handles, labels, loc="lower left", fontsize=8)
+
+plt.show()
+
+```

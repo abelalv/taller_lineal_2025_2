@@ -1,5 +1,5 @@
 ---
-title: Taller 5 - Matrices $2 x 2$
+title: Taller 5 - Rectas y Planos en $\mathbb{R}^3$
 format: html
 bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
 csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
@@ -7,3 +7,22 @@ link-citations: true                 # opcional: añade hipervínculos
 filters:
   - pyodide
 ---
+Problema 4.5.1. Enumera las formas equivalentes de describir una recta en $R^3$ (vectorial, paramétrica, simétrica) y explica qué datos mínimos determinan una recta (por ejemplo, un punto y un vector dirección). Indica cómo verificar que dos descripciones representan la misma recta. [Grossman §4.5]
+
+Problema 4.5.2. Enumera las formas equivalentes de describir un plano en $R^3$ (punto–normal, ecuación general $ax+by+cz=d$, paramétrica). ¿Qué conjuntos de datos mínimos determinan un plano? Da al menos dos alternativas (por ejemplo, tres puntos no colineales; un punto y dos vectores no paralelos). [Grossman §4.5]
+
+Problema 4.5.3. Explica el significado geométrico del vector normal de un plano. Describe cómo obtener un normal a partir de dos vectores directores del plano y por qué cualquier múltiplo no nulo del normal describe el mismo plano. [Grossman §4.5]
+
+Problema 4.5.4. Clasifica los posibles casos de intersección entre una recta y un plano y da criterios algebraicos para distinguirlos con los datos: punto–dirección de la recta y normal del plano. (Corte en un punto, paralelismo sin pertenencia, o recta contenida en el plano). [Grossman §4.5]
+
+Problema 4.5.5. Define y formula cómo calcular el ángulo entre: (a) dos rectas; (b) una recta y un plano; (c) dos planos. Especifica las cantidades a usar (producto punto entre direcciones o entre normales) y el rango de ángulos aceptado. [Grossman §4.5]
+
+Problema 4.5.6. Establece criterios para paralelismo y perpendicularidad entre rectas y planos usando productos punto y cruz. Distingue “rectas paralelas”, “rectas que se cruzan” (alabeadas) y “rectas concurrentes”. [Grossman §4.5]
+
+Problema 4.5.7. Presenta fórmulas y una interpretación geométrica para las distancias: (a) de un punto a un plano; (b) de un punto a una recta; (c) entre dos rectas paralelas. Indica qué vectores intervienen en cada caso y por qué la expresión corresponde a una longitud. [Grossman §4.5]
+
+Problema 4.5.8. Describe cómo construir la proyección ortogonal de un punto sobre (a) una recta dada por punto–dirección; (b) un plano dado por punto–normal. ¿Cómo se expresa la componente paralela y la componente ortogonal en cada caso? [Grossman §4.5]
+
+Problema 4.5.9. Relaciona la intersección de dos o tres planos con la teoría de sistemas lineales: ¿en qué casos la intersección es una recta, un punto, un plano o el vacío? Conecta cada caso con condiciones de rango (consistencia e infinitud de soluciones). [Grossman §4.5]
+
+Problema 4.5.10. Explica procedimientos seguros para cambiar de forma (por ejemplo, de paramétrica a cartesiana para rectas/planos y a punto–normal para planos) y para verificar pertenencia de un punto a una recta o a un plano, o de una recta a un plano. [Grossman §4.5]
