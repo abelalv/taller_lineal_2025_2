@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Taller 2 - Rectas en R^2</title>
+<title>Taller 5 - Matrices$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ncentros = {\n    \"A: Cruz Verde (Centro)\": np.array([1.0, 8.0]),\n    \"B: Centro Salud Norte (El Peñón)\": np.array([6.0, 7.0]),\n    \"C: Hospital Universitario (Sur)\": np.array([8.0, 2.0]),\n}\n\nviento_norte = np.array([0.0, -1.0])\nviento_este = np.array([-1.0, 0.0])\nobstaculo1_y = 5.0\nobstaculo2_x = 4.5\n\nfig, ax = plt.subplots(figsize=(8, 8))\n\nfor nombre, p in centros.items():\n    ax.scatter(p[0], p[1], s=80)\n    ax.text(p[0] + 0.1, p[1] + 0.1, nombre, fontsize=9)\n\npares = [\n    (\"A→B\", \"A: Cruz Verde (Centro)\", \"B: Centro Salud Norte (El Peñón)\"),\n    (\"B→C\", \"B: Centro Salud Norte (El Peñón)\", \"C: Hospital Universitario (Sur)\"),\n    (\"A→C\", \"A: Cruz Verde (Centro)\", \"C: Hospital Universitario (Sur)\"),\n]\n\ndef distancia(p, q):\n    return float(np.linalg.norm(q - p))\n\nline_handles = []\nfor _, o_key, d_key in pares:\n    o = centros[o_key]\n    d = centros[d_key]\n    (line,) = ax.plot([o[0], d[0]], [o[1], d[1]], linewidth=2, label=f\"Ruta directa {o_key[0]}→{d_key[0]}\")\n    mid = (o + d) / 2\n    ax.text(mid[0], mid[1], f\"{distancia(o, d):.2f} km\", fontsize=8)\n    line_handles.append(line)\n\nB = centros[\"B: Centro Salud Norte (El Peñón)\"]\nC = centros[\"C: Hospital Universitario (Sur)\"]\nwp1 = np.array([B[0], obstaculo1_y + 0.6])\nruta_respaldo_x = [B[0], wp1[0], C[0]]\nruta_respaldo_y = [B[1], wp1[1], C[1]]\n(backup_line,) = ax.plot(ruta_respaldo_x, ruta_respaldo_y, linestyle=\"--\", linewidth=2, label=\"Ruta de respaldo B→C\")\n\nx_vals = np.linspace(0, 10, 200)\n(yline,) = ax.plot(x_vals, np.full_like(x_vals, obstaculo1_y), linewidth=2, label=\"Avenida bloqueada (y=5)\")\n(yline2,) = ax.plot(np.full_like(x_vals, obstaculo2_x), x_vals, linewidth=2, label=\"Corredor bloqueado (x=4.5)\")\n\nq1 = ax.quiver(0.8, 9.2, viento_norte[0], viento_norte[1], angles=\"xy\", scale_units=\"xy\", scale=1)\nq2 = ax.quiver(0.8, 8.4, viento_este[0], viento_este[1], angles=\"xy\", scale_units=\"xy\", scale=1)\n\nax.text(1.1, 9.2, \"Viento Norte (empuja hacia el Sur)\")\nax.text(1.1, 8.4, \"Viento Este (empuja hacia el Oeste)\")\n\nax.set_title(\"Sistema de Robots de Entrega Urbana en $\\\\mathbb{R}^2$\")\nax.set_xlabel(\"x (km)\")\nax.set_ylabel(\"y (km)\")\nax.set_xlim(0, 10)\nax.set_ylim(0, 10)\nax.grid(True)\n\nhandles = [*line_handles, backup_line, yline, yline2, q1, q2]\nlabels = [h.get_label() if hasattr(h, \"get_label\") else \"Elemento\" for h in handles]\nax.legend(handles, labels, loc=\"lower left\", fontsize=8)\n\nplt.show()","options":{"out-width":"700px","label":"","fig-cap":"","results":"markup","fig-height":5,"read-only":"false","out-height":"","context":"interactive","warning":"true","comment":"","message":"true","autorun":"","classes":"","dpi":72,"fig-width":7,"output":"true"}}];
+globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\n# Coeficientes del sistema de ecuaciones\nA = np.array([[10, 5], [8, 7]])  # <--\nmodifique aquí\nb = np.array([35, 34])            # <--\nmodifique aquí\n# Resuelve el sistema de ecuaciones\nsolution = np.linalg.solve(A, b)\ncoffee_price, tea_price = solution\nprint(f\"Precio del café: ${coffee_price:.2f}\")\nprint(f\"Precio del té: ${tea_price:.2f}\")\n# Costo de 3 tazas de café y 4 de té\ntotal_cost = 3 * coffee_price + 4 * tea_price\nprint(f\"Costo de 3 tazas de café y 4 de té: ${total_cost:.2f}\")","options":{"message":"true","out-width":"700px","fig-cap":"","dpi":72,"label":"","warning":"true","fig-width":7,"output":"true","context":"interactive","results":"markup","read-only":"false","comment":"","autorun":"","out-height":"","fig-height":5,"classes":""}},{"id":2,"code":"import numpy as np\n# Coeficientes del sistema de ecuaciones\nA = np.array([[10, 10], [10, 15]])  # <-- modifique aquí\nb = np.array([45, 50])               # <-- modifique aquí\n# Resuelve el sistema de ecuaciones\nsolution = np.linalg.solve(A, b)\npencil_price, notebook_price = solution     # <-- modifique aquí          \n\nprint(f\"Precio del lápiz: ${pencil_price:.2f}\")\nprint(f\"Precio del cuaderno: ${notebook_price:.2f}\")\n# Costo de 5 lápices y 7 cuadernos\ntotal_cost = 5 * pencil_price + 7 * notebook_price\nprint(f\"Costo de 5 lápices y 7 cuadernos: ${total_cost:.2f}\") ","options":{"message":"true","out-width":"700px","fig-cap":"","dpi":72,"label":"","warning":"true","fig-width":7,"output":"true","context":"interactive","results":"markup","read-only":"false","comment":"","autorun":"","out-height":"","fig-height":5,"classes":""}},{"id":3,"code":"import numpy as np\n# Coeficientes del sistema de ecuaciones\nA = np.array([[20, 20], [30, 20]])  # <--\nmodifique aquí\nb = np.array([4500, 4000])           # <--  \nmodifique aquí\n# Resuelve el sistema de ecuaciones\nsolution = np.linalg.solve(A, b)\nproduct_A_price, product_B_price = solution\nprint(f\"Beneficio por unidad de A: ${product_A_price:.2f}\")\nprint(f\"Beneficio por unidad de B: ${product_B_price:.2f}\")\n# Beneficio de 25 unidades de A y 25 de B\ntotal_benefit = 25 * product_A_price + 25 * product_B_price\nprint(f\"Beneficio de 25 unidades de A y 25 de B: ${total_benefit:.2f}\") ","options":{"message":"true","out-width":"700px","fig-cap":"","dpi":72,"label":"","warning":"true","fig-width":7,"output":"true","context":"interactive","results":"markup","read-only":"false","comment":"","autorun":"","out-height":"","fig-height":5,"classes":""}}];
 
 
 </script>
@@ -461,7 +461,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller6.html">Matrices y sistemas de ecuaciones</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -540,7 +540,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./taller5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matrices</span></a>
+ <span class="menu-text">Matrices 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taller6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Matrices y sistemas de ecuaciones</span></a>
   </div>
 </li>
       </ul>
@@ -555,13 +561,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#escenario-sistema-de-robots-de-entrega-urbana" id="toc-escenario-sistema-de-robots-de-entrega-urbana" class="nav-link active" data-scroll-target="#escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</a>
-  <ul class="collapse">
-  <li><a href="#tu-rol-como-ingeniero" id="toc-tu-rol-como-ingeniero" class="nav-link" data-scroll-target="#tu-rol-como-ingeniero">Tu Rol como Ingeniero</a></li>
-  <li><a href="#elementos-del-sistema-en-mathbbr2" id="toc-elementos-del-sistema-en-mathbbr2" class="nav-link" data-scroll-target="#elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#importancia-del-álgebra-lineal-en-mathbbr2" id="toc-importancia-del-álgebra-lineal-en-mathbbr2" class="nav-link" data-scroll-target="#importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#instrucciones-de-trabajo" id="toc-instrucciones-de-trabajo" class="nav-link" data-scroll-target="#instrucciones-de-trabajo">Instrucciones de Trabajo</a></li>
-  </ul></li>
+  <li><a href="#ejercicios-computacionales" id="toc-ejercicios-computacionales" class="nav-link active" data-scroll-target="#ejercicios-computacionales">Ejercicios computacionales</a></li>
+  <li><a href="#ejemplo-1-sistema-de-ecuaciones-2x2" id="toc-ejemplo-1-sistema-de-ecuaciones-2x2" class="nav-link" data-scroll-target="#ejemplo-1-sistema-de-ecuaciones-2x2">Ejemplo 1: Sistema de ecuaciones 2x2</a></li>
   </ul>
 </nav>
     </div>
@@ -578,9 +579,9 @@ window.Quarto = {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller6.html">Matrices y sistemas de ecuaciones</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></h1>
+<h1 class="title">Taller 5 - Matrices$</h1>
 </div>
 
 
@@ -597,77 +598,70 @@ window.Quarto = {
 </header>
 
 
-<section id="escenario-sistema-de-robots-de-entrega-urbana" class="level2">
-<h2 class="anchored" data-anchor-id="escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</h2>
-<p>La empresa <strong>RoboDelivery</strong> ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.</p>
-<section id="tu-rol-como-ingeniero" class="level3">
-<h3 class="anchored" data-anchor-id="tu-rol-como-ingeniero">Tu Rol como Ingeniero</h3>
-<p>Como ingeniero, debes diseñar algoritmos que permitan:</p>
-<ul>
-<li>Optimizar rutas entre puntos de distribución en el plano urbano.</li>
-<li>Evitar obstáculos como avenidas principales y zonas peatonales.</li>
-<li>Considerar fuerzas ambientales como viento lateral que afecta la estabilidad.</li>
-<li>Calcular distancias precisas para la planificación de batería.</li>
-<li>Determinar zonas de cobertura y rutas de respaldo.</li>
-</ul>
+<ol type="1">
+<li><p>Sea la matriz <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> y el vector <span class="math inline">\(\mathbf{v} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}\)</span>.</p>
+<ol type="1">
+<li>Calcula <span class="math inline">\(A\mathbf{v}\)</span>.<br>
+</li>
+<li>Calcula <span class="math inline">\(A^2\mathbf{v}\)</span>.<br>
+</li>
+<li>Calcula <span class="math inline">\(A\mathbf{v} + A^2\mathbf{v}\)</span>.</li>
+</ol></li>
+<li><p><strong>Problema en Contexto: Compra de Frutas</strong></p>
+<p>Un comerciante de frutas desea determinar el precio de cada unidad de manzanas y naranjas. Sabe que si compra 4 manzanas y 3 naranjas, el gasto total es de $26, y que si compra 2 manzanas y 5 naranjas, el gasto es de $23.</p>
+<ol type="a">
+<li>Exprese este problema como un sistema de ecuaciones lineales.</li>
+<li>¿Cuánto costaría comprar 3 manzanas y 4 naranjas?<br>
+</li>
+<li>Verifica la solución sustituyendo los valores en ambas ecuaciones.</li>
+</ol></li>
+<li><p><strong>Problema en Contexto: Producción de Camisas y Pantalones</strong></p>
+<p>Una fábrica produce camisas y pantalones. La producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.</p>
+<ol type="a">
+<li>¿Cuál es el beneficio de producir 50 camisas y 50 pantalones?</li>
+<li>Verifica la solución sustituyendo los valores en ambas ecuaciones.</li>
+</ol></li>
+<li><p>Si una matriz <span class="math inline">\(A\)</span> de <span class="math inline">\(2\times 2\)</span> tiene columnas linealmente independientes, ¿es cierto que <span class="math inline">\(A\)</span> tiene filas linealmente independientes? Justifica tu respuesta.</p></li>
+<li><p>Escribe 3 formas diferentes de saber si una matriz invertible.</p></li>
+<li><p>Si <span class="math inline">\(X=(3,6)\)</span> y <span class="math inline">\(Y=(-2,3)\)</span>, que representaría <span class="math display">\[proy_{X}Y\]</span> y <span class="math display">\[proy_{Y}X\]</span> Grafica la situación.</p></li>
+<li><p>Como podemos interpretar el determinante de una matriz? ¿Qué significa que el determinante sea igual a cero?</p></li>
+<li><p>Los vectores <span class="math inline">\(\mathbf{v}_1 = (1, 2)\)</span> y <span class="math inline">\(\mathbf{v}_2 = (-2, 1)\)</span> ortogonales (verifique) entonces son linealmente dependientes. De esta forma, ¿podemos decir que dos vectores ortogonales son linealmente independientes? Justifica tu respuesta. El reciproco ¿es cierto?</p></li>
+<li><p>Sea el sistema de ecuaciones lineales <span class="math display">\[Ax=b\]</span> y <span class="math inline">\(A\)</span> una matriz cuadrada de <span class="math inline">\(2\times 2\)</span> con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de <span class="math inline">\(A\)</span> es igual a cero?</p></li>
+<li><p>Si forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.</p></li>
+<li><p>Si se forma una matriz con dos vectores linealmente dependientes, ¿es cierto que la matriz no es invertible? Justifica tu respuesta.</p></li>
+<li><p>Escribe un ejemplo de un sistema de ecuaciones lineales que no tiene solución. ¿Qué significa esto en términos de la geometría de los vectores?</p></li>
+<li><p>Escribe un sistema que tenga infinitas soluciones. ¿Qué significa esto en términos de la geometría de los vectores?</p></li>
+<li><p>Escribe un ejemplo de un sistema de ecuaciones que no sea consistente. ¿Qué significa esto en términos de la geometría de los vectores?</p></li>
+</ol>
+<section id="ejercicios-computacionales" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios-computacionales">Ejercicios computacionales</h2>
 </section>
-<section id="elementos-del-sistema-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li>🏥 <strong>Centros de Distribución:</strong> Tres puntos estratégicos en el mapa urbano:
-<ul>
-<li><strong>Centro A:</strong> Farmacia Cruz Verde (centro histórico)</li>
-<li><strong>Centro B:</strong> Centro de Salud Norte (barrio El Peñón)</li>
-<li><strong>Centro C:</strong> Hospital Universitario (zona sur)</li>
-</ul></li>
-<li>🌬️ <strong>Fuerzas Ambientales:</strong> Vectores que afectan la navegación:
-<ul>
-<li><strong>Viento Norte:</strong> Corriente dominante que empuja hacia el sur.</li>
-<li><strong>Viento Este:</strong> Corriente transversal que empuja hacia el oeste.</li>
-</ul></li>
-<li>🚧 <strong>Obstáculos Lineales:</strong> Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.</li>
-</ul>
-</section>
-<section id="importancia-del-álgebra-lineal-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li><strong>Vectores de posición:</strong> Coordenadas <span class="math inline">\((x, y)\)</span> de cada centro.</li>
-<li><strong>Vectores de desplazamiento:</strong> Rutas entre centros.</li>
-<li><strong>Suma vectorial:</strong> Combinación de movimientos y fuerzas.</li>
-<li><strong>Producto escalar:</strong> Análisis de direcciones favorables/desfavorables.</li>
-<li><strong>Producto punto:</strong> Determinación de ángulos entre rutas.</li>
-<li><strong>Proyecciones:</strong> Componentes útiles de fuerzas ambientales.</li>
-<li><strong>Rectas:</strong> Modelado de calles y obstáculos.</li>
-<li><strong>Distancias:</strong> Optimización energética y temporal.</li>
-</ul>
-</section>
-<section id="instrucciones-de-trabajo" class="level3">
-<h3 class="anchored" data-anchor-id="instrucciones-de-trabajo">Instrucciones de Trabajo</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>⚠️ <strong>Reglas Importantes</strong></p>
-<ul>
-<li>SOLO modifica los valores en la sección <strong>“PARÁMETROS DEL ESTUDIANTE”</strong>.</li>
-<li>NO cambies ninguna otra parte del código.</li>
-<li>Ejecuta cada celda en orden secuencial.</li>
-<li>Documenta todos tus cálculos manuales.</li>
-<li>Interpreta resultados en contexto de logística urbana.</li>
-</ul>
-</div>
-</div>
+<section id="ejemplo-1-sistema-de-ecuaciones-2x2" class="level1">
+<h1>Ejemplo 1: Sistema de ecuaciones 2x2</h1>
+<p>Suponga que una cafetería vende café y té. Un día, se vendieron 10 tazas de café y 5 de té por un total de $35. Otro día, se vendieron 8 tazas de café y 7 de té por un total de $34.</p>
+<ol type="a">
+<li><p>Exprese el problema como un sistema de ecuaciones lineales.</p></li>
+<li><p>Resuelva el sistema para encontrar el precio de cada taza de café y de té.</p></li>
+<li><p>¿Cuánto costaría comprar 3 tazas de café y 4 de té?</p></li>
+</ol>
 <div id="qpyodide-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><strong>Problema 1 : Sistema de ecuaciones 2x2</strong></p>
+<p>Suponga que una tienda vende lápices y cuadernos. Un día, se vendieron 15 lápices y 10 cuadernos por un total de $45. Otro día, se vendieron 10 lápices y 15 cuadernos por un total de $50. a) Exprese el problema como un sistema de ecuaciones lineales. b) Resuelva el sistema para encontrar el precio de cada lápiz y de cada cuaderno c) ¿Cuánto costaría comprar 5 lápices y 7 cuadernos? d) Modifique el código para que refleje su solución.</p>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><strong>Problema 3</strong></p>
+<p>Una empresa produce dos productos: A y B. La producción de una unidad de A requiere 3 horas de trabajo y la de una unidad de B requiere 2 horas. La empresa tiene un total de 120 horas de trabajo disponibles por semana. Si la empresa produce 20 unidades de A y 30 unidades de B, el beneficio semanal es de $4000, y si produce 30 unidades de A y 20 unidades de B, el beneficio es de $4500.</p>
+<ol type="a">
+<li>Exprese el problema como un sistema de ecuaciones lineales.</li>
+<li>Resuelva el sistema para encontrar el beneficio por unidad de cada producto.</li>
+<li>¿Cuál es el beneficio de producir 25 unidades de A y 25 unidades de B?</li>
+<li>Modifique el código para que refleje su solución.</li>
+</ol>
+<div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

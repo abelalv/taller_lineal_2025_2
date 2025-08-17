@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Taller 2 - Rectas en R^2</title>
+<title>Taller 5 - Matrices$</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ncentros = {\n    \"A: Cruz Verde (Centro)\": np.array([1.0, 8.0]),\n    \"B: Centro Salud Norte (El Peñón)\": np.array([6.0, 7.0]),\n    \"C: Hospital Universitario (Sur)\": np.array([8.0, 2.0]),\n}\n\nviento_norte = np.array([0.0, -1.0])\nviento_este = np.array([-1.0, 0.0])\nobstaculo1_y = 5.0\nobstaculo2_x = 4.5\n\nfig, ax = plt.subplots(figsize=(8, 8))\n\nfor nombre, p in centros.items():\n    ax.scatter(p[0], p[1], s=80)\n    ax.text(p[0] + 0.1, p[1] + 0.1, nombre, fontsize=9)\n\npares = [\n    (\"A→B\", \"A: Cruz Verde (Centro)\", \"B: Centro Salud Norte (El Peñón)\"),\n    (\"B→C\", \"B: Centro Salud Norte (El Peñón)\", \"C: Hospital Universitario (Sur)\"),\n    (\"A→C\", \"A: Cruz Verde (Centro)\", \"C: Hospital Universitario (Sur)\"),\n]\n\ndef distancia(p, q):\n    return float(np.linalg.norm(q - p))\n\nline_handles = []\nfor _, o_key, d_key in pares:\n    o = centros[o_key]\n    d = centros[d_key]\n    (line,) = ax.plot([o[0], d[0]], [o[1], d[1]], linewidth=2, label=f\"Ruta directa {o_key[0]}→{d_key[0]}\")\n    mid = (o + d) / 2\n    ax.text(mid[0], mid[1], f\"{distancia(o, d):.2f} km\", fontsize=8)\n    line_handles.append(line)\n\nB = centros[\"B: Centro Salud Norte (El Peñón)\"]\nC = centros[\"C: Hospital Universitario (Sur)\"]\nwp1 = np.array([B[0], obstaculo1_y + 0.6])\nruta_respaldo_x = [B[0], wp1[0], C[0]]\nruta_respaldo_y = [B[1], wp1[1], C[1]]\n(backup_line,) = ax.plot(ruta_respaldo_x, ruta_respaldo_y, linestyle=\"--\", linewidth=2, label=\"Ruta de respaldo B→C\")\n\nx_vals = np.linspace(0, 10, 200)\n(yline,) = ax.plot(x_vals, np.full_like(x_vals, obstaculo1_y), linewidth=2, label=\"Avenida bloqueada (y=5)\")\n(yline2,) = ax.plot(np.full_like(x_vals, obstaculo2_x), x_vals, linewidth=2, label=\"Corredor bloqueado (x=4.5)\")\n\nq1 = ax.quiver(0.8, 9.2, viento_norte[0], viento_norte[1], angles=\"xy\", scale_units=\"xy\", scale=1)\nq2 = ax.quiver(0.8, 8.4, viento_este[0], viento_este[1], angles=\"xy\", scale_units=\"xy\", scale=1)\n\nax.text(1.1, 9.2, \"Viento Norte (empuja hacia el Sur)\")\nax.text(1.1, 8.4, \"Viento Este (empuja hacia el Oeste)\")\n\nax.set_title(\"Sistema de Robots de Entrega Urbana en $\\\\mathbb{R}^2$\")\nax.set_xlabel(\"x (km)\")\nax.set_ylabel(\"y (km)\")\nax.set_xlim(0, 10)\nax.set_ylim(0, 10)\nax.grid(True)\n\nhandles = [*line_handles, backup_line, yline, yline2, q1, q2]\nlabels = [h.get_label() if hasattr(h, \"get_label\") else \"Elemento\" for h in handles]\nax.legend(handles, labels, loc=\"lower left\", fontsize=8)\n\nplt.show()","options":{"out-width":"700px","label":"","fig-cap":"","results":"markup","fig-height":5,"read-only":"false","out-height":"","context":"interactive","warning":"true","comment":"","message":"true","autorun":"","classes":"","dpi":72,"fig-width":7,"output":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"import numpy as np\nA = np.array([[1, 2], [3, 4]]) # creación de la matriz A\nB = np.array([[5, 6], [7, 8]]) # creación de la matriz B\nx = np.array([[3], [-2]]) # creación del vector x\ny = np.array([[2], [-4]]) # creación del vector y\nA_plus_B = A + B # suma de matrices\nprint(\"A + B =\\n\", A_plus_B)\nAB = np.dot(A, B) # producto de matrices\n#tambien se puede usar A @ B\nprint(\"AB =\\n\", AB)\n# producto de matriz por vector\nA_x_plus_y = np.dot(A, x + y)\nprint(\"A(x + y) =\\n\", A_x_plus_y) ","id":1,"options":{"message":"true","fig-cap":"","results":"markup","fig-width":7,"comment":"","label":"","warning":"true","read-only":"false","classes":"","fig-height":5,"autorun":"","out-width":"700px","context":"interactive","dpi":72,"output":"true","out-height":""}},{"code":"A = np.array([[1, 2], [3, 4]]) # creación de la matriz A\nA_power_8 = np.linalg.matrix_power(A, 8) # A^8\nprint(\"A^8 =\\n\", A_power_8)\nA_inv = np.linalg.inv(A) # A^{-1}\nprint(\"A^{-1} =\\n\", A_inv)","id":2,"options":{"message":"true","fig-cap":"","results":"markup","fig-width":7,"comment":"","label":"","warning":"true","read-only":"false","classes":"","fig-height":5,"autorun":"","out-width":"700px","context":"interactive","dpi":72,"output":"true","out-height":""}},{"code":"A = np.array([[1, 2], [3, 4]]) # creación de\ndet_A = np.linalg.det(A) # determinante de A\nprint(\"det(A) =\", det_A)","id":3,"options":{"message":"true","fig-cap":"","results":"markup","fig-width":7,"comment":"","label":"","warning":"true","read-only":"false","classes":"","fig-height":5,"autorun":"","out-width":"700px","context":"interactive","dpi":72,"output":"true","out-height":""}}];
 
 
 </script>
@@ -461,7 +461,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller5.html">Matrices 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -539,8 +539,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taller5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Matrices</span></a>
+  <a href="./taller5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Matrices 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taller6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrices y sistemas de ecuaciones</span></a>
   </div>
 </li>
       </ul>
@@ -555,13 +561,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#escenario-sistema-de-robots-de-entrega-urbana" id="toc-escenario-sistema-de-robots-de-entrega-urbana" class="nav-link active" data-scroll-target="#escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</a>
-  <ul class="collapse">
-  <li><a href="#tu-rol-como-ingeniero" id="toc-tu-rol-como-ingeniero" class="nav-link" data-scroll-target="#tu-rol-como-ingeniero">Tu Rol como Ingeniero</a></li>
-  <li><a href="#elementos-del-sistema-en-mathbbr2" id="toc-elementos-del-sistema-en-mathbbr2" class="nav-link" data-scroll-target="#elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#importancia-del-álgebra-lineal-en-mathbbr2" id="toc-importancia-del-álgebra-lineal-en-mathbbr2" class="nav-link" data-scroll-target="#importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#instrucciones-de-trabajo" id="toc-instrucciones-de-trabajo" class="nav-link" data-scroll-target="#instrucciones-de-trabajo">Instrucciones de Trabajo</a></li>
-  </ul></li>
+  <li><a href="#problemas-computacionales" id="toc-problemas-computacionales" class="nav-link active" data-scroll-target="#problemas-computacionales">Problemas computacionales</a></li>
   </ul>
 </nav>
     </div>
@@ -578,9 +578,9 @@ window.Quarto = {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller5.html">Matrices 1</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></h1>
+<h1 class="title">Taller 5 - Matrices$</h1>
 </div>
 
 
@@ -597,77 +597,54 @@ window.Quarto = {
 </header>
 
 
-<section id="escenario-sistema-de-robots-de-entrega-urbana" class="level2">
-<h2 class="anchored" data-anchor-id="escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</h2>
-<p>La empresa <strong>RoboDelivery</strong> ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.</p>
-<section id="tu-rol-como-ingeniero" class="level3">
-<h3 class="anchored" data-anchor-id="tu-rol-como-ingeniero">Tu Rol como Ingeniero</h3>
-<p>Como ingeniero, debes diseñar algoritmos que permitan:</p>
-<ul>
-<li>Optimizar rutas entre puntos de distribución en el plano urbano.</li>
-<li>Evitar obstáculos como avenidas principales y zonas peatonales.</li>
-<li>Considerar fuerzas ambientales como viento lateral que afecta la estabilidad.</li>
-<li>Calcular distancias precisas para la planificación de batería.</li>
-<li>Determinar zonas de cobertura y rutas de respaldo.</li>
-</ul>
-</section>
-<section id="elementos-del-sistema-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li>🏥 <strong>Centros de Distribución:</strong> Tres puntos estratégicos en el mapa urbano:
-<ul>
-<li><strong>Centro A:</strong> Farmacia Cruz Verde (centro histórico)</li>
-<li><strong>Centro B:</strong> Centro de Salud Norte (barrio El Peñón)</li>
-<li><strong>Centro C:</strong> Hospital Universitario (zona sur)</li>
-</ul></li>
-<li>🌬️ <strong>Fuerzas Ambientales:</strong> Vectores que afectan la navegación:
-<ul>
-<li><strong>Viento Norte:</strong> Corriente dominante que empuja hacia el sur.</li>
-<li><strong>Viento Este:</strong> Corriente transversal que empuja hacia el oeste.</li>
-</ul></li>
-<li>🚧 <strong>Obstáculos Lineales:</strong> Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.</li>
-</ul>
-</section>
-<section id="importancia-del-álgebra-lineal-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li><strong>Vectores de posición:</strong> Coordenadas <span class="math inline">\((x, y)\)</span> de cada centro.</li>
-<li><strong>Vectores de desplazamiento:</strong> Rutas entre centros.</li>
-<li><strong>Suma vectorial:</strong> Combinación de movimientos y fuerzas.</li>
-<li><strong>Producto escalar:</strong> Análisis de direcciones favorables/desfavorables.</li>
-<li><strong>Producto punto:</strong> Determinación de ángulos entre rutas.</li>
-<li><strong>Proyecciones:</strong> Componentes útiles de fuerzas ambientales.</li>
-<li><strong>Rectas:</strong> Modelado de calles y obstáculos.</li>
-<li><strong>Distancias:</strong> Optimización energética y temporal.</li>
-</ul>
-</section>
-<section id="instrucciones-de-trabajo" class="level3">
-<h3 class="anchored" data-anchor-id="instrucciones-de-trabajo">Instrucciones de Trabajo</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>⚠️ <strong>Reglas Importantes</strong></p>
-<ul>
-<li>SOLO modifica los valores en la sección <strong>“PARÁMETROS DEL ESTUDIANTE”</strong>.</li>
-<li>NO cambies ninguna otra parte del código.</li>
-<li>Ejecuta cada celda en orden secuencial.</li>
-<li>Documenta todos tus cálculos manuales.</li>
-<li>Interpreta resultados en contexto de logística urbana.</li>
-</ul>
-</div>
-</div>
+<ol type="1">
+<li><p>Sean las matrices <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> y <span class="math inline">\(B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li>Calcule <span class="math inline">\(A + B\)</span> y <span class="math inline">\(A - B\)</span>.<br>
+</li>
+<li>Calcule <span class="math inline">\(AB\)</span> y <span class="math inline">\(BA\)</span>. (Son iguales? Justifica tu respuesta).</li>
+<li>Calcule <span class="math inline">\(A^2\)</span> y <span class="math inline">\(B^2\)</span>.<br>
+</li>
+<li>Calcule el determinante de <span class="math inline">\(A\)</span> y de <span class="math inline">\(B\)</span>.</li>
+</ol></li>
+<li><p>Sea el vector <span class="math inline">\(\mathbf{v} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li>Calcule <span class="math inline">\(A\mathbf{v}\)</span> y <span class="math inline">\(B\mathbf{v}\)</span>.<br>
+</li>
+<li>Calcule <span class="math inline">\(A^2\mathbf{v}\)</span> y <span class="math inline">\(B^2\mathbf{v}\)</span>.<br>
+</li>
+<li>Calcule <span class="math inline">\(A\mathbf{v} + B\mathbf{v}\)</span>.</li>
+</ol></li>
+<li><p>Busca un numero <span class="math inline">\(a\)</span> tal que la matriz <span class="math inline">\(A=\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; a \end{pmatrix}\)</span> sea invertible. ¿Qué sucede si <span class="math inline">\(a=6\)</span>? ¿Por qué?</p></li>
+<li><p>¿Qué relación existe entre el determinante de una matriz y su invertibilidad? Justifica tu respuesta.</p></li>
+<li><p>Sea la matriz <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> y la matriz <span class="math inline">\(B=\begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}\)</span>, que dimensiones debe tener <span class="math inline">\(X\)</span> para que se cumpla la igualdad <span class="math inline">\(AX=B\)</span>? ¿Es posible encontrar <span class="math inline">\(X\)</span>?</p></li>
+<li><p>Sea la matriz <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2&amp;2 \\ 3 &amp; 4&amp;-1 \end{pmatrix}\)</span> y la matriz <span class="math inline">\(B=\begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \\ 9 &amp; 10 \end{pmatrix}\)</span>, calcula si es posible <span class="math inline">\(AB\)</span> y <span class="math inline">\(BA\)</span>. ¿Qué dimensiones tienen estas matrices? ¿Qué significa esto en términos de la multiplicación de matrices?</p></li>
+<li><p>Expresa la multiplicación de matrices como una combinación lineal de sus columnas. ¿Qué significa esto en términos de la geometría de los vectores?</p></li>
+</ol>
+<section id="problemas-computacionales" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-computacionales">Problemas computacionales</h2>
+<p><strong>Problema 1</strong></p>
+<p>Sean las matrices <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span>, <span class="math inline">\(B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}\)</span>, <span class="math inline">\(x=\begin{pmatrix} 3 \\ -2 \end{pmatrix}\)</span> y <span class="math inline">\(y=\begin{pmatrix} 2 \\ -4 \end{pmatrix}\)</span>. Calcule: - <span class="math inline">\(A + B\)</span> - <span class="math inline">\(A - B\)</span> - <span class="math inline">\(AB\)</span> - <span class="math inline">\(A(x + y)\)</span></p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><strong>Problema 2</strong></p>
+<p>Con base el siguiente ejemplo<br>
+Sea la matriz <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span>.</p>
+<ol type="a">
+<li>Calcule <span class="math inline">\(A^8\)</span></li>
+<li>Calcule <span class="math inline">\(A^{-1}\)</span></li>
+</ol>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>encuentre el valor de</p>
+<p><span class="math display">\[3A^8 + 2A^{-1}\]</span></p>
+<p><strong>Problema 3</strong></p>
+<p>Sea la matriz <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> calcule el determinante de <span class="math inline">\(A\)</span> y de <span class="math inline">\(A^2\)</span>. ¿Qué relación existe entre estos dos determinantes? Justifica tu respuesta.</p>
+<div id="qpyodide-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>¿Qué relación hay entre del determinante de una matriz y su matriz inversa? Justifica tu respuesta.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ncentros = {\n    \"A: Cruz Verde (Centro)\": np.array([1.0, 8.0]),\n    \"B: Centro Salud Norte (El Peñón)\": np.array([6.0, 7.0]),\n    \"C: Hospital Universitario (Sur)\": np.array([8.0, 2.0]),\n}\n\nviento_norte = np.array([0.0, -1.0])\nviento_este = np.array([-1.0, 0.0])\nobstaculo1_y = 5.0\nobstaculo2_x = 4.5\n\nfig, ax = plt.subplots(figsize=(8, 8))\n\nfor nombre, p in centros.items():\n    ax.scatter(p[0], p[1], s=80)\n    ax.text(p[0] + 0.1, p[1] + 0.1, nombre, fontsize=9)\n\npares = [\n    (\"A→B\", \"A: Cruz Verde (Centro)\", \"B: Centro Salud Norte (El Peñón)\"),\n    (\"B→C\", \"B: Centro Salud Norte (El Peñón)\", \"C: Hospital Universitario (Sur)\"),\n    (\"A→C\", \"A: Cruz Verde (Centro)\", \"C: Hospital Universitario (Sur)\"),\n]\n\ndef distancia(p, q):\n    return float(np.linalg.norm(q - p))\n\nline_handles = []\nfor _, o_key, d_key in pares:\n    o = centros[o_key]\n    d = centros[d_key]\n    (line,) = ax.plot([o[0], d[0]], [o[1], d[1]], linewidth=2, label=f\"Ruta directa {o_key[0]}→{d_key[0]}\")\n    mid = (o + d) / 2\n    ax.text(mid[0], mid[1], f\"{distancia(o, d):.2f} km\", fontsize=8)\n    line_handles.append(line)\n\nB = centros[\"B: Centro Salud Norte (El Peñón)\"]\nC = centros[\"C: Hospital Universitario (Sur)\"]\nwp1 = np.array([B[0], obstaculo1_y + 0.6])\nruta_respaldo_x = [B[0], wp1[0], C[0]]\nruta_respaldo_y = [B[1], wp1[1], C[1]]\n(backup_line,) = ax.plot(ruta_respaldo_x, ruta_respaldo_y, linestyle=\"--\", linewidth=2, label=\"Ruta de respaldo B→C\")\n\nx_vals = np.linspace(0, 10, 200)\n(yline,) = ax.plot(x_vals, np.full_like(x_vals, obstaculo1_y), linewidth=2, label=\"Avenida bloqueada (y=5)\")\n(yline2,) = ax.plot(np.full_like(x_vals, obstaculo2_x), x_vals, linewidth=2, label=\"Corredor bloqueado (x=4.5)\")\n\nq1 = ax.quiver(0.8, 9.2, viento_norte[0], viento_norte[1], angles=\"xy\", scale_units=\"xy\", scale=1)\nq2 = ax.quiver(0.8, 8.4, viento_este[0], viento_este[1], angles=\"xy\", scale_units=\"xy\", scale=1)\n\nax.text(1.1, 9.2, \"Viento Norte (empuja hacia el Sur)\")\nax.text(1.1, 8.4, \"Viento Este (empuja hacia el Oeste)\")\n\nax.set_title(\"Sistema de Robots de Entrega Urbana en $\\\\mathbb{R}^2$\")\nax.set_xlabel(\"x (km)\")\nax.set_ylabel(\"y (km)\")\nax.set_xlim(0, 10)\nax.set_ylim(0, 10)\nax.grid(True)\n\nhandles = [*line_handles, backup_line, yline, yline2, q1, q2]\nlabels = [h.get_label() if hasattr(h, \"get_label\") else \"Elemento\" for h in handles]\nax.legend(handles, labels, loc=\"lower left\", fontsize=8)\n\nplt.show()","options":{"out-width":"700px","label":"","fig-cap":"","results":"markup","fig-height":5,"read-only":"false","out-height":"","context":"interactive","warning":"true","comment":"","message":"true","autorun":"","classes":"","dpi":72,"fig-width":7,"output":"true"}}];
+globalThis.qpyodideCellDetails = [{"id":1,"code":"\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# ======== parámetros ========\np0 = np.array([1, -2])     # <--- estudiante cambia aquí -- punto por donde pasa la recta\nv  = np.array([2, 3])      # <--- estudiante cambia aquí -- vector director\n# ============================\n\nt = np.linspace(-5, 5, 200)\npts = p0[:, None] + v[:, None] * t\n\nplt.figure()\nplt.axhline(0, linewidth=0.5)\nplt.axvline(0, linewidth=0.5)\nplt.plot(pts[0], pts[1], label=\"Recta r(t) = p0 + t·v\")\nplt.quiver(p0[0], p0[1], v[0], v[1], angles='xy', scale_units='xy', scale=1,\n           color='tab:red', label=\"v (director)\")\nplt.scatter(*p0, color='k', zorder=5)\nplt.gca().set_aspect('equal')\nplt.xlim(-6, 6); plt.ylim(-6, 6)\nplt.grid(True)\nplt.legend()\nplt.show()","options":{"read-only":"false","fig-cap":"","autorun":"","out-height":"","fig-height":5,"warning":"true","fig-width":7,"message":"true","comment":"","out-width":"700px","dpi":72,"label":"","output":"true","context":"interactive","classes":"","results":"markup"}},{"id":2,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# --- PARÁMETROS ---\nu = np.array([1, 2])          # <--- estudiante cambia aquí\nk = 2                         # <--- estudiante cambia aquí (escala)\nv = k * u                     # v es múltiplo de u\n# ------------------\n\nprint(\"u =\", u, \"  v =\", v)\nprint(\"¿Son linealmente dependientes?\", np.allclose(np.cross(np.append(u,0), np.append(v,0)), 0))\n\nplt.figure()\nplt.quiver(0, 0, u[0], u[1], angles='xy', scale_units='xy', scale=1, color='black', label='u')\nplt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='red', label='v = k·u')\nplt.axhline(0); plt.axvline(0); plt.grid(True)\nplt.xlim(-5, 5); plt.ylim(-5, 5)\nplt.legend(); plt.title('Vectores linealmente dependientes: v = k·u')\nplt.show()","options":{"read-only":"false","fig-cap":"","autorun":"","out-height":"","fig-height":5,"warning":"true","fig-width":7,"message":"true","comment":"","out-width":"700px","dpi":72,"label":"","output":"true","context":"interactive","classes":"","results":"markup"}},{"id":3,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\n# --- PARÁMETROS ---\nu = np.array([1, 2])          # <--- estudiante cambia aquí\nv = np.array([2, -1])         # <--- estudiante cambia aquí\n# ------------------\n\ndet = np.linalg.det(np.column_stack((u, v)))\nindep = det != 0\n\nprint(\"¿Son linealmente independientes?\", indep)\n\nplt.figure()\nplt.quiver(0, 0, u[0], u[1], angles='xy', scale_units='xy', scale=1, color='black', label='u')\nplt.quiver(0, 0, v[0], v[1], angles='xy', scale_units='xy', scale=1, color='red', label='v')\n# Paralelogramo generado por u y v\npar = np.array([[0,0], u, u+v, v, [0,0]])\nplt.fill(par[:,0], par[:,1], alpha=0.1)\nplt.axhline(0); plt.axvline(0); plt.grid(True)\nplt.xlim(-5, 5); plt.ylim(-5, 5)\nplt.legend(); plt.title('Vectores linealmente independientes')\nplt.show()","options":{"read-only":"false","fig-cap":"","autorun":"","out-height":"","fig-height":5,"warning":"true","fig-width":7,"message":"true","comment":"","out-width":"700px","dpi":72,"label":"","output":"true","context":"interactive","classes":"","results":"markup"}}];
 
 
 </script>
@@ -461,7 +461,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller2.html">Taller 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -510,7 +510,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taller2.html" class="sidebar-item-text sidebar-link">
+  <a href="./taller2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Taller 2</span></a>
   </div>
 </li>
@@ -555,12 +555,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#escenario-sistema-de-robots-de-entrega-urbana" id="toc-escenario-sistema-de-robots-de-entrega-urbana" class="nav-link active" data-scroll-target="#escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</a>
+  <li><a href="#rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal" id="toc-rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal" class="nav-link active" data-scroll-target="#rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal">Rectas en <span class="math inline">\(\mathbb R^2\)</span>, paralelismo, perpendicularidad e independencia lineal</a></li>
+  <li><a href="#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad" id="toc-ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad" class="nav-link" data-scroll-target="#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad">Ecuación de la recta y relaciones de paralelismo/perpendicularidad</a>
   <ul class="collapse">
-  <li><a href="#tu-rol-como-ingeniero" id="toc-tu-rol-como-ingeniero" class="nav-link" data-scroll-target="#tu-rol-como-ingeniero">Tu Rol como Ingeniero</a></li>
-  <li><a href="#elementos-del-sistema-en-mathbbr2" id="toc-elementos-del-sistema-en-mathbbr2" class="nav-link" data-scroll-target="#elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#importancia-del-álgebra-lineal-en-mathbbr2" id="toc-importancia-del-álgebra-lineal-en-mathbbr2" class="nav-link" data-scroll-target="#importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#instrucciones-de-trabajo" id="toc-instrucciones-de-trabajo" class="nav-link" data-scroll-target="#instrucciones-de-trabajo">Instrucciones de Trabajo</a></li>
+  <li><a href="#nota-pedagógica" id="toc-nota-pedagógica" class="nav-link" data-scroll-target="#nota-pedagógica">Nota pedagógica</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
+  </ul></li>
+  <li><a href="#problemas-computacionales" id="toc-problemas-computacionales" class="nav-link" data-scroll-target="#problemas-computacionales">Problemas computacionales</a>
+  <ul class="collapse">
+  <li><a href="#instrucciones-generales" id="toc-instrucciones-generales" class="nav-link" data-scroll-target="#instrucciones-generales">Instrucciones generales</a></li>
+  <li><a href="#ejercicio-computacional-1" id="toc-ejercicio-computacional-1" class="nav-link" data-scroll-target="#ejercicio-computacional-1">Ejercicio Computacional 1</a></li>
+  <li><a href="#ejercicio-computacional-2" id="toc-ejercicio-computacional-2" class="nav-link" data-scroll-target="#ejercicio-computacional-2">Ejercicio Computacional 2</a></li>
+  <li><a href="#ejercicio-computacional3" id="toc-ejercicio-computacional3" class="nav-link" data-scroll-target="#ejercicio-computacional3">Ejercicio Computacional3</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -578,7 +584,7 @@ window.Quarto = {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller2.html">Taller 2</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></h1>
 </div>
@@ -597,74 +603,69 @@ window.Quarto = {
 </header>
 
 
-<section id="escenario-sistema-de-robots-de-entrega-urbana" class="level2">
-<h2 class="anchored" data-anchor-id="escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</h2>
-<p>La empresa <strong>RoboDelivery</strong> ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.</p>
-<section id="tu-rol-como-ingeniero" class="level3">
-<h3 class="anchored" data-anchor-id="tu-rol-como-ingeniero">Tu Rol como Ingeniero</h3>
-<p>Como ingeniero, debes diseñar algoritmos que permitan:</p>
-<ul>
-<li>Optimizar rutas entre puntos de distribución en el plano urbano.</li>
-<li>Evitar obstáculos como avenidas principales y zonas peatonales.</li>
-<li>Considerar fuerzas ambientales como viento lateral que afecta la estabilidad.</li>
-<li>Calcular distancias precisas para la planificación de batería.</li>
-<li>Determinar zonas de cobertura y rutas de respaldo.</li>
-</ul>
+<section id="rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal" class="level2">
+<h2 class="anchored" data-anchor-id="rectas-en-mathbb-r2-paralelismo-perpendicularidad-e-independencia-lineal">Rectas en <span class="math inline">\(\mathbb R^2\)</span>, paralelismo, perpendicularidad e independencia lineal</h2>
 </section>
-<section id="elementos-del-sistema-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li>🏥 <strong>Centros de Distribución:</strong> Tres puntos estratégicos en el mapa urbano:
-<ul>
-<li><strong>Centro A:</strong> Farmacia Cruz Verde (centro histórico)</li>
-<li><strong>Centro B:</strong> Centro de Salud Norte (barrio El Peñón)</li>
-<li><strong>Centro C:</strong> Hospital Universitario (zona sur)</li>
-</ul></li>
-<li>🌬️ <strong>Fuerzas Ambientales:</strong> Vectores que afectan la navegación:
-<ul>
-<li><strong>Viento Norte:</strong> Corriente dominante que empuja hacia el sur.</li>
-<li><strong>Viento Este:</strong> Corriente transversal que empuja hacia el oeste.</li>
-</ul></li>
-<li>🚧 <strong>Obstáculos Lineales:</strong> Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.</li>
-</ul>
+<section id="ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad" class="level2">
+<h2 class="anchored" data-anchor-id="ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad">Ecuación de la recta y relaciones de paralelismo/perpendicularidad</h2>
+<section id="nota-pedagógica" class="level3">
+<h3 class="anchored" data-anchor-id="nota-pedagógica">Nota pedagógica</h3>
+<p>Este taller introduce los conceptos fundamentales de las rectas en el plano, el paralelismo y la perpendicularidad desde la óptica de la pendiente y la forma vectorial. Asimismo, conecta estos conceptos con la independencia lineal y la noción de base, destacando su interpretación geométrica.</p>
+<hr>
+<div id="4bba3769" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="taller2_files/figure-html/cell-2-output-1.png" width="590" height="431" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Figura&nbsp;1.</strong> Dos rectas paralelas y una recta perpendicular en <span class="math inline">\(\mathbb R^2\)</span>.</p>
 </section>
-<section id="importancia-del-álgebra-lineal-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li><strong>Vectores de posición:</strong> Coordenadas <span class="math inline">\((x, y)\)</span> de cada centro.</li>
-<li><strong>Vectores de desplazamiento:</strong> Rutas entre centros.</li>
-<li><strong>Suma vectorial:</strong> Combinación de movimientos y fuerzas.</li>
-<li><strong>Producto escalar:</strong> Análisis de direcciones favorables/desfavorables.</li>
-<li><strong>Producto punto:</strong> Determinación de ángulos entre rutas.</li>
-<li><strong>Proyecciones:</strong> Componentes útiles de fuerzas ambientales.</li>
-<li><strong>Rectas:</strong> Modelado de calles y obstáculos.</li>
-<li><strong>Distancias:</strong> Optimización energética y temporal.</li>
-</ul>
+<section id="ejercicios" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicios">Ejercicios</h3>
+<p><strong>Problema 1</strong> Determine la ecuación de la recta que pasa por los puntos <span class="math inline">\(A(2,-1)\)</span> y <span class="math inline">\(B(5,7)\)</span>.</p>
+<p><strong>Problema 2</strong> Halle una ecuación paramétrica y las intersecciones con los ejes de la recta <span class="math inline">\(3x-2y+4=0\)</span>.&nbsp;</p>
+<p><strong>Problema 3</strong> Compruebe si las rectas <span class="math inline">\(y=(3,5)t+(1,4)\)</span> y <span class="math inline">\(3y-2x-1=0\)</span> son paralelas.&nbsp;</p>
+<p><strong>Problema 4</strong> Encuentre la ecuación de la recta perpendicular a <span class="math inline">\(4x+2y-7=0\)</span> que pasa por el punto <span class="math inline">\((-1,3)\)</span> y exprésela paramétricamente.&nbsp;</p>
+<p><strong>Problema 5</strong> Dados los vectores <span class="math inline">\(\mathbf u=(2,1)\)</span> y <span class="math inline">\(\mathbf v=(4,2)\)</span>, explique geométricamente por qué las rectas que ellos generan en <span class="math inline">\(\mathbb R^2\)</span> son coincidentes.&nbsp;</p>
+<p><strong>Problema 6</strong> Decida si el conjunto <span class="math inline">\({(1,2),(3,6)}\)</span> es linealmente independiente y describa la subregión del plano que generan.&nbsp;Justifique con un criterio geométrico.&nbsp;</p>
+<p><strong>Problema 8</strong> Para los vectores <span class="math inline">\(\mathbf a=(1,-2)\)</span> y <span class="math inline">\(\mathbf b=(2,1)\)</span>, determine si forman un par linealmente independiente y describa la subregión del plano que generan.&nbsp;</p>
+<p><strong>Problema 9</strong> Sea <span class="math inline">\(B={(1,0),(0,1)}\)</span>. Explique por qué <span class="math inline">\(B\)</span> es una base de <span class="math inline">\(\mathbb R^2\)</span> y relacione cada vector con la orientación de los ejes.</p>
+<p><strong>Problema 10</strong> Construya una base ortonormal de <span class="math inline">\(\mathbb R^2\)</span> a partir del vector <span class="math inline">\(\mathbf w=(4,3)\)</span>.</p>
+<p><strong>Problema 11</strong> Exprese el vector <span class="math inline">\(\mathbf p=(5,-1)\)</span> como combinación lineal de la base <span class="math inline">\({(2,1),(1,-1)}\)</span> y discuta la unicidad de la representación.&nbsp;</p>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Nota pedagógica final:</strong> Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial <span class="math inline">\(R^2\)</span> y vincularlas con interpretaciones geométricas y físicas.</p>
+</blockquote>
+<hr>
 </section>
-<section id="instrucciones-de-trabajo" class="level3">
-<h3 class="anchored" data-anchor-id="instrucciones-de-trabajo">Instrucciones de Trabajo</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>⚠️ <strong>Reglas Importantes</strong></p>
-<ul>
-<li>SOLO modifica los valores en la sección <strong>“PARÁMETROS DEL ESTUDIANTE”</strong>.</li>
-<li>NO cambies ninguna otra parte del código.</li>
-<li>Ejecuta cada celda en orden secuencial.</li>
-<li>Documenta todos tus cálculos manuales.</li>
-<li>Interpreta resultados en contexto de logística urbana.</li>
-</ul>
-</div>
-</div>
+</section>
+<section id="problemas-computacionales" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-computacionales">Problemas computacionales</h2>
+<section id="instrucciones-generales" class="level3">
+<h3 class="anchored" data-anchor-id="instrucciones-generales">Instrucciones generales</h3>
+<p>Modifique únicamente las líneas marcadas con <code># &lt;-- modifique aquí</code> y ejecute el bloque. Analice la salida y responda las preguntas que siguen.</p>
+</section>
+<section id="ejercicio-computacional-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-computacional-1">Ejercicio Computacional 1</h3>
+<p>En este script se gráfica la recta que pasa por un punto <span class="math inline">\(p_0\)</span> con vector director <span class="math inline">\(\mathbf v\)</span>. Solo debes cambiar los valores de <span class="math inline">\(p_0\)</span> y <span class="math inline">\(\mathbf v\)</span> donde se indica y ejecutar. Tras observar la gráfica, responde:</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>¿Con qué condición sobre <span class="math inline">\(\mathbf v\)</span> la recta resulta perpendicular a <span class="math inline">\(y = 2x + 1\)</span>?</p>
+</section>
+<section id="ejercicio-computacional-2" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-computacional-2">Ejercicio Computacional 2</h3>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>¿Qué observas cuando cambias <span class="math inline">\(k\)</span>? Describe la relación entre <span class="math inline">\(\mathbf  u\)</span> y <span class="math inline">\(\mathbf  v\)</span>?.</p>
+</section>
+<section id="ejercicio-computacional3" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-computacional3">Ejercicio Computacional3</h3>
+<div id="qpyodide-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>¿Cómo se relaciona el área del paralelogramo con la independencia lineal de <span class="math inline">\(\mathbf  u\)</span> y <span class="math inline">\(\mathbf  v\)</span>?</p>
 
 
 </section>

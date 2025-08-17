@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Taller 2 - Rectas en R^2</title>
+<title>Taller 1 - Vectores en R^2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ncentros = {\n    \"A: Cruz Verde (Centro)\": np.array([1.0, 8.0]),\n    \"B: Centro Salud Norte (El Peñón)\": np.array([6.0, 7.0]),\n    \"C: Hospital Universitario (Sur)\": np.array([8.0, 2.0]),\n}\n\nviento_norte = np.array([0.0, -1.0])\nviento_este = np.array([-1.0, 0.0])\nobstaculo1_y = 5.0\nobstaculo2_x = 4.5\n\nfig, ax = plt.subplots(figsize=(8, 8))\n\nfor nombre, p in centros.items():\n    ax.scatter(p[0], p[1], s=80)\n    ax.text(p[0] + 0.1, p[1] + 0.1, nombre, fontsize=9)\n\npares = [\n    (\"A→B\", \"A: Cruz Verde (Centro)\", \"B: Centro Salud Norte (El Peñón)\"),\n    (\"B→C\", \"B: Centro Salud Norte (El Peñón)\", \"C: Hospital Universitario (Sur)\"),\n    (\"A→C\", \"A: Cruz Verde (Centro)\", \"C: Hospital Universitario (Sur)\"),\n]\n\ndef distancia(p, q):\n    return float(np.linalg.norm(q - p))\n\nline_handles = []\nfor _, o_key, d_key in pares:\n    o = centros[o_key]\n    d = centros[d_key]\n    (line,) = ax.plot([o[0], d[0]], [o[1], d[1]], linewidth=2, label=f\"Ruta directa {o_key[0]}→{d_key[0]}\")\n    mid = (o + d) / 2\n    ax.text(mid[0], mid[1], f\"{distancia(o, d):.2f} km\", fontsize=8)\n    line_handles.append(line)\n\nB = centros[\"B: Centro Salud Norte (El Peñón)\"]\nC = centros[\"C: Hospital Universitario (Sur)\"]\nwp1 = np.array([B[0], obstaculo1_y + 0.6])\nruta_respaldo_x = [B[0], wp1[0], C[0]]\nruta_respaldo_y = [B[1], wp1[1], C[1]]\n(backup_line,) = ax.plot(ruta_respaldo_x, ruta_respaldo_y, linestyle=\"--\", linewidth=2, label=\"Ruta de respaldo B→C\")\n\nx_vals = np.linspace(0, 10, 200)\n(yline,) = ax.plot(x_vals, np.full_like(x_vals, obstaculo1_y), linewidth=2, label=\"Avenida bloqueada (y=5)\")\n(yline2,) = ax.plot(np.full_like(x_vals, obstaculo2_x), x_vals, linewidth=2, label=\"Corredor bloqueado (x=4.5)\")\n\nq1 = ax.quiver(0.8, 9.2, viento_norte[0], viento_norte[1], angles=\"xy\", scale_units=\"xy\", scale=1)\nq2 = ax.quiver(0.8, 8.4, viento_este[0], viento_este[1], angles=\"xy\", scale_units=\"xy\", scale=1)\n\nax.text(1.1, 9.2, \"Viento Norte (empuja hacia el Sur)\")\nax.text(1.1, 8.4, \"Viento Este (empuja hacia el Oeste)\")\n\nax.set_title(\"Sistema de Robots de Entrega Urbana en $\\\\mathbb{R}^2$\")\nax.set_xlabel(\"x (km)\")\nax.set_ylabel(\"y (km)\")\nax.set_xlim(0, 10)\nax.set_ylim(0, 10)\nax.grid(True)\n\nhandles = [*line_handles, backup_line, yline, yline2, q1, q2]\nlabels = [h.get_label() if hasattr(h, \"get_label\") else \"Elemento\" for h in handles]\nax.legend(handles, labels, loc=\"lower left\", fontsize=8)\n\nplt.show()","options":{"out-width":"700px","label":"","fig-cap":"","results":"markup","fig-height":5,"read-only":"false","out-height":"","context":"interactive","warning":"true","comment":"","message":"true","autorun":"","classes":"","dpi":72,"fig-width":7,"output":"true"}}];
+globalThis.qpyodideCellDetails = [{"options":{"warning":"true","autorun":"","output":"true","out-height":"","comment":"","message":"true","results":"markup","label":"","fig-height":5,"read-only":"false","out-width":"700px","dpi":72,"fig-cap":"","context":"interactive","fig-width":7,"classes":""},"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Suma de vectores\nsuma = u + v\nprint(suma)","id":1},{"options":{"warning":"true","autorun":"","output":"true","out-height":"","comment":"","message":"true","results":"markup","label":"","fig-height":5,"read-only":"false","out-width":"700px","dpi":72,"fig-cap":"","context":"interactive","fig-width":7,"classes":""},"code":"\nimport numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n# Producto punto de los vectores\nproducto_punto = np.dot(u, v)\nprint(producto_punto)","id":2},{"options":{"warning":"true","autorun":"","output":"true","out-height":"","comment":"","message":"true","results":"markup","label":"","fig-height":5,"read-only":"false","out-width":"700px","dpi":72,"fig-cap":"","context":"interactive","fig-width":7,"classes":""},"code":"import numpy as np\n# Definimos el vector\nu = np.array([2, -1])\n# Norma del vector u\nnorma_u = np.linalg.norm(u)\nprint(norma_u)","id":3},{"options":{"warning":"true","autorun":"","output":"true","out-height":"","comment":"","message":"true","results":"markup","label":"","fig-height":5,"read-only":"false","out-width":"700px","dpi":72,"fig-cap":"","context":"interactive","fig-width":7,"classes":""},"code":"import numpy as np\n# Definimos los vectores\nu = np.array([2, -1])\nv = np.array([1, 3])\n\n# Cálculo de la desigualdad de Cauchy–Schwarz\ncauchy_schwarz = abs(np.dot(u, v)) <= np.linalg.norm(u\n) * np.linalg.norm(v)\nprint(\"Desigualdad de Cauchy–Schwarz:\", cauchy_schwarz)\n# Imprimir los valores para verificar la desigualdad\nprint(\"|u * v|=\", abs(np.dot(u, v)))\nprint(\"||u||||v||=\", np.linalg.norm(u)* np.linalg.norm(v))","id":4}];
 
 
 </script>
@@ -461,7 +461,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller1.html">Taller 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -504,7 +504,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taller1.html" class="sidebar-item-text sidebar-link">
+  <a href="./taller1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Taller 1</span></a>
   </div>
 </li>
@@ -555,12 +555,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#escenario-sistema-de-robots-de-entrega-urbana" id="toc-escenario-sistema-de-robots-de-entrega-urbana" class="nav-link active" data-scroll-target="#escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</a>
+  <li><a href="#guía-de-ejercicios-vectores-en-r2" id="toc-guía-de-ejercicios-vectores-en-r2" class="nav-link active" data-scroll-target="#guía-de-ejercicios-vectores-en-r2">Guía de Ejercicios: Vectores en <span class="math inline">\(R^2\)</span></a></li>
+  <li><a href="#vectores-en-r2" id="toc-vectores-en-r2" class="nav-link" data-scroll-target="#vectores-en-r2">Vectores en <span class="math inline">\(R^2\)</span></a>
   <ul class="collapse">
-  <li><a href="#tu-rol-como-ingeniero" id="toc-tu-rol-como-ingeniero" class="nav-link" data-scroll-target="#tu-rol-como-ingeniero">Tu Rol como Ingeniero</a></li>
-  <li><a href="#elementos-del-sistema-en-mathbbr2" id="toc-elementos-del-sistema-en-mathbbr2" class="nav-link" data-scroll-target="#elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#importancia-del-álgebra-lineal-en-mathbbr2" id="toc-importancia-del-álgebra-lineal-en-mathbbr2" class="nav-link" data-scroll-target="#importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#instrucciones-de-trabajo" id="toc-instrucciones-de-trabajo" class="nav-link" data-scroll-target="#instrucciones-de-trabajo">Instrucciones de Trabajo</a></li>
+  <li><a href="#nota-pedagógica" id="toc-nota-pedagógica" class="nav-link" data-scroll-target="#nota-pedagógica">Nota pedagógica</a></li>
+  <li><a href="#problemas" id="toc-problemas" class="nav-link" data-scroll-target="#problemas">Problemas</a></li>
+  </ul></li>
+  <li><a href="#comprobación-computacional" id="toc-comprobación-computacional" class="nav-link" data-scroll-target="#comprobación-computacional">Comprobación Computacional |</a>
+  <ul class="collapse">
+  <li><a href="#suma-de-vectores" id="toc-suma-de-vectores" class="nav-link" data-scroll-target="#suma-de-vectores">Suma de vectores</a></li>
+  <li><a href="#producto-punto" id="toc-producto-punto" class="nav-link" data-scroll-target="#producto-punto">Producto punto</a></li>
+  <li><a href="#norma-de-un-vector" id="toc-norma-de-un-vector" class="nav-link" data-scroll-target="#norma-de-un-vector">Norma de un vector</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -578,9 +583,9 @@ window.Quarto = {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller1.html">Taller 1</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></h1>
+<h1 class="title">Taller 1 - Vectores en <span class="math inline">\(R^2\)</span></h1>
 </div>
 
 
@@ -597,74 +602,88 @@ window.Quarto = {
 </header>
 
 
-<section id="escenario-sistema-de-robots-de-entrega-urbana" class="level2">
-<h2 class="anchored" data-anchor-id="escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</h2>
-<p>La empresa <strong>RoboDelivery</strong> ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.</p>
-<section id="tu-rol-como-ingeniero" class="level3">
-<h3 class="anchored" data-anchor-id="tu-rol-como-ingeniero">Tu Rol como Ingeniero</h3>
-<p>Como ingeniero, debes diseñar algoritmos que permitan:</p>
-<ul>
-<li>Optimizar rutas entre puntos de distribución en el plano urbano.</li>
-<li>Evitar obstáculos como avenidas principales y zonas peatonales.</li>
-<li>Considerar fuerzas ambientales como viento lateral que afecta la estabilidad.</li>
-<li>Calcular distancias precisas para la planificación de batería.</li>
-<li>Determinar zonas de cobertura y rutas de respaldo.</li>
-</ul>
+<section id="guía-de-ejercicios-vectores-en-r2" class="level2">
+<h2 class="anchored" data-anchor-id="guía-de-ejercicios-vectores-en-r2">Guía de Ejercicios: Vectores en <span class="math inline">\(R^2\)</span></h2>
 </section>
-<section id="elementos-del-sistema-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li>🏥 <strong>Centros de Distribución:</strong> Tres puntos estratégicos en el mapa urbano:
-<ul>
-<li><strong>Centro A:</strong> Farmacia Cruz Verde (centro histórico)</li>
-<li><strong>Centro B:</strong> Centro de Salud Norte (barrio El Peñón)</li>
-<li><strong>Centro C:</strong> Hospital Universitario (zona sur)</li>
-</ul></li>
-<li>🌬️ <strong>Fuerzas Ambientales:</strong> Vectores que afectan la navegación:
-<ul>
-<li><strong>Viento Norte:</strong> Corriente dominante que empuja hacia el sur.</li>
-<li><strong>Viento Este:</strong> Corriente transversal que empuja hacia el oeste.</li>
-</ul></li>
-<li>🚧 <strong>Obstáculos Lineales:</strong> Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.</li>
-</ul>
+<section id="vectores-en-r2" class="level2">
+<h2 class="anchored" data-anchor-id="vectores-en-r2">Vectores en <span class="math inline">\(R^2\)</span></h2>
+<section id="nota-pedagógica" class="level3">
+<h3 class="anchored" data-anchor-id="nota-pedagógica">Nota pedagógica</h3>
+<p>Estos ejercicios introducen las operaciones fundamentales con vectores en <span class="math inline">\(R^2\)</span> — suma, multiplicación por un escalar y producto punto — y sus propiedades algebraicas y geométricas.</p>
+<div id="9fce7d55" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="taller1_files/figure-html/cell-2-output-1.png" width="573" height="433" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>La figura ilustra la ley del paralelogramo: el vector <span class="math inline">\(\mathbf u+\mathbf v\)</span> se obtiene al trasladar <span class="math inline">\(\mathbf v\)</span> al extremo de <span class="math inline">\(\mathbf u\)</span>.</p>
 </section>
-<section id="importancia-del-álgebra-lineal-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li><strong>Vectores de posición:</strong> Coordenadas <span class="math inline">\((x, y)\)</span> de cada centro.</li>
-<li><strong>Vectores de desplazamiento:</strong> Rutas entre centros.</li>
-<li><strong>Suma vectorial:</strong> Combinación de movimientos y fuerzas.</li>
-<li><strong>Producto escalar:</strong> Análisis de direcciones favorables/desfavorables.</li>
-<li><strong>Producto punto:</strong> Determinación de ángulos entre rutas.</li>
-<li><strong>Proyecciones:</strong> Componentes útiles de fuerzas ambientales.</li>
-<li><strong>Rectas:</strong> Modelado de calles y obstáculos.</li>
-<li><strong>Distancias:</strong> Optimización energética y temporal.</li>
-</ul>
+<section id="problemas" class="level3">
+<h3 class="anchored" data-anchor-id="problemas">Problemas</h3>
+<ol type="1">
+<li><p><strong>Problema 1</strong> Sea <span class="math inline">\(\mathbf u=(2,-1)\)</span> y <span class="math inline">\(\mathbf v=(1,3)\)</span>. Calcule <span class="math inline">\(\mathbf u+\mathbf v\)</span>.<br>
+</p></li>
+<li><p><strong>Problema 2</strong> Represente gráficamente los vectores del problema anterior y el vector suma. Describa la construcción geométrica utilizada.</p></li>
+<li><p><strong>Problema 3</strong> Verifique experimentalmente la conmutatividad y la asociatividad de la suma de vectores en <span class="math inline">\(R^2\)</span> usando <span class="math inline">\(\mathbf u=(4,0)\)</span>, <span class="math inline">\(\mathbf v=(-1,5)\)</span> y <span class="math inline">\(\mathbf w=(3,-2)\)</span>.<br>
+</p></li>
+<li><p><strong>Problema 4</strong> Para <span class="math inline">\(\mathbf a=(3,-4)\)</span> determine <span class="math inline">\(3\mathbf a\)</span>, <span class="math inline">\(-\tfrac12\mathbf a\)</span> y describa el efecto geométrico de cada multiplicación.</p></li>
+<li><p><strong>Problema 5</strong> Demuestre con ejemplos numéricos que la multiplicación por escalar es distributiva respecto de la suma: <span class="math inline">\(c(\mathbf u+\mathbf v)=c\mathbf u+c\mathbf v\)</span> con <span class="math inline">\(c=2\)</span>, <span class="math inline">\(\mathbf u=(1,2)\)</span> y <span class="math inline">\(\mathbf v=(0,-3)\)</span>.<br>
+</p></li>
+<li><p><strong>Problema 6</strong> Sea <span class="math inline">\(\mathbf p=(1,4)\)</span> y <span class="math inline">\(\mathbf q=(5,-2)\)</span>. Calcule el producto punto <span class="math inline">\(\mathbf p\cdot\mathbf q\)</span>, las magnitudes <span class="math inline">\(\lVert\mathbf p\rVert\)</span>, <span class="math inline">\(\lVert\mathbf q\rVert\)</span> y el ángulo entre ellos.<br>
+</p></li>
+<li><p><strong>Problema 7</strong> Compruebe la desigualdad de Cauchy–Schwarz para los vectores del problema anterior y analice cuándo se alcanza la igualdad.</p></li>
+<li><p><strong>Problema 8</strong> Encuentre el valor de <span class="math inline">\(k\in\mathbb R\)</span> tal que <span class="math inline">\(\mathbf u+k\mathbf v\)</span> sea ortogonal a <span class="math inline">\(\mathbf v\)</span>, donde <span class="math inline">\(\mathbf u=(2,1)\)</span> y <span class="math inline">\(\mathbf v=(3,-1)\)</span>.<br>
+</p></li>
+<li><p><strong>Problema 9</strong> Verifique numéricamente la propiedad distributiva del producto punto sobre la suma: <span class="math inline">\(\mathbf u\cdot(\mathbf v+\mathbf w)=\mathbf u\cdot\mathbf v+\mathbf u\cdot\mathbf w\)</span> para <span class="math inline">\(\mathbf u=(1,2)\)</span>, <span class="math inline">\(\mathbf v=(0,5)\)</span> y <span class="math inline">\(\mathbf w=(-2,1)\)</span>.</p></li>
+<li><p><strong>Problema 10</strong> Un objeto se desplaza <span class="math inline">\(\mathbf d=(6,2)\)</span> m bajo la acción de una fuerza constante <span class="math inline">\(\mathbf F=(10,3)\)</span> N. Calcule el trabajo realizado y explique el significado físico del producto punto en este contexto.<br>
+</p></li>
+</ol>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Nota pedagógica final:</strong> Estos ejercicios deben resolverse inicialmente “a mano”; el uso de software de álgebra lineal es recomendable para comprobar resultados y explorar variaciones. Al finalizar, los estudiantes deberán identificar y aplicar las propiedades algebraicas del espacio vectorial <span class="math inline">\(R^2\)</span> y vincularlas con interpretaciones geométricas y físicas.</p>
+</blockquote>
+<hr>
 </section>
-<section id="instrucciones-de-trabajo" class="level3">
-<h3 class="anchored" data-anchor-id="instrucciones-de-trabajo">Instrucciones de Trabajo</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>⚠️ <strong>Reglas Importantes</strong></p>
-<ul>
-<li>SOLO modifica los valores en la sección <strong>“PARÁMETROS DEL ESTUDIANTE”</strong>.</li>
-<li>NO cambies ninguna otra parte del código.</li>
-<li>Ejecuta cada celda en orden secuencial.</li>
-<li>Documenta todos tus cálculos manuales.</li>
-<li>Interpreta resultados en contexto de logística urbana.</li>
-</ul>
-</div>
-</div>
+</section>
+<section id="comprobación-computacional" class="level2">
+<h2 class="anchored" data-anchor-id="comprobación-computacional">Comprobación Computacional |</h2>
+<p>En esta sección vamos a comprobar computacionalmente algunos ejercicios usando Python, el siguiente código nos permite sumar dos vectores usando la librería NumPy.</p>
+<p>Para este ejemplo vamos a sumar los vectores <span class="math inline">\(\mathbf{u}=(2,-1)\)</span> y <span class="math inline">\(\mathbf{v}=(1,3)\)</span>.</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Ejercicios:</p>
+<section id="suma-de-vectores" class="level3">
+<h3 class="anchored" data-anchor-id="suma-de-vectores">Suma de vectores</h3>
+<ol type="1">
+<li><p>Sea los vectores <span class="math inline">\(\mathbf u=(2,2)\)</span> y <span class="math inline">\(\mathbf v=(2,0)\)</span>, encuentra el resultado de la suma usando Python.</p></li>
+<li><p>Realiza las siguiente operaciones modificando el código anterior:</p>
+<ul>
+<li><span class="math inline">\(\mathbf u+2\mathbf v\)</span></li>
+<li><span class="math inline">\(3\mathbf u-\mathbf v\)</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="producto-punto" class="level3">
+<h3 class="anchored" data-anchor-id="producto-punto">Producto punto</h3>
+<p>Para realizar el producto punto de dos vectores podemos usar la función <code>np.dot</code> de la librería NumPy, por ejemplo para los vectores <span class="math inline">\(\mathbf{u}=(2,-1)\)</span> y <span class="math inline">\(\mathbf{v}=(1,3)\)</span>:</p>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="norma-de-un-vector" class="level3">
+<h3 class="anchored" data-anchor-id="norma-de-un-vector">Norma de un vector</h3>
+<p>Para calcular la norma de un vector en Python podemos usar la función <code>np.linalg.norm</code>, por ejemplo para el vector <span class="math inline">\(\mathbf{u}=(2,-1)\)</span>:</p>
+<div id="qpyodide-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol start="3" type="1">
+<li>En el siguiente código comprobamos la desigualdad de Cauchy–Schwarz para los vectores <span class="math inline">\(\mathbf{u}=(2,-1)\)</span> y <span class="math inline">\(\mathbf{v}=(1,3)\)</span> usando Python.</li>
+</ol>
+<p>Recuerda que la desigualdad de Cauchy–Schwarz dice que <span class="math inline">\(|\mathbf{u}\cdot\mathbf{v}| \leq \|\mathbf{u}\| \|\mathbf{v}\|\)</span>.</p>
+<div id="qpyodide-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Encuentra el un vector <span class="math inline">\(\mathbf{u}\)</span> para que obtenga la igualdad de Cauchy–Schwarz, es decir, que se cumpla que <span class="math inline">\(|\mathbf{u}\cdot\mathbf{v}| = \|\mathbf{u}\| \|\mathbf{v}\|\)</span>, justifica tu respuesta.</p>
 
 
 </section>

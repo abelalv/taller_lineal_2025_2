@@ -23,7 +23,10 @@ website:
       - section:  Matrices 2 x  2
         contents:
           - href: taller5.qmd
-            text: Matrices
+            text: Matrices 1
+          - href: taller6.qmd
+            text: Matrices  y sistemas de ecuaciones
+          
 format:
   html:
     theme: cosmo

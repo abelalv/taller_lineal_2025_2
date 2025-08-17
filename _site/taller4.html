@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Taller 2 - Rectas en R^2</title>
+<title>Taller 4 - Vectores en R^2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -228,7 +228,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\ncentros = {\n    \"A: Cruz Verde (Centro)\": np.array([1.0, 8.0]),\n    \"B: Centro Salud Norte (El Peñón)\": np.array([6.0, 7.0]),\n    \"C: Hospital Universitario (Sur)\": np.array([8.0, 2.0]),\n}\n\nviento_norte = np.array([0.0, -1.0])\nviento_este = np.array([-1.0, 0.0])\nobstaculo1_y = 5.0\nobstaculo2_x = 4.5\n\nfig, ax = plt.subplots(figsize=(8, 8))\n\nfor nombre, p in centros.items():\n    ax.scatter(p[0], p[1], s=80)\n    ax.text(p[0] + 0.1, p[1] + 0.1, nombre, fontsize=9)\n\npares = [\n    (\"A→B\", \"A: Cruz Verde (Centro)\", \"B: Centro Salud Norte (El Peñón)\"),\n    (\"B→C\", \"B: Centro Salud Norte (El Peñón)\", \"C: Hospital Universitario (Sur)\"),\n    (\"A→C\", \"A: Cruz Verde (Centro)\", \"C: Hospital Universitario (Sur)\"),\n]\n\ndef distancia(p, q):\n    return float(np.linalg.norm(q - p))\n\nline_handles = []\nfor _, o_key, d_key in pares:\n    o = centros[o_key]\n    d = centros[d_key]\n    (line,) = ax.plot([o[0], d[0]], [o[1], d[1]], linewidth=2, label=f\"Ruta directa {o_key[0]}→{d_key[0]}\")\n    mid = (o + d) / 2\n    ax.text(mid[0], mid[1], f\"{distancia(o, d):.2f} km\", fontsize=8)\n    line_handles.append(line)\n\nB = centros[\"B: Centro Salud Norte (El Peñón)\"]\nC = centros[\"C: Hospital Universitario (Sur)\"]\nwp1 = np.array([B[0], obstaculo1_y + 0.6])\nruta_respaldo_x = [B[0], wp1[0], C[0]]\nruta_respaldo_y = [B[1], wp1[1], C[1]]\n(backup_line,) = ax.plot(ruta_respaldo_x, ruta_respaldo_y, linestyle=\"--\", linewidth=2, label=\"Ruta de respaldo B→C\")\n\nx_vals = np.linspace(0, 10, 200)\n(yline,) = ax.plot(x_vals, np.full_like(x_vals, obstaculo1_y), linewidth=2, label=\"Avenida bloqueada (y=5)\")\n(yline2,) = ax.plot(np.full_like(x_vals, obstaculo2_x), x_vals, linewidth=2, label=\"Corredor bloqueado (x=4.5)\")\n\nq1 = ax.quiver(0.8, 9.2, viento_norte[0], viento_norte[1], angles=\"xy\", scale_units=\"xy\", scale=1)\nq2 = ax.quiver(0.8, 8.4, viento_este[0], viento_este[1], angles=\"xy\", scale_units=\"xy\", scale=1)\n\nax.text(1.1, 9.2, \"Viento Norte (empuja hacia el Sur)\")\nax.text(1.1, 8.4, \"Viento Este (empuja hacia el Oeste)\")\n\nax.set_title(\"Sistema de Robots de Entrega Urbana en $\\\\mathbb{R}^2$\")\nax.set_xlabel(\"x (km)\")\nax.set_ylabel(\"y (km)\")\nax.set_xlim(0, 10)\nax.set_ylim(0, 10)\nax.grid(True)\n\nhandles = [*line_handles, backup_line, yline, yline2, q1, q2]\nlabels = [h.get_label() if hasattr(h, \"get_label\") else \"Elemento\" for h in handles]\nax.legend(handles, labels, loc=\"lower left\", fontsize=8)\n\nplt.show()","options":{"out-width":"700px","label":"","fig-cap":"","results":"markup","fig-height":5,"read-only":"false","out-height":"","context":"interactive","warning":"true","comment":"","message":"true","autorun":"","classes":"","dpi":72,"fig-width":7,"output":"true"}}];
+globalThis.qpyodideCellDetails = [{"options":{"results":"markup","context":"interactive","label":"","output":"true","fig-height":5,"message":"true","classes":"","autorun":"","comment":"","dpi":72,"warning":"true","fig-width":7,"read-only":"false","fig-cap":"","out-width":"700px","out-height":""},"id":1,"code":"import numpy as np\nimport matplotlib.pyplot as plt\na=2\nb= 0  # <-- modifique aquí\nm = 1/2 # <-- modifique aquí\nt = np.linspace(-4, 4, 100)\nx = t + a\ny = m*t+b\n\nplt.figure(figsize=(4,4))\nplt.plot(x, y, label=f'y = {m}x')\nplt.scatter([0], [0], color='red')\nplt.axhline(0); plt.axvline(0); plt.gca().set_aspect('equal')\nplt.legend(); plt.grid(True)\nplt.title('Visualización de la recta')\nplt.show()"},{"options":{"results":"markup","context":"interactive","label":"","output":"true","fig-height":5,"message":"true","classes":"","autorun":"","comment":"","dpi":72,"warning":"true","fig-width":7,"read-only":"false","fig-cap":"","out-width":"700px","out-height":""},"id":2,"code":"import numpy as np\nimport matplotlib.pyplot as plt\n\nu = np.array([3, 2])   # <-- modifique aquí\nv = np.array([1, -1])  # <-- modifique aquí\n\nproj = (u @ v) / (v @ v) * v\n\nplt.figure(figsize=(4,4))\nfor vec, col, lab in [(u, None, 'u'), (v, None, 'v'), (proj, 'red', 'proy_v u')]:\n    plt.quiver(0, 0, vec[0], vec[1], angles='xy', scale_units='xy', scale=1, color=col, label=lab)\nplt.xlim(-5,5); plt.ylim(-5,5); plt.gca().set_aspect('equal'); plt.grid(True); plt.legend()\nplt.title('Proyección de u sobre v')\nplt.show()"},{"options":{"results":"markup","context":"interactive","label":"","output":"true","fig-height":5,"message":"true","classes":"","autorun":"","comment":"","dpi":72,"warning":"true","fig-width":7,"read-only":"false","fig-cap":"","out-width":"700px","out-height":""},"id":3,"code":"import numpy as np\n\nv1 = np.array([3, 4])   # <-- modifique aquí\nv2 = np.array([-1, 7])  # <-- modifique aquí\n\nlhs = np.linalg.norm(v1 + v2)\nrhs = np.linalg.norm(v1) + np.linalg.norm(v2)\nprint(f'||v1+v2|| = {lhs:.3f},  ||v1|| + ||v2|| = {rhs:.3f}')"},{"options":{"results":"markup","context":"interactive","label":"","output":"true","fig-height":5,"message":"true","classes":"","autorun":"","comment":"","dpi":72,"warning":"true","fig-width":7,"read-only":"false","fig-cap":"","out-width":"700px","out-height":""},"id":4,"code":"import numpy as np\n\nA = np.array([2, 3])   # <-- modifique aquí\nB = np.array([5, -1])  # <-- modifique aquí\nC = np.array([-1, 4])  # <-- modifique aquí\n\ndAB = np.linalg.norm(A - B)\ndBC = np.linalg.norm(B - C)\ndCA = np.linalg.norm(C - A)\nprint(f'dAB = {dAB:.2f}, dBC = {dBC:.2f}, dCA = {dCA:.2f}')"},{"options":{"results":"markup","context":"interactive","label":"","output":"true","fig-height":5,"message":"true","classes":"","autorun":"","comment":"","dpi":72,"warning":"true","fig-width":7,"read-only":"false","fig-cap":"","out-width":"700px","out-height":""},"id":5,"code":"import numpy as np\n\nb1 = np.array([2, 1])  # <-- modifique aquí\nb2 = np.array([1, -1]) # <-- modifique aquí\np  = np.array([3, 0])  # <-- modifique aquí\n\nB = np.column_stack((b1, b2))\ntry:\n    coeffs = np.linalg.solve(B, p)\n    print('p pertenece al subespacio; coeficientes:', coeffs)\nexcept np.linalg.LinAlgError:\n    print('p NO pertenece al subespacio generado por b1 y b2')"}];
 
 
 </script>
@@ -461,7 +461,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller4.html">Taller 4</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -522,7 +522,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taller4.html" class="sidebar-item-text sidebar-link">
+  <a href="./taller4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Taller 4</span></a>
   </div>
 </li>
@@ -555,12 +555,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#escenario-sistema-de-robots-de-entrega-urbana" id="toc-escenario-sistema-de-robots-de-entrega-urbana" class="nav-link active" data-scroll-target="#escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</a>
+  <li><a href="#subespacios-proyecciones-norma-y-distancia-mathbbr2" id="toc-subespacios-proyecciones-norma-y-distancia-mathbbr2" class="nav-link active" data-scroll-target="#subespacios-proyecciones-norma-y-distancia-mathbbr2">Subespacios, proyecciones, norma y distancia <span class="math inline">\(\mathbb{R}^2\)</span></a>
   <ul class="collapse">
-  <li><a href="#tu-rol-como-ingeniero" id="toc-tu-rol-como-ingeniero" class="nav-link" data-scroll-target="#tu-rol-como-ingeniero">Tu Rol como Ingeniero</a></li>
-  <li><a href="#elementos-del-sistema-en-mathbbr2" id="toc-elementos-del-sistema-en-mathbbr2" class="nav-link" data-scroll-target="#elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#importancia-del-álgebra-lineal-en-mathbbr2" id="toc-importancia-del-álgebra-lineal-en-mathbbr2" class="nav-link" data-scroll-target="#importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></a></li>
-  <li><a href="#instrucciones-de-trabajo" id="toc-instrucciones-de-trabajo" class="nav-link" data-scroll-target="#instrucciones-de-trabajo">Instrucciones de Trabajo</a></li>
+  <li><a href="#nota-pedagógica" id="toc-nota-pedagógica" class="nav-link" data-scroll-target="#nota-pedagógica">Nota pedagógica</a></li>
+  </ul></li>
+  <li><a href="#proyección-ortogonal-de-un-vector-sobre-otro" id="toc-proyección-ortogonal-de-un-vector-sobre-otro" class="nav-link" data-scroll-target="#proyección-ortogonal-de-un-vector-sobre-otro">Proyección ortogonal de un vector sobre otro</a>
+  <ul class="collapse">
+  <li><a href="#algunas-formulas" id="toc-algunas-formulas" class="nav-link" data-scroll-target="#algunas-formulas">Algunas formulas</a></li>
+  </ul></li>
+  <li><a href="#problemas-computacionales" id="toc-problemas-computacionales" class="nav-link" data-scroll-target="#problemas-computacionales">Problemas computacionales</a>
+  <ul class="collapse">
+  <li><a href="#instrucciones-generales" id="toc-instrucciones-generales" class="nav-link" data-scroll-target="#instrucciones-generales">Instrucciones generales</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -578,9 +583,9 @@ window.Quarto = {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Enganche_1.html">Vectores en el Plano</a></li><li class="breadcrumb-item"><a href="./taller4.html">Taller 4</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Taller 2 - Rectas en <span class="math inline">\(R^2\)</span></h1>
+<h1 class="title">Taller 4 - Vectores en <span class="math inline">\(R^2\)</span></h1>
 </div>
 
 
@@ -597,74 +602,84 @@ window.Quarto = {
 </header>
 
 
-<section id="escenario-sistema-de-robots-de-entrega-urbana" class="level2">
-<h2 class="anchored" data-anchor-id="escenario-sistema-de-robots-de-entrega-urbana">Escenario: Sistema de Robots de Entrega Urbana</h2>
-<p>La empresa <strong>RoboDelivery</strong> ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.</p>
-<section id="tu-rol-como-ingeniero" class="level3">
-<h3 class="anchored" data-anchor-id="tu-rol-como-ingeniero">Tu Rol como Ingeniero</h3>
-<p>Como ingeniero, debes diseñar algoritmos que permitan:</p>
-<ul>
-<li>Optimizar rutas entre puntos de distribución en el plano urbano.</li>
-<li>Evitar obstáculos como avenidas principales y zonas peatonales.</li>
-<li>Considerar fuerzas ambientales como viento lateral que afecta la estabilidad.</li>
-<li>Calcular distancias precisas para la planificación de batería.</li>
-<li>Determinar zonas de cobertura y rutas de respaldo.</li>
-</ul>
+<section id="subespacios-proyecciones-norma-y-distancia-mathbbr2" class="level2">
+<h2 class="anchored" data-anchor-id="subespacios-proyecciones-norma-y-distancia-mathbbr2">Subespacios, proyecciones, norma y distancia <span class="math inline">\(\mathbb{R}^2\)</span></h2>
+<section id="nota-pedagógica" class="level3">
+<h3 class="anchored" data-anchor-id="nota-pedagógica">Nota pedagógica</h3>
+<p>Estos ejercicios repasan los conceptos fundamentales de vectores en <span class="math inline">\(\mathbb{R}^2\)</span>, incluyendo subespacios, proyecciones, norma y distancia. Se hace hincapié en la interpretación geométrica de estos conceptos y su aplicación en la resolución de problemas.</p>
+<p><strong>Problema 1</strong><br>
+Demuestre que el conjunto <span class="math inline">\(H_1=\{(x,y)\in\mathbf R^2\mid y=\tfrac12x\}\)</span> es un subespacio y describa su representación gráfica.</p>
+<p><strong>Problema 2</strong><br>
+Sea <span class="math inline">\(H_2=\{(x,y)\in\mathbf R^2\mid x-y=0\}\)</span>. Determine si <span class="math inline">\(H_2\)</span> es un subespacio de <span class="math inline">\(\mathbf R^2\)</span> e interprete el resultado geométricamente.</p>
+<p><strong>Problema 3</strong><br>
+Considere <span class="math inline">\(H_3=\{(x,y)\in\mathbf R^2\mid x^2+y^2=1\}\)</span>. ¿Es <span class="math inline">\(H_3\)</span> un subespacio? Justifique mediante las reglas de cerradura.</p>
+<p><strong>Problema 4</strong><br>
+Sea <span class="math inline">\(U=\{(x,y)\in\mathbf R^2 : y=3x\}\)</span> y <span class="math inline">\(V=\{(x,y)\in\mathbf R^2 : y=-x\}\)</span>. Muestre que <span class="math inline">\(U\cap V=\{\mathbf 0\}\)</span> y explique por qué esta intersección sigue siendo un subespacio.</p>
+<p><strong>Problema 5</strong><br>
+Sea <span class="math inline">\(W=\operatorname{span}\{(2,1),(1,-1)\}\)</span>. Determine si <span class="math inline">\(W=\mathbf R^2\)</span> o una recta por el origen y explique su conclusión.</p>
+<p><strong>Problema 6</strong><br>
+Calcule <span class="math inline">\(\operatorname{proy}_{(1,1)}(2,3)\)</span> y verifique que el residuo <span class="math inline">\(\mathbf u-\operatorname{proy}_{\mathbf v}\mathbf u\)</span> es ortogonal a <span class="math inline">\(\mathbf v\)</span>.</p>
+<p><strong>Problema 7</strong><br>
+Sea <span class="math inline">\(\mathbf u=(a,b)\)</span> y <span class="math inline">\(\mathbf v=(1,-1)\)</span> en <span class="math inline">\(\mathbf R^2\)</span>. Determine todos los valores de <span class="math inline">\((a,b)\)</span> para los cuales <span class="math inline">\(\operatorname{proy}_{\mathbf v}\mathbf u=\mathbf 0\)</span>. Interprete el resultado.</p>
+<p><strong>Problema 8</strong><br>
+Calcule la norma de los vectores <span class="math inline">\(\mathbf v_1=(3,4)\)</span> y <span class="math inline">\(\mathbf v_2=(-1,7)\)</span> y verifique la desigualdad triangular <span class="math inline">\(\lVert \mathbf v_1+\mathbf v_2\rVert\le\lVert \mathbf v_1\rVert+\lVert \mathbf v_2\rVert\)</span>. ¿Cómo podemos interpretar geométricamente esta desigualdad?</p>
+<p><strong>Problema  9</strong><br>
+Dado el triángulo de vértices <span class="math inline">\(A(2,3)\)</span>, <span class="math inline">\(B(5,-1)\)</span> y <span class="math inline">\(C(-1,4)\)</span>, calcule sus tres lados y determine si es isósceles, equilátero o escaleno.</p>
+<p><strong>Problema 10</strong> Sea <span class="math inline">\(P_1(1,2)\)</span> y <span class="math inline">\(P_2(4,6)\)</span>. Calcule la distancia entre estos puntos y verifique que es igual a la norma del vector <span class="math inline">\(\mathbf v=P_2-P_1\)</span>.</p>
 </section>
-<section id="elementos-del-sistema-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="elementos-del-sistema-en-mathbbr2">Elementos del Sistema en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li>🏥 <strong>Centros de Distribución:</strong> Tres puntos estratégicos en el mapa urbano:
-<ul>
-<li><strong>Centro A:</strong> Farmacia Cruz Verde (centro histórico)</li>
-<li><strong>Centro B:</strong> Centro de Salud Norte (barrio El Peñón)</li>
-<li><strong>Centro C:</strong> Hospital Universitario (zona sur)</li>
-</ul></li>
-<li>🌬️ <strong>Fuerzas Ambientales:</strong> Vectores que afectan la navegación:
-<ul>
-<li><strong>Viento Norte:</strong> Corriente dominante que empuja hacia el sur.</li>
-<li><strong>Viento Este:</strong> Corriente transversal que empuja hacia el oeste.</li>
-</ul></li>
-<li>🚧 <strong>Obstáculos Lineales:</strong> Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.</li>
-</ul>
 </section>
-<section id="importancia-del-álgebra-lineal-en-mathbbr2" class="level3">
-<h3 class="anchored" data-anchor-id="importancia-del-álgebra-lineal-en-mathbbr2">Importancia del Álgebra Lineal en <span class="math inline">\(\mathbb{R}^2\)</span></h3>
-<ul>
-<li><strong>Vectores de posición:</strong> Coordenadas <span class="math inline">\((x, y)\)</span> de cada centro.</li>
-<li><strong>Vectores de desplazamiento:</strong> Rutas entre centros.</li>
-<li><strong>Suma vectorial:</strong> Combinación de movimientos y fuerzas.</li>
-<li><strong>Producto escalar:</strong> Análisis de direcciones favorables/desfavorables.</li>
-<li><strong>Producto punto:</strong> Determinación de ángulos entre rutas.</li>
-<li><strong>Proyecciones:</strong> Componentes útiles de fuerzas ambientales.</li>
-<li><strong>Rectas:</strong> Modelado de calles y obstáculos.</li>
-<li><strong>Distancias:</strong> Optimización energética y temporal.</li>
-</ul>
+<section id="proyección-ortogonal-de-un-vector-sobre-otro" class="level2">
+<h2 class="anchored" data-anchor-id="proyección-ortogonal-de-un-vector-sobre-otro">Proyección ortogonal de un vector sobre otro</h2>
+<section id="algunas-formulas" class="level3">
+<h3 class="anchored" data-anchor-id="algunas-formulas">Algunas formulas</h3>
+<p>Un subespacio <span class="math inline">\(H\)</span> de <span class="math inline">\(\mathbf R^2\)</span> es un conjunto no vacío que cumple las propiedades de cerradura bajo suma y multiplicación por escalares. Los subespacios son importantes porque permiten entender la estructura de <span class="math inline">\(\mathbf R^2\)</span> en términos de combinaciones lineales.</p>
+<p>La proyección de <span class="math inline">\(\mathbf u\)</span> sobre <span class="math inline">\(\mathbf v\)</span> se define como <span class="math display">\[\operatorname{proy}_{\mathbf v}\mathbf u=\dfrac{\mathbf u\cdot \mathbf v}{\mathbf v\cdot \mathbf v}\,\mathbf v,\qquad \mathbf v\neq \mathbf 0.\]</span> Esta construcción descompone <span class="math inline">\(\mathbf u\)</span> en una parte paralela a <span class="math inline">\(\mathbf v\)</span> y otra ortogonal.</p>
+<p>La <strong>norma</strong> de <span class="math inline">\(\mathbf v=(x,y)\)</span> es <span class="math inline">\(\lVert \mathbf v\rVert=\sqrt{x^2+y^2}\)</span> y la <strong>distancia</strong> entre <span class="math inline">\(P_1(x_1,y_1)\)</span> y <span class="math inline">\(P_2(x_2,y_2)\)</span> se calcula mediante <span class="math inline">\(d(P_1,P_2)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)</span>.</p>
+<p>La <strong>desigualdad triangular</strong> establece que para cualquier <span class="math inline">\(\mathbf u,\mathbf v\in\mathbf R^2\)</span> se cumple <span class="math inline">\(\lVert \mathbf u+\mathbf v\rVert\leq \lVert \mathbf u\rVert+\lVert \mathbf v\rVert\)</span>.</p>
 </section>
-<section id="instrucciones-de-trabajo" class="level3">
-<h3 class="anchored" data-anchor-id="instrucciones-de-trabajo">Instrucciones de Trabajo</h3>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>⚠️ <strong>Reglas Importantes</strong></p>
-<ul>
-<li>SOLO modifica los valores en la sección <strong>“PARÁMETROS DEL ESTUDIANTE”</strong>.</li>
-<li>NO cambies ninguna otra parte del código.</li>
-<li>Ejecuta cada celda en orden secuencial.</li>
-<li>Documenta todos tus cálculos manuales.</li>
-<li>Interpreta resultados en contexto de logística urbana.</li>
-</ul>
-</div>
-</div>
+</section>
+<section id="problemas-computacionales" class="level2">
+<h2 class="anchored" data-anchor-id="problemas-computacionales">Problemas computacionales</h2>
+<section id="instrucciones-generales" class="level3">
+<h3 class="anchored" data-anchor-id="instrucciones-generales">Instrucciones generales</h3>
+<p>Modifique únicamente las líneas marcadas con <code># &lt;-- modifique aquí</code> y ejecute el bloque. Analice la salida y responda las preguntas que siguen.</p>
+<p><strong>Problema computacional 1</strong></p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol type="a">
+<li><p>¿Cuáles son las coordenadas del vector directriz de la recta?</p></li>
+<li><p>¿Para qué valores de <code>b</code> la recta es un subespacio de <span class="math inline">\(\mathbf R^2\)</span>?</p></li>
+<li><p>Explique por qué su respuesta concuerda con la definición de subespacio.</p></li>
+</ol>
+<p><strong>Problema Computacional 2</strong></p>
+<div id="qpyodide-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><strong>Conceptual</strong><br>
+a. Determine con el código cuándo la proyección es el vector cero.<br>
+b. Formule la condición algebraica equivalente y relacione con la ortogonalidad de <span class="math inline">\(u\)</span> y <span class="math inline">\(v\)</span>.<br>
+c.&nbsp;Explique geométricamente por qué la proyección es cero en esos casos.</p>
+<p><strong>Problema computacional 3</strong></p>
+<div id="qpyodide-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol type="a">
+<li><p>Busque un par de vectores donde la desigualdad sea estricta y otro donde sea igualdad.</p></li>
+<li><p>Explique geométricamente por qué existe igualdad solo en casos particulares.</p></li>
+</ol>
+<p><strong>Problema Computacional 4</strong></p>
+<div id="qpyodide-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol type="a">
+<li><p>Cambie las coordenadas para obtener un triángulo equilátero.</p></li>
+<li><p>Justifique algebraicamente su elección usando las distancias.</p></li>
+</ol>
+<p><strong>Problema Computacional 5</strong> En el siguiente código se define un subespacio generado por los vectores <span class="math inline">\(b_1\)</span> y <span class="math inline">\(b_2\)</span>. Modifique las coordenadas del vector <span class="math inline">\(b_1\)</span> y <span class="math inline">\(p\)</span>. En el programa establece si el vector <span class="math inline">\(p\)</span> pertenece o no al subespacio generado por <span class="math inline">\(b_1\)</span> y <span class="math inline">\(b_2\)</span>.</p>
+<div id="qpyodide-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol type="a">
+<li><p>¿Qué significa que el vector <span class="math inline">\(p\)</span> pertenezca al subespacio generado por <span class="math inline">\(b_1\)</span> y <span class="math inline">\(b_2\)</span>? ¿Qué condiciones deben cumplirse?</p></li>
+<li><p>Explique que condiciones se deben tener <span class="math inline">\(b_1\)</span> y <span class="math inline">\(b_2\)</span> para que el subespacio sea <span class="math inline">\(\mathbb{R}^2\)</span>.</p></li>
+<li><p>Describa geométricamente el caso en que <span class="math inline">\(p\)</span> queda fuera del subespacio.</p></li>
+</ol>
 
 
 </section>
