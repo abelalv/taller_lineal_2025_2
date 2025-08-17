@@ -1,22 +1,24 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Temas",
+    "objectID": "taller5.html",
+    "href": "taller5.html",
+    "title": "Taller 5 - Matrices$",
     "section": "",
-    "text": "Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, Anton (2010),Grossman (2018), Kolman & Hill (2004). Esta lista de ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.",
+    "text": "Sean las matrices \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y \\(B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\).\n\nCalcule \\(A + B\\) y \\(A - B\\).\n\nCalcule \\(AB\\) y \\(BA\\). (Son iguales? Justifica tu respuesta).\nCalcule \\(A^2\\) y \\(B^2\\).\n\nCalcule el determinante de \\(A\\) y de \\(B\\).\n\nSea el vector \\(\\mathbf{v} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\).\n\nCalcule \\(A\\mathbf{v}\\) y \\(B\\mathbf{v}\\).\n\nCalcule \\(A^2\\mathbf{v}\\) y \\(B^2\\mathbf{v}\\).\n\nCalcule \\(A\\mathbf{v} + B\\mathbf{v}\\).\n\nBusca un numero \\(a\\) tal que la matriz \\(A=\\begin{pmatrix} 1 & 2 \\\\ 3 & a \\end{pmatrix}\\) sea invertible. ¿Qué sucede si \\(a=6\\)? ¿Por qué?\n¿Qué relación existe entre el determinante de una matriz y su invertibilidad? Justifica tu respuesta.\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y la matriz \\(B=\\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\), que dimensiones debe tener \\(X\\) para que se cumpla la igualdad \\(AX=B\\)? ¿Es posible encontrar \\(X\\)?\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2&2 \\\\ 3 & 4&-1 \\end{pmatrix}\\) y la matriz \\(B=\\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\\\ 9 & 10 \\end{pmatrix}\\), calcula si es posible \\(AB\\) y \\(BA\\). ¿Qué dimensiones tienen estas matrices? ¿Qué significa esto en términos de la multiplicación de matrices?\nExpresa la multiplicación de matrices como una combinación lineal de sus columnas. ¿Qué significa esto en términos de la geometría de los vectores?",
     "crumbs": [
-      "Contenido"
+      "Matrices 2 x  2",
+      "Matrices 1"
     ]
   },
   {
-    "objectID": "about.html#contenido",
-    "href": "about.html#contenido",
-    "title": "Temas",
-    "section": "Contenido",
-    "text": "Contenido\n\nActividad Inicial- Introducción a Python\nTaller 1 - Vectores en \\(R^2\\)\nTaller 2 - Rectas en \\(R^2\\)\nTaller 3 - Vectores, Rectas y Planos en \\(R^3\\)\nTaller 4 - Subespacios, proyecciones, norma y distancia \\(\\mathbb{R}^2\\)",
+    "objectID": "taller5.html#problemas-computacionales",
+    "href": "taller5.html#problemas-computacionales",
+    "title": "Taller 5 - Matrices$",
+    "section": "Problemas computacionales",
+    "text": "Problemas computacionales\nProblema 1\nSean las matrices \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\), \\(B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\), \\(x=\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}\\) y \\(y=\\begin{pmatrix} 2 \\\\ -4 \\end{pmatrix}\\). Calcule: - \\(A + B\\) - \\(A - B\\) - \\(AB\\) - \\(A(x + y)\\)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nProblema 2\nCon base el siguiente ejemplo\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\).\n\nCalcule \\(A^8\\)\nCalcule \\(A^{-1}\\)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nencuentre el valor de\n\\[3A^8 + 2A^{-1}\\]\nProblema 3\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) calcule el determinante de \\(A\\) y de \\(A^2\\). ¿Qué relación existe entre estos dos determinantes? Justifica tu respuesta.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Qué relación hay entre del determinante de una matriz y su matriz inversa? Justifica tu respuesta.",
     "crumbs": [
-      "Contenido"
+      "Matrices 2 x  2",
+      "Matrices 1"
     ]
   },
   {
@@ -64,26 +66,40 @@
     ]
   },
   {
-    "objectID": "taller3.html",
-    "href": "taller3.html",
-    "title": "Taller 3- Vectores en \\(R^2\\)",
+    "objectID": "taller6.html",
+    "href": "taller6.html",
+    "title": "Taller 5 - Matrices",
     "section": "",
-    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "text": "Sea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y el vector \\(\\mathbf{v} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\).\n\nCalcula \\(A\\mathbf{v}\\).\n\nCalcula \\(A^2\\mathbf{v}\\).\n\nCalcula \\(A\\mathbf{v} + A^2\\mathbf{v}\\).\n\nProblema en Contexto: Compra de Frutas\nUn comerciante de frutas desea determinar el precio de cada unidad de manzanas y naranjas. Sabe que si compra 4 manzanas y 3 naranjas, el gasto total es de $26, y que si compra 2 manzanas y 5 naranjas, el gasto es de $23.\n\nExprese este problema como un sistema de ecuaciones lineales.\n¿Cuánto costaría comprar 3 manzanas y 4 naranjas?\n\nVerifica la solución sustituyendo los valores en ambas ecuaciones.\n\nProblema en Contexto: Producción de Camisas y Pantalones\nUna fábrica produce camisas y pantalones. La producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.\n\n¿Cuál es el beneficio de producir 50 camisas y 50 pantalones?\nVerifica la solución sustituyendo los valores en ambas ecuaciones.\n\nSi una matriz \\(A\\) de \\(2\\times 2\\) tiene columnas linealmente independientes, ¿es cierto que \\(A\\) tiene filas linealmente independientes? Justifica tu respuesta.\nEscribe 3 formas diferentes de saber si una matriz invertible.\nSi \\(X=(3,6)\\) y \\(Y=(-2,3)\\), que representaría \\[proy_{X}Y\\] y \\[proy_{Y}X\\] Grafica la situación.\nComo podemos interpretar el determinante de una matriz? ¿Qué significa que el determinante sea igual a cero?\nLos vectores \\(\\mathbf{v}_1 = (1, 2)\\) y \\(\\mathbf{v}_2 = (-2, 1)\\) ortogonales (verifique) entonces son linealmente dependientes. De esta forma, ¿podemos decir que dos vectores ortogonales son linealmente independientes? Justifica tu respuesta. El reciproco ¿es cierto?\nSea el sistema de ecuaciones lineales \\[Ax=b\\] y \\(A\\) una matriz cuadrada de \\(2\\times 2\\) con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de \\(A\\) es igual a cero?\nSi forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.\nSi se forma una matriz con dos vectores linealmente dependientes, ¿es cierto que la matriz no es invertible? Justifica tu respuesta.\nEscribe un ejemplo de un sistema de ecuaciones lineales que no tiene solución. ¿Qué significa esto en términos de la geometría de los vectores?\nEscribe un sistema que tenga infinitas soluciones. ¿Qué significa esto en términos de la geometría de los vectores?\nEscribe un ejemplo de un sistema de ecuaciones que no sea consistente. ¿Qué significa esto en términos de la geometría de los vectores?",
     "crumbs": [
-      "Vectores en el Plano",
-      "Taller 3"
+      "Matrices 2 x  2",
+      "Matrices  y sistemas de ecuaciones"
     ]
   },
   {
-    "objectID": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
-    "href": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
-    "title": "Taller 3- Vectores en \\(R^2\\)",
-    "section": "",
-    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "objectID": "taller6.html#ejercicios-computacionales",
+    "href": "taller6.html#ejercicios-computacionales",
+    "title": "Taller 5 - Matrices",
+    "section": "Ejercicios computacionales",
+    "text": "Ejercicios computacionales",
     "crumbs": [
-      "Vectores en el Plano",
-      "Taller 3"
+      "Matrices 2 x  2",
+      "Matrices  y sistemas de ecuaciones"
     ]
+  },
+  {
+    "objectID": "actividad_computacional_1.html",
+    "href": "actividad_computacional_1.html",
+    "title": "Taller 2 - Rectas en \\(R^2\\)",
+    "section": "",
+    "text": "La empresa RoboDelivery ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.\n\n\nComo ingeniero, debes diseñar algoritmos que permitan:\n\nOptimizar rutas entre puntos de distribución en el plano urbano.\nEvitar obstáculos como avenidas principales y zonas peatonales.\nConsiderar fuerzas ambientales como viento lateral que afecta la estabilidad.\nCalcular distancias precisas para la planificación de batería.\nDeterminar zonas de cobertura y rutas de respaldo.\n\n\n\n\n\n🏥 Centros de Distribución: Tres puntos estratégicos en el mapa urbano:\n\nCentro A: Farmacia Cruz Verde (centro histórico)\nCentro B: Centro de Salud Norte (barrio El Peñón)\nCentro C: Hospital Universitario (zona sur)\n\n🌬️ Fuerzas Ambientales: Vectores que afectan la navegación:\n\nViento Norte: Corriente dominante que empuja hacia el sur.\nViento Este: Corriente transversal que empuja hacia el oeste.\n\n🚧 Obstáculos Lineales: Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.\n\n\n\n\n\nVectores de posición: Coordenadas \\((x, y)\\) de cada centro.\nVectores de desplazamiento: Rutas entre centros.\nSuma vectorial: Combinación de movimientos y fuerzas.\nProducto escalar: Análisis de direcciones favorables/desfavorables.\nProducto punto: Determinación de ángulos entre rutas.\nProyecciones: Componentes útiles de fuerzas ambientales.\nRectas: Modelado de calles y obstáculos.\nDistancias: Optimización energética y temporal.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n⚠️ Reglas Importantes\n\nSOLO modifica los valores en la sección “PARÁMETROS DEL ESTUDIANTE”.\nNO cambies ninguna otra parte del código.\nEjecuta cada celda en orden secuencial.\nDocumenta todos tus cálculos manuales.\nInterpreta resultados en contexto de logística urbana.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "actividad_computacional_1.html#escenario-sistema-de-robots-de-entrega-urbana",
+    "href": "actividad_computacional_1.html#escenario-sistema-de-robots-de-entrega-urbana",
+    "title": "Taller 2 - Rectas en \\(R^2\\)",
+    "section": "",
+    "text": "La empresa RoboDelivery ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.\n\n\nComo ingeniero, debes diseñar algoritmos que permitan:\n\nOptimizar rutas entre puntos de distribución en el plano urbano.\nEvitar obstáculos como avenidas principales y zonas peatonales.\nConsiderar fuerzas ambientales como viento lateral que afecta la estabilidad.\nCalcular distancias precisas para la planificación de batería.\nDeterminar zonas de cobertura y rutas de respaldo.\n\n\n\n\n\n🏥 Centros de Distribución: Tres puntos estratégicos en el mapa urbano:\n\nCentro A: Farmacia Cruz Verde (centro histórico)\nCentro B: Centro de Salud Norte (barrio El Peñón)\nCentro C: Hospital Universitario (zona sur)\n\n🌬️ Fuerzas Ambientales: Vectores que afectan la navegación:\n\nViento Norte: Corriente dominante que empuja hacia el sur.\nViento Este: Corriente transversal que empuja hacia el oeste.\n\n🚧 Obstáculos Lineales: Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.\n\n\n\n\n\nVectores de posición: Coordenadas \\((x, y)\\) de cada centro.\nVectores de desplazamiento: Rutas entre centros.\nSuma vectorial: Combinación de movimientos y fuerzas.\nProducto escalar: Análisis de direcciones favorables/desfavorables.\nProducto punto: Determinación de ángulos entre rutas.\nProyecciones: Componentes útiles de fuerzas ambientales.\nRectas: Modelado de calles y obstáculos.\nDistancias: Optimización energética y temporal.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n⚠️ Reglas Importantes\n\nSOLO modifica los valores en la sección “PARÁMETROS DEL ESTUDIANTE”.\nNO cambies ninguna otra parte del código.\nEjecuta cada celda en orden secuencial.\nDocumenta todos tus cálculos manuales.\nInterpreta resultados en contexto de logística urbana.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "Enganche_1.html",
@@ -105,6 +121,76 @@
     "crumbs": [
       "Vectores en el Plano",
       "Actividad Inicial"
+    ]
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html",
+    "href": "borradores/actividad_r2_proyecciones.html",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "Contexto. RoboDelivery opera robots de entrega en una ciudad idealizada en el plano \\(\\mathbb{R}^2\\). Los centros A, B y C están definidos por sus coordenadas \\((x,y)\\) en kilómetros. El sistema sufre dos vientos (Norte → empuja hacia el Sur y Este → empuja hacia el Oeste), modelados como vectores. Hay obstáculos lineales (calles/avenidas) modelados como rectas.\nRegla de oro: Solo cambia las variables en la sección “Variables que puedes modificar” del script actividad_r2_proyecciones.py. El resto del código no necesita edición: realiza los cálculos y muestra resultados.\n\n\n\nOperar vectores en \\(\\mathbb{R}^2\\): suma, producto punto, norma, ángulos.\nAplicar proyección de un vector sobre otro y su interpretación física.\nModelar rutas como vectores de desplazamiento y obstáculos como rectas.\nConectar el signo de la proyección con viento a favor/contra.\nUsar magnitudes vectoriales para una estimación energética simple.\n\n\n\n\n\nP1. Distancias de rutas. Con tus coordenadas de A, B y C, ¿cuáles son las distancias (km) de A→B, B→C y A→C? &gt; Cambia solo las coordenadas de A, B, C y observa los resultados.\nP2. Ángulos y vientos. ¿Cuál es el ángulo (°) entre cada ruta y cada viento? &gt; Cambia solo la intensidad de cada viento. ¿Qué ruta es más “alineada” (ángulo pequeño) con el viento Norte? ¿Y con el Este?\nP3. Proyecciones de viento sobre rutas. Para la ruta A→B, ¿la proyección del viento resultante (Norte+Este) es positiva (viento a favor) o negativa (viento en contra)? &gt; Cambia solo las intensidades de los vientos y explica el signo de la proyección.\nP4. Cruce con obstáculos. Con tu recta-obstáculo \\(y = y_0\\) (o \\(x = x_0\\)), ¿la ruta B→C la cruza? &gt; Cambia solo el valor de y_obstaculo o x_obstaculo y verifica el booleano de cruce.\nP5. Energía estimada. Suponiendo velocidad base constante y penalización por viento en contra proporcional a la proyección escalar (solo si es negativa), ¿qué energía (Wh) consumen las rutas? &gt; Cambia solo vel_base_kmh, energia_por_km_Wh y penalizacion_Wh_por_mps_por_km y compara rutas.\n\nSugerencia: Si la proyección escalar del viento resultante sobre la ruta es \\(p\\) (m/s), entonces usamos \\(p_-= \\min(p,0)\\) para penalizar solo viento en contra.\n\n\n\n\n\n\nAbre actividad_r2_proyecciones.py.\nEdita únicamente la sección Variables que puedes modificar.\nEjecuta el script y responde las 5 preguntas con base en la salida.\n(Opcional) Guarda capturas de la salida para tu reporte.\n\n¡Listo! No necesitas tocar funciones ni fórmulas."
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html#objetivos-de-aprendizaje-2º-semestre-de-ingeniería",
+    "href": "borradores/actividad_r2_proyecciones.html#objetivos-de-aprendizaje-2º-semestre-de-ingeniería",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "Operar vectores en \\(\\mathbb{R}^2\\): suma, producto punto, norma, ángulos.\nAplicar proyección de un vector sobre otro y su interpretación física.\nModelar rutas como vectores de desplazamiento y obstáculos como rectas.\nConectar el signo de la proyección con viento a favor/contra.\nUsar magnitudes vectoriales para una estimación energética simple."
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html#preguntas-el-script-imprime-resultados-con-base-en-tus-variables",
+    "href": "borradores/actividad_r2_proyecciones.html#preguntas-el-script-imprime-resultados-con-base-en-tus-variables",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "P1. Distancias de rutas. Con tus coordenadas de A, B y C, ¿cuáles son las distancias (km) de A→B, B→C y A→C? &gt; Cambia solo las coordenadas de A, B, C y observa los resultados.\nP2. Ángulos y vientos. ¿Cuál es el ángulo (°) entre cada ruta y cada viento? &gt; Cambia solo la intensidad de cada viento. ¿Qué ruta es más “alineada” (ángulo pequeño) con el viento Norte? ¿Y con el Este?\nP3. Proyecciones de viento sobre rutas. Para la ruta A→B, ¿la proyección del viento resultante (Norte+Este) es positiva (viento a favor) o negativa (viento en contra)? &gt; Cambia solo las intensidades de los vientos y explica el signo de la proyección.\nP4. Cruce con obstáculos. Con tu recta-obstáculo \\(y = y_0\\) (o \\(x = x_0\\)), ¿la ruta B→C la cruza? &gt; Cambia solo el valor de y_obstaculo o x_obstaculo y verifica el booleano de cruce.\nP5. Energía estimada. Suponiendo velocidad base constante y penalización por viento en contra proporcional a la proyección escalar (solo si es negativa), ¿qué energía (Wh) consumen las rutas? &gt; Cambia solo vel_base_kmh, energia_por_km_Wh y penalizacion_Wh_por_mps_por_km y compara rutas.\n\nSugerencia: Si la proyección escalar del viento resultante sobre la ruta es \\(p\\) (m/s), entonces usamos \\(p_-= \\min(p,0)\\) para penalizar solo viento en contra."
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html#cómo-trabajar",
+    "href": "borradores/actividad_r2_proyecciones.html#cómo-trabajar",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "Abre actividad_r2_proyecciones.py.\nEdita únicamente la sección Variables que puedes modificar.\nEjecuta el script y responde las 5 preguntas con base en la salida.\n(Opcional) Guarda capturas de la salida para tu reporte.\n\n¡Listo! No necesitas tocar funciones ni fórmulas."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Temas",
+    "section": "",
+    "text": "Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, Anton (2010),Grossman (2018), Kolman & Hill (2004). Esta lista de ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
+    "objectID": "about.html#contenido",
+    "href": "about.html#contenido",
+    "title": "Temas",
+    "section": "Contenido",
+    "text": "Contenido\n\nActividad Inicial- Introducción a Python\nTaller 1 - Vectores en \\(R^2\\)\nTaller 2 - Rectas en \\(R^2\\)\nTaller 3 - Vectores, Rectas y Planos en \\(R^3\\)\nTaller 4 - Subespacios, proyecciones, norma y distancia \\(\\mathbb{R}^2\\)",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
+    "objectID": "taller3.html",
+    "href": "taller3.html",
+    "title": "Taller 3- Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 3"
+    ]
+  },
+  {
+    "objectID": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
+    "href": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
+    "title": "Taller 3- Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 3"
     ]
   },
   {
