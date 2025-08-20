@@ -1,0 +1,102 @@
+---
+title: Taller 5 - Matrices$
+format: html
+bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
+csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+
+1. Sean las matrices $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ y $B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$.  
+   a) Calcule $A + B$ y $A - B$.  
+   b) Calcule $AB$ y $BA$.  (Son iguales? Justifica tu respuesta).
+   c) Calcule $A^2$ y $B^2$.  
+   d) Calcule el determinante de $A$ y de $B$.
+
+2. Sea el vector $\mathbf{v} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.  
+   a) Calcule $A\mathbf{v}$ y $B\mathbf{v}$.  
+   b) Calcule $A^2\mathbf{v}$ y $B^2\mathbf{v}$.  
+   c) Calcule $A\mathbf{v} + B\mathbf{v}$.
+
+
+3. Busca un numero $a$ tal que la matriz $A=\begin{pmatrix} 1 & 2 \\ 3 & a \end{pmatrix}$ sea invertible. ¿Qué sucede si $a=6$? ¿Por qué?
+
+
+4. ¿Qué relación existe entre el determinante de una matriz y su invertibilidad? Justifica tu respuesta.
+
+5. Sea la matriz $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ y la matriz $B=\begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$, que dimensiones debe tener $X$ para que se cumpla la igualdad $AX=B$? ¿Es posible encontrar $X$?
+
+6. Sea la matriz $A = \begin{pmatrix} 1 & 2&2 \\ 3 & 4&-1 \end{pmatrix}$ y la matriz $B=\begin{pmatrix} 5 & 6 \\ 7 & 8 \\ 9 & 10 \end{pmatrix}$, calcula si es posible $AB$ y $BA$. ¿Qué dimensiones tienen estas matrices? ¿Qué significa esto en términos de la multiplicación de matrices?
+
+7. Expresa la multiplicación de matrices como una combinación lineal de sus columnas. ¿Qué significa esto en términos de la geometría de los vectores?
+
+## Problemas computacionales 
+
+
+**Problema 1**
+
+Sean las matrices 
+$A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$, 
+$B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$,
+$x=\begin{pmatrix} 3 \\ -2 \end{pmatrix}$ y
+$y=\begin{pmatrix} 2 \\ -4 \end{pmatrix}$. 
+Calcule:
+- $A + B$
+- $A - B$
+- $AB$
+- $A(x + y)$
+
+
+
+```{pyodide-python}
+import numpy as np
+A = np.array([[1, 2], [3, 4]]) # creación de la matriz A
+B = np.array([[5, 6], [7, 8]]) # creación de la matriz B
+x = np.array([[3], [-2]]) # creación del vector x
+y = np.array([[2], [-4]]) # creación del vector y
+A_plus_B = A + B # suma de matrices
+print("A + B =\n", A_plus_B)
+AB = np.dot(A, B) # producto de matrices
+#tambien se puede usar A @ B
+print("AB =\n", AB)
+# producto de matriz por vector
+A_x_plus_y = np.dot(A, x + y)
+print("A(x + y) =\n", A_x_plus_y) 
+```
+
+**Problema 2**
+
+
+Con base el siguiente ejemplo  
+Sea la matriz $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+
+a) Calcule $A^8$
+b) Calcule $A^{-1}$
+
+```{pyodide-python}
+A = np.array([[1, 2], [3, 4]]) # creación de la matriz A
+A_power_8 = np.linalg.matrix_power(A, 8) # A^8
+print("A^8 =\n", A_power_8)
+A_inv = np.linalg.inv(A) # A^{-1}
+print("A^{-1} =\n", A_inv)
+``` 
+encuentre el valor de
+
+$$3A^8 + 2A^{-1}$$
+
+
+**Problema 3**
+
+Sea la matriz $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ 
+calcule el determinante de $A$ y de $A^2$. ¿Qué relación existe entre estos dos determinantes? Justifica tu respuesta.
+
+```{pyodide-python}
+A = np.array([[1, 2], [3, 4]]) # creación de
+det_A = np.linalg.det(A) # determinante de A
+print("det(A) =", det_A)
+
+``` 
+
+¿Qué relación hay entre del determinante de una matriz y su matriz inversa? Justifica tu respuesta.
+

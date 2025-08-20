@@ -1,0 +1,144 @@
+---
+title: Taller 5 - Matrices
+format: html
+bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
+csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+
+1. Sea la matriz $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ y el vector $\mathbf{v} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.  
+   1. Calcula $A\mathbf{v}$.  
+   2. Calcula $A^2\mathbf{v}$.  
+   3. Calcula $A\mathbf{v} + A^2\mathbf{v}$.  
+
+ 
+2. **Problema en Contexto: Compra de Frutas**
+
+    Un comerciante de frutas desea determinar el precio de cada unidad de manzanas y naranjas. Sabe que si compra 4 manzanas y 3 naranjas, el gasto total es de $26, y que si compra 2 manzanas y 5 naranjas, el gasto es de $23.
+
+    a) Exprese este problema como un sistema de ecuaciones lineales. 
+    c) ¿Cuánto costaría comprar 3 manzanas y 4 naranjas?  
+    d) Verifica la solución sustituyendo los valores en ambas ecuaciones.
+
+3. **Problema en Contexto: Producción de Camisas y Pantalones**
+
+    Una fábrica produce camisas y pantalones. La
+    producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.
+
+    a) ¿Cuál es el beneficio de producir 50 camisas y 50 pantalones?
+    b) Verifica la solución sustituyendo los valores en ambas ecuaciones.
+
+4. Si una matriz $A$ de $2\times 2$ tiene columnas linealmente independientes, ¿es cierto que $A$ tiene filas linealmente independientes? Justifica tu respuesta.
+
+5. Escribe 3 formas diferentes de saber si una matriz invertible.
+
+6. Si $X=(3,6)$ y $Y=(-2,3)$, que representaría $$proy_{X}Y$$ y $$proy_{Y}X$$ Grafica la situación.
+
+7. Como podemos interpretar el determinante de una matriz? ¿Qué significa que el determinante sea igual a cero?
+
+8. Los vectores $\mathbf{v}_1 = (1, 2)$ y $\mathbf{v}_2 = (-2, 1)$ ortogonales (verifique) entonces son linealmente dependientes. De esta forma, ¿podemos decir que dos vectores ortogonales son linealmente independientes? Justifica tu respuesta. El reciproco ¿es cierto?
+
+
+9. Sea el sistema de ecuaciones lineales
+$$Ax=b$$
+y $A$ una matriz cuadrada de $2\times 2$ con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de $A$ es igual a cero?
+
+
+
+10. Si forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.
+
+11. Si se forma una matriz con dos vectores linealmente dependientes, ¿es cierto que la matriz no es invertible? Justifica tu respuesta.
+
+12. Escribe un ejemplo de un sistema de ecuaciones lineales que no tiene solución. ¿Qué significa esto en términos de la geometría de los vectores?
+
+13. Escribe un sistema que tenga infinitas soluciones. ¿Qué significa esto en términos de la geometría de los vectores?
+
+14. Escribe un ejemplo de un sistema de ecuaciones que no sea consistente. ¿Qué significa esto en términos de la geometría de los vectores?
+
+
+## Ejercicios computacionales
+
+
+
+
+# Ejemplo 1: Sistema de ecuaciones 2x2 
+
+Suponga que una cafetería vende café y té. Un día, se vendieron 10 tazas de café y 5 de té por un total de $35. Otro día, se vendieron 8 tazas de café y 7 de té por un total de $34.
+
+a) Exprese el problema como un sistema de ecuaciones lineales.
+
+b) Resuelva el sistema para encontrar el precio de cada taza de café y de té.
+
+c) ¿Cuánto costaría comprar 3 tazas de café y 4 de té?
+
+
+```{pyodide-python}
+import numpy as np
+# Coeficientes del sistema de ecuaciones
+A = np.array([[10, 5], [8, 7]])  # <--
+modifique aquí
+b = np.array([35, 34])            # <--
+modifique aquí
+# Resuelve el sistema de ecuaciones
+solution = np.linalg.solve(A, b)
+coffee_price, tea_price = solution
+print(f"Precio del café: ${coffee_price:.2f}")
+print(f"Precio del té: ${tea_price:.2f}")
+# Costo de 3 tazas de café y 4 de té
+total_cost = 3 * coffee_price + 4 * tea_price
+print(f"Costo de 3 tazas de café y 4 de té: ${total_cost:.2f}")
+
+```
+
+
+**Problema 1 : Sistema de ecuaciones 2x2**
+
+Suponga que una tienda vende lápices y cuadernos. Un día, se vendieron 15 lápices y 10 cuadernos por un total de $45. Otro día, se vendieron 10 lápices y 15 cuadernos por un total de $50.
+a) Exprese el problema como un sistema de ecuaciones lineales.
+b) Resuelva el sistema para encontrar el precio de cada lápiz y de cada cuaderno
+c) ¿Cuánto costaría comprar 5 lápices y 7 cuadernos?
+d) Modifique el código para que refleje su solución.
+
+```{pyodide-python}
+import numpy as np
+# Coeficientes del sistema de ecuaciones
+A = np.array([[10, 10], [10, 15]])  # <-- modifique aquí
+b = np.array([45, 50])               # <-- modifique aquí
+# Resuelve el sistema de ecuaciones
+solution = np.linalg.solve(A, b)
+pencil_price, notebook_price = solution     # <-- modifique aquí          
+
+print(f"Precio del lápiz: ${pencil_price:.2f}")
+print(f"Precio del cuaderno: ${notebook_price:.2f}")
+# Costo de 5 lápices y 7 cuadernos
+total_cost = 5 * pencil_price + 7 * notebook_price
+print(f"Costo de 5 lápices y 7 cuadernos: ${total_cost:.2f}") 
+```
+
+**Problema 3**
+
+Una empresa produce dos productos: A y B. La producción de una unidad de A requiere 3 horas de trabajo y la de una unidad de B requiere 2 horas. La empresa tiene un total de 120 horas de trabajo disponibles por semana. Si la empresa produce 20 unidades de A y 30 unidades de B, el beneficio semanal es de $4000, y si produce 30 unidades de A y 20 unidades de B, el beneficio es de $4500.
+
+a) Exprese el problema como un sistema de ecuaciones lineales.
+b) Resuelva el sistema para encontrar el beneficio por unidad de cada producto.
+c) ¿Cuál es el beneficio de producir 25 unidades de A y 25 unidades de B?
+d) Modifique el código para que refleje su solución.
+```{pyodide-python}
+import numpy as np
+# Coeficientes del sistema de ecuaciones
+A = np.array([[20, 20], [30, 20]])  # <--
+modifique aquí
+b = np.array([4500, 4000])           # <--  
+modifique aquí
+# Resuelve el sistema de ecuaciones
+solution = np.linalg.solve(A, b)
+product_A_price, product_B_price = solution
+print(f"Beneficio por unidad de A: ${product_A_price:.2f}")
+print(f"Beneficio por unidad de B: ${product_B_price:.2f}")
+# Beneficio de 25 unidades de A y 25 de B
+total_benefit = 25 * product_A_price + 25 * product_B_price
+print(f"Beneficio de 25 unidades de A y 25 de B: ${total_benefit:.2f}") 
+```
+
