@@ -1,9 +1,0 @@
----
-title: Taller 6 - Matrices en $R^2$
-format: html
-bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
-csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
-link-citations: true                 # opcional: añade hipervínculos
-filters:
-  - pyodide
----
