@@ -8,8 +8,8 @@ filters:
   - pyodide
 ---
 
-Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, @anton2010,@grossman2018,
-@kolman2004. Esta lista de  ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.
+Aquí encontrarás algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están inspirados en el libro de texto en los libros, @anton2010,@grossman2018,
+@kolman2004. Esta lista de  ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumos de las actividades computacionales.
 
 
 ## Contenido
