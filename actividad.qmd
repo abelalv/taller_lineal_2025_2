@@ -1,0 +1,70 @@
+---
+title: "Taller computacional"
+author: ""
+format:
+    html
+jupyter: python3
+execute:
+  echo: true
+  warning: false
+  message: false
+
+---
+
+
+
+
+
+## Contexto realista (Cali)
+
+Un repartidor de pizzas parte de la pizzería en **San Antonio** (tomaremos la pizzería como el origen $(0,0)$). Debe entregar 4 pizzas en 4 casas de **Comuna 3** y **San Cayetano**, que modelamos con puntos en el plano cartesiano:
+
+- $A=(1,1)$, $B=(2,3)$, $C=(3,2)$.
+
+**Regla de la vía**: puede hacer un **primer trayecto en línea recta** desde la pizzería siguiendo un corredor principal $,\mathcal{L},$ (por ejemplo, una avenida de buen flujo), y luego realizar **desvíos perpendiculares a ese corredor** para llegar a cada casa (no puede pasar por el mismo corredor dos veces). Su objetivo es **minimizar el tiempo total**, que supondremos proporcional a la **distancia recorrida**, en este caso la constante de proporcionalidad es $k=2$.
+
+**Modelación geométrica:**
+
+- Por ejemplo si el repartidor decide que el primer trayecto es llevar la pizza al punto $A=(1,1)$, el corredor principal podría ser la línea que pasa por $A$ y luego debe hacer desvíos perpendiculares a esa línea para llegar a los otros puntos.
+
+Esta idealización condensa calles locales como trayectos perpendiculares y el corredor principal como una vía recta, muy útil para emplear **proyecciones** y **ángulos**.
+
+
+**Ejercicios**
+
+1. Observa las siguientes funciones, comenta las funciones y  describe que hace cada una y cómo se relacionan con el problema del repartidor:
+
+
+Función 1
+```{python}
+import numpy as np
+
+a= np.array([1, 1])
+origen = np.array([0, 0])
+
+b = a - origen
+
+ds= np.linalg.norm(b)
+print(ds)
+
+```
+
+Función 2
+```{python}
+import numpy as np
+
+a= np.array([1, 1])
+b = np.array([2,3])
+
+c=np.dot(a, b)/np.linalg.norm(b)**2 * b
+print(c)
+
+```
+
+2. Supon que el repartidor decide ir primero a $A=(1,1)$, ¿cuál es el corredor principal y cómo se proyectan los otros puntos sobre él? ¿Cuál es la distancia que recorrido para llegar a ese primer punto?
+
+3.  Escribe una estrategia para minimizar el tiempo de entrega
+
+4. Encuentra el tiempo mínimo de entrega y la ruta óptima para el repartidor.
+
+
