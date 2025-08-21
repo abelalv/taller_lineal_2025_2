@@ -37,6 +37,8 @@ Esta idealización condensa calles locales como trayectos perpendiculares y el c
 
 Función 1
 ```{python}
+"Esta función importa y llama la librería NumPy para poder crear dos vectores: uno, representando el punto de partida (u origen) del repartidor en el plano cartesiano, y el otro, representando la posición de la primera casa. Luego, se creará un nuevo vector como la diferencia entre la posición de la casa y el origen (vector desplazamiento), el cual se le va a calcular su norma para saber la distancia recorrida desde el origen hasta el punto A por el repartidor"
+
 import numpy as np
 
 a= np.array([1, 1])
@@ -51,6 +53,9 @@ print(ds)
 
 Función 2
 ```{python}
+"Esta función importa y llama la librería NumPy para poder crear dos vectores: el primero que contiene la posición de la primera casa y el segundo que contiene la posición de la segunda casa. Luego, se calcula la proyección del vector A sobre B para que el repartidor pueda descomponer un movimiento en la dirección del otro y pueda pensar qué caminos podría tomar"
+
+
 import numpy as np
 
 a= np.array([1, 1])
@@ -61,10 +66,21 @@ print(c)
 
 ```
 
-2. Supon que el repartidor decide ir primero a $A=(1,1)$, ¿cuál es el corredor principal y cómo se proyectan los otros puntos sobre él? ¿Cuál es la distancia que recorrido para llegar a ese primer punto?
+2. Supon que el repartidor decide ir primero a $A=(1,1)$, ¿cuál es el corredor principal y cómo se proyectan los otros puntos sobre él? ¿Cuál es la distancia que recorrió para llegar a ese primer punto?
+
+R// El corredor principal sería la recta que pasa por el punto A desde el origen en el plano cartesiano y la proyección de los otros puntos sobre dicho vector es igual, ya que al realizar el procedimiento de forma manual dio como resultado la misma coordenada ((2.5,2.5)). La distancia que recorrió hasta ese primer punto fue de 1.4142 kilómetros. 
 
 3.  Escribe una estrategia para minimizar el tiempo de entrega
 
+Yo propondría usar vectores directrices que pasen por el punto A, de manera tal que podría calcular la distancia entre dos puntos varias veces, sumar dichas distancias y ya que tenemos la siguiente ecuación: t = 2d (sugerido por el propio ejercicio), entonces multiplicar la distancia total recorrida por 2 y así saber el tiempo mínimo que le tomó. 
+
 4. Encuentra el tiempo mínimo de entrega y la ruta óptima para el repartidor.
 
+R// Bajo mi lógica sobre la cual basé mi estrategia, el tiempo mínimo de entrega sería 
+de 14 minutos y la ruta óptima sería del origen para A, luego C y finaliza en B.
+Sin embargo, le consulté a ChatGPT y me dijo que el tiempo mínimo era de 12 minutos aproximadamente y la ruta óptima sería la misma que propuse con la salvedad de que antes de pasar a B o a C, se usa la proyección de dichos vectores sobre A y después se traza la perpendicular.  
+
+Observaciones con respecto al ejercicio:
+- Decir en qué unidades del SI se está trabajando
+- Esclarecer si se requiere que el repartidor haga un viaje solo de ida o vuelta (para mi está de forma implícita, pero puede dar lugar a malinterpretaciones) 
 
