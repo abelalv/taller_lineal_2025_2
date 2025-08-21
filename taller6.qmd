@@ -24,15 +24,14 @@ filters:
 
 3. **Problema en Contexto: Producción de Camisas y Pantalones**
 
-    Una fábrica produce camisas y pantalones. La
-    producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.
+    Una fábrica produce camisas y pantalones. La producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.
 
     a) ¿Cuál es el beneficio de producir 50 camisas y 50 pantalones?
     b) Verifica la solución sustituyendo los valores en ambas ecuaciones.
 
 4. Si una matriz $A$ de $2\times 2$ tiene columnas linealmente independientes, ¿es cierto que $A$ tiene filas linealmente independientes? Justifica tu respuesta.
 
-5. Escribe 3 formas diferentes de saber si una matriz invertible.
+5. Escribe 3 formas diferentes de saber si una matriz es invertible.
 
 6. Si $X=(3,6)$ y $Y=(-2,3)$, que representaría $$proy_{X}Y$$ y $$proy_{Y}X$$ Grafica la situación.
 
@@ -43,11 +42,11 @@ filters:
 
 9. Sea el sistema de ecuaciones lineales
 $$Ax=b$$
-y $A$ una matriz cuadrada de $2\times 2$ con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de $A$ es igual a cero?
+y $A$ es una matriz cuadrada de $2\times 2$ con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de $A$ es igual a cero?
 
 
 
-10. Si forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.
+10. Si se forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.
 
 11. Si se forma una matriz con dos vectores linealmente dependientes, ¿es cierto que la matriz no es invertible? Justifica tu respuesta.
 
@@ -63,7 +62,7 @@ y $A$ una matriz cuadrada de $2\times 2$ con determinante distinto de cero. ¿Cu
 
 
 
-# Ejemplo 1: Sistema de ecuaciones 2x2 
+# Problema 1: Sistema de ecuaciones 2x2 
 
 Suponga que una cafetería vende café y té. Un día, se vendieron 10 tazas de café y 5 de té por un total de $35. Otro día, se vendieron 8 tazas de café y 7 de té por un total de $34.
 
@@ -93,7 +92,7 @@ print(f"Costo de 3 tazas de café y 4 de té: ${total_cost:.2f}")
 ```
 
 
-**Problema 1 : Sistema de ecuaciones 2x2**
+**Problema 2 : Sistema de ecuaciones 2x2**
 
 Suponga que una tienda vende lápices y cuadernos. Un día, se vendieron 15 lápices y 10 cuadernos por un total de $45. Otro día, se vendieron 10 lápices y 15 cuadernos por un total de $50.
 a) Exprese el problema como un sistema de ecuaciones lineales.
