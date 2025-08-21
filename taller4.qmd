@@ -167,7 +167,7 @@ b. Explique geométricamente por qué existe igualdad solo en casos particulares
 import numpy as np
 
 A = np.array([2, 3])   # <-- modifique aquí
-B = np.array([5, -1])  # <-- modifique aquí
+B = np.array([5, -1])  # <-- modifique aquí  
 C = np.array([-1, 4])  # <-- modifique aquí
 
 dAB = np.linalg.norm(A - B)
