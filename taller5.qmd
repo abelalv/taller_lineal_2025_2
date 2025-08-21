@@ -20,7 +20,7 @@ filters:
    c) Calcule $A\mathbf{v} + B\mathbf{v}$.
 
 
-3. Busca un numero $a$ tal que la matriz $A=\begin{pmatrix} 1 & 2 \\ 3 & a \end{pmatrix}$ sea invertible. ¿Qué sucede si $a=6$? ¿Por qué?
+3. Busca un número $a$ tal que la matriz $A=\begin{pmatrix} 1 & 2 \\ 3 & a \end{pmatrix}$ sea invertible. ¿Qué sucede si $a=6$? ¿Por qué?
 
 
 4. ¿Qué relación existe entre el determinante de una matriz y su invertibilidad? Justifica tu respuesta.
@@ -68,7 +68,7 @@ print("A(x + y) =\n", A_x_plus_y)
 **Problema 2**
 
 
-Con base el siguiente ejemplo  
+Con base en el siguiente ejemplo  
 Sea la matriz $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
 
 a) Calcule $A^8$
@@ -81,9 +81,7 @@ print("A^8 =\n", A_power_8)
 A_inv = np.linalg.inv(A) # A^{-1}
 print("A^{-1} =\n", A_inv)
 ``` 
-encuentre el valor de
-
-$$3A^8 + 2A^{-1}$$
+encuentre el valor de $$3A^8 + 2A^{-1}$$
 
 
 **Problema 3**
@@ -98,5 +96,5 @@ print("det(A) =", det_A)
 
 ``` 
 
-¿Qué relación hay entre del determinante de una matriz y su matriz inversa? Justifica tu respuesta.
+¿Qué relación hay entre el determinante de una matriz y su matriz inversa? Justifica tu respuesta.
 
