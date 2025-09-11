@@ -1,0 +1,108 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: Actividad motivacional  - Álgebra Lineal en los Videojuegos\n",
+        "format: html\n",
+        "bibliography: referencias.bib        # o una \n",
+        "link-citations: true                 # opcional: añade hipervínculos\n",
+        "filters:\n",
+        "  - pyodide\n",
+        "---\n",
+        "\n",
+        "\n",
+        "### Escenario\n",
+        "\n",
+        "Un jugador situado en $(1,1)$ dispara un proyectil láser que viaja según el vector de dirección $\\vec d=(4,3)$. Un enemigo 2D se modela como un **círculo** de radio $r=2$ centrado en $(13,11)$.  \n",
+        "\n",
+        "Nuestro objetivo es decidir si el proyectil golpea al enemigo, usando únicamente conceptos elementales de geometría analítica y álgebra lineal.\n",
+        "\n",
+        "\n",
+        "### Visualización (ejecuta antes de leer la explicación)"
+      ],
+      "id": "cb07e555"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#|echo: false\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "# Datos del problema\n",
+        "P0 = np.array([1, 1])           # Posición inicial del proyectil\n",
+        "v  = np.array([4, 3])           # Vector de dirección (no normalizado)\n",
+        "C  = np.array([13, 11])         # Centro del círculo (enemigo)\n",
+        "r  = 2                          # Radio del círculo\n",
+        "\n",
+        "# Trayectoria paramétrica  P(t)=P0 + t*v, 0≤t≤T\n",
+        "T = 4                           # tiempo máximo de dibujo (arbitrario)\n",
+        "t = np.linspace(0, T, 250)\n",
+        "traj = P0[:, None] + v[:, None] * t\n",
+        "\n",
+        "fig, ax = plt.subplots()\n",
+        "ax.plot(*traj, lw=1.5, label='Trayectoria del proyectil')\n",
+        "ax.scatter(*P0, color='green', zorder=5, label='Jugador $(1,1)$')\n",
+        "\n",
+        "# Círculo del enemigo\n",
+        "circle = plt.Circle(C, r, ec='red', fc='none', lw=2, label='Enemigo (radio 2)')\n",
+        "ax.add_patch(circle)\n",
+        "ax.scatter(*C, color='red', zorder=5)\n",
+        "\n",
+        "# Ajustes de la figura para cuadrícula\n",
+        "ax.set_aspect('equal')\n",
+        "ax.set_xlabel('$x$')\n",
+        "ax.set_ylabel('$y$')\n",
+        "ax.set_title('Escena de colisión')\n",
+        "ax.legend(loc='upper left')\n",
+        "ax.set_xticks(np.arange(0, 18, 1))\n",
+        "ax.set_yticks(np.arange(0, 16, 1))\n",
+        "ax.set_xlim(0, 17)\n",
+        "ax.set_ylim(0, 15)\n",
+        "ax.grid(True, which='both', linestyle='-', linewidth=0.7, alpha=0.8)\n",
+        "plt.tight_layout()"
+      ],
+      "id": "1f89efa8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# El escenario\n",
+        "\n",
+        "Tu personaje se encuentra en la posición $(1,1)$ y dispara un proyectil.\n",
+        "\n",
+        "* El proyectil viaja en la dirección indicada por el vector $\\vec d = (4,3)$.\n",
+        "  Esto significa que por cada 4 unidades que avanza hacia la derecha, sube 3 unidades.\n",
+        "* El enemigo es un círculo con centro en $(13,11)$ y radio $2$.\n",
+        "\n",
+        "## Tu misión (15 minutos)\n",
+        "\n",
+        "Sin usar herramientas de geometría avanzada ni fórmulas que no conozcas, ¿cómo podrías determinar si el proyectil golpeará al enemigo?\n",
+        "\n",
+        "**Instrucciones:**\n",
+        "\n",
+        "* Piensa en una estrategia, un método o un “algoritmo” para responder a la pregunta: **¿hay colisión?**\n",
+        "* Describe tu idea de la manera más clara posible.\n",
+        "* Puedes usar dibujos, diagramas o explicar los pasos que seguirías."
+      ],
+      "id": "806c9157"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/home/uses/micromamba/envs/class/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
