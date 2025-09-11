@@ -1,0 +1,218 @@
+---
+title: Taller 7 - Sistemas de ecauciones
+format: html
+bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
+csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)
+link-citations: true                 # opcional: añade hipervínculos
+filters:
+  - pyodide
+---
+
+
+Usando el método de Gauss, resuleva los siguientes sistemas y argumente si tiene solución o no. (En caso de tener soluciòn por favor encuentrela)
+    Solcuión de sistemas  de ecuaciones        
+
+a.
+
+$$
+\begin{cases}
+x + y + z = 6 \\
+2x - y + z = 3 \\
+x + 2y - z = 4
+\end{cases}
+$$
+
+b.
+
+$$
+\begin{cases}
+x - y + 2z = 5 \\
+2x + y - z = 4 \\
+-x + 3y + z = 2
+\end{cases}
+$$
+
+c.
+
+
+$$
+\begin{cases}
+x + y + z = 3 \\
+2x + 2y + 2z = 6 \\
+x - y + z = 1
+\end{cases}
+$$
+
+d. 
+
+
+$$
+\begin{cases}
+x + 2y - z = 4 \\
+2x + 4y - 2z = 8 \\
+3x + 6y - 3z = 12
+\end{cases}
+$$
+
+e.
+
+$$
+\begin{cases}
+x + y + z = 2 \\
+x + y + z = 5 \\
+2x - y + z = 3
+\end{cases}
+$$
+
+2. Dado el siguiente sistema encuetre un parametro $a$ para que tenga ùnica solución e infinitas 
+
+
+$$
+\begin{cases}
+x + y + z = 2 \\
+x  - z = 1 \\
+4x+  ay - 2z = 5
+\end{cases}
+$$
+
+
+
+3. **Mezaclas** Tres recipientes contienen mezclas de agua y sal. El primero tiene 1 litro de agua y 1 gramo de sal, el segundo tiene 2 litros de agua y 3 gramos de sal, y el tercero tiene 1 litro de agua y 2 gramos de sal. Si se mezclan cantidades desconocidas de cada recipiente para obtener una mezcla final con 4 litros de agua y 6 gramos de sal, ¿cuánto se debe tomar de cada recipiente?
+
+4. **Compras** En una tienda, 1 manzana, 1 plátano y 1 naranja cuestan $6. Dos manzanas, 1 plátano y 1 naranja cuestan $7. Una manzana, 2 plátanos y 1 naranja cuestan $8. ¿Cuál es el precio de cada fruta?
+
+5. **Reparto** Tres amigos reparten $1000 entre sí. El primero recibe el doble que el segundo, el tercero recibe $100 menos que el primero, y entre los tres suman $1000. ¿Cuánto recibe cada uno?
+
+6. Ressuelve el siguiente sistema, justifica su respuesta por que tiene ùnica solución
+
+$$
+\begin{cases}
+x + y + z = 6 \\
+2x - y + z = 3 \\
+x + 2y - z = 4 \\
+3x + y + 2z = 10
+\end{cases}
+$$
+
+
+7. Para resolver un sistema de ecuaciones con python se usa la lbreria numpy 
+
+```{python}
+import numpy as np
+A = np.array([[1,1,1],[2,-1,1],[1,2,-1]]) # matriz de coeficientes
+b = np.array([6,3,4]) # vector de términos independientes, este puede ser de forma de fila o e columna
+sol = np.linalg.solve(A, b)
+print(sol)
+```
+
+
+De los puntos del 1 al 5 cuales se puede resolver usando este codigo y justifique porque.
+
+
+8. Una matriz $A$ es invertible si $AA^{ -1}=A^{ -1}=I$
+
+Supongamos que tenemos la matriz 
+
+$$
+A=\begin{pmatrix}
+1 & 0 & 1 \\
+-1 & 2 & 4 \\
+0 & 1 & 3
+\end{pmatrix}
+$$
+
+suponemos que la matriz inversa es 
+
+$$
+A^{-1}=\begin{pmatrix}
+a&b&c \\
+d&e&f& \\
+g & h & i
+\end{pmatrix}
+$$
+
+
+a. ¿por que podemos decir que?
+
+
+$$
+A=\begin{pmatrix}
+1 & 0 & 1 \\
+-1 & 2 & 4 \\
+0 & 1 & 3
+\end{pmatrix}\begin{pmatrix}
+a \\
+d \\
+g 
+\end{pmatrix}=\begin{pmatrix}
+1 \\
+0 \\
+0 
+\end{pmatrix}
+$$
+
+
+b. Use el hecho anteriror y el código de Phyton para encontrar la matriz inversa de $A$
+
+
+9. 
+En una economía hay 10 sectores: Agricultura ($x_1$), Minería ($x_2$), Manufactura ($x_3$), Energía ($x_4$), Construcción ($x_5$), Transporte ($x_6$), Comercio ($x_7$), Educación ($x_8$), Salud ($x_9$) y Tecnología ($x_{10}$).
+
+Cada sector requiere insumos de los demás para producir. Supón que la matriz de coeficientes técnicos $A$ y el vector de demanda final $b$ son:
+
+$$
+A = \begin{pmatrix}
+0.1 & 0.05 & 0.02 & 0.01 & 0.03 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 \\
+0.02 & 0.1 & 0.03 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\
+0.01 & 0.02 & 0.1 & 0.04 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\
+0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 \\
+0.03 & 0.01 & 0.01 & 0.02 & 0.1 & 0.04 & 0.01 & 0.01 & 0.01 & 0.01 \\
+0.02 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.01 & 0.01 & 0.01 \\
+0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.04 & 0.01 & 0.01 \\
+0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.01 \\
+0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.04 \\
+0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1
+\end{pmatrix}
+$$
+
+$$
+b = \begin{pmatrix} 100 \\ 80 \\ 120 \\ 90 \\ 110 \\ 95 \\ 105 \\ 85 \\ 115 \\ 130 \end{pmatrix}
+$$
+
+El sistema a resolver es:
+
+$$
+\begin{cases}
+x_1 - (0.1x_1 + 0.05x_2 + ... + 0.01x_{10}) = 100 \\
+x_2 - (0.02x_1 + 0.1x_2 + ... + 0.01x_{10}) = 80 \\
+\vdots \\
+x_{10} - (0.01x_1 + 0.01x_2 + ... + 0.1x_{10}) = 130
+\end{cases}
+$$
+
+Donde $x_i$ es el valor de la producción total del sector $i$.
+
+```{python}
+import numpy as np
+A = np.array([
+    [0.1, 0.05, 0.02, 0.01, 0.03, 0.02, 0.01, 0.01, 0.01, 0.01],
+    [0.02, 0.1, 0.03, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+    [0.01, 0.02, 0.1, 0.04, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01],
+    [0.01, 0.01, 0.03, 0.1, 0.05, 0.02, 0.01, 0.01, 0.01, 0.01],
+    [0.03, 0.01, 0.01, 0.02, 0.1, 0.04, 0.01, 0.01, 0.01, 0.01],
+    [0.02, 0.01, 0.01, 0.01, 0.03, 0.1, 0.05, 0.01, 0.01, 0.01],
+    [0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.04, 0.01, 0.01],
+    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.05, 0.01],
+    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.04],
+    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1]
+])
+
+b = np.array([100, 80, 120, 90, 110, 95, 105, 85, 115, 130])
+
+
+sol = np.linalg.solve(A, b)
+print(sol)
+```
+
+
+Solcione el sistema de ecuaciones e interprete la solcuión

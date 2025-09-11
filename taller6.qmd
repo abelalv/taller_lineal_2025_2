@@ -1,5 +1,5 @@
 ---
-title: Taller 5 - Matrices
+title: Taller 6 - Matrices
 format: html
 bibliography: referencias.bib        # o una ruta: _bibliography/referencias.bib
 csl: apa.csl                         # opcional: estilo CSL (APA, Chicago, etc.)

@@ -26,6 +26,8 @@ website:
             text: Matrices 1
           - href: taller6.qmd
             text: Matrices  y sistemas de ecuaciones
+          - href: taller7.qmd
+            text: Sistemas de ecuacionesde n x n
           
 format:
   html:
