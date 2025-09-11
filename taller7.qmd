@@ -210,8 +210,6 @@ A = np.array([
 b = np.array([100, 80, 120, 90, 110, 95, 105, 85, 115, 130])
 
 
-sol = np.linalg.solve(A, b)
-print(sol)
 ```
 
 

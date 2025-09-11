@@ -349,7 +349,7 @@ x + 2y - z = 4 \\
 <ol start="7" type="1">
 <li>Para resolver un sistema de ecuaciones con python se usa la lbreria numpy</li>
 </ol>
-<div id="7c8e4e09" class="cell" data-execution_count="1">
+<div id="cde3e4fc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>]]) <span class="co"># matriz de coeficientes</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>]) <span class="co"># vector de términos independientes, este puede ser de forma de fila o e columna</span></span>
@@ -431,7 +431,7 @@ x_{10} - (0.01x_1 + 0.01x_2 + ... + 0.1x_{10}) = 130
 \end{cases}
 \]</span></p>
 <p>Donde <span class="math inline">\(x_i\)</span> es el valor de la producción total del sector <span class="math inline">\(i\)</span>.</p>
-<div id="3ca894a2" class="cell" data-execution_count="2">
+<div id="f7b98198" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.1</span>, <span class="fl">0.05</span>, <span class="fl">0.02</span>, <span class="fl">0.01</span>, <span class="fl">0.03</span>, <span class="fl">0.02</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>],</span>
@@ -446,15 +446,7 @@ x_{10} - (0.01x_1 + 0.01x_2 + ... + 0.1x_{10}) = 130
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.03</span>, <span class="fl">0.1</span>]</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>])</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">120</span>, <span class="dv">90</span>, <span class="dv">110</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">85</span>, <span class="dv">115</span>, <span class="dv">130</span>])</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>sol <span class="op">=</span> np.linalg.solve(A, b)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[310.03460186 212.34567973 748.07273097  69.40791177 633.47509939
- 131.98202773 630.46901075 116.17131367 495.05481218 866.28771876]</code></pre>
-</div>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">120</span>, <span class="dv">90</span>, <span class="dv">110</span>, <span class="dv">95</span>, <span class="dv">105</span>, <span class="dv">85</span>, <span class="dv">115</span>, <span class="dv">130</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Solcione el sistema de ecuaciones e interprete la solcuión</p>
 
