@@ -1,136 +1,21 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Temas",
-    "section": "",
-    "text": "Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, Anton (2010),Grossman (2018), Kolman & Hill (2004). Esta lista de ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.",
-    "crumbs": [
-      "Contenido"
-    ]
-  },
-  {
-    "objectID": "about.html#contenido",
-    "href": "about.html#contenido",
-    "title": "Temas",
-    "section": "Contenido",
-    "text": "Contenido\n\nActividad Inicial- Introducción a Python\nTaller 1 - Vectores en \\(R^2\\)\nTaller 2 - Rectas en \\(R^2\\)\nTaller 3 - Vectores, Rectas y Planos en \\(R^3\\)\nTaller 4 - Subespacios, proyecciones, norma y distancia \\(\\mathbb{R}^2\\)\ntaller 5\ntaller 6\ntaller 7 Sistemas de ecuaciones nxn parte A",
-    "crumbs": [
-      "Contenido"
-    ]
-  },
-  {
-    "objectID": "taller7.html",
-    "href": "taller7.html",
+    "objectID": "taller8.html",
+    "href": "taller8.html",
     "title": "Taller 7 - Sistemas de ecauciones",
     "section": "",
-    "text": "Usando el método de Gauss, resuleva los siguientes sistemas y argumente si tiene solución o no. (En caso de tener soluciòn por favor encuentrela) Solcuión de sistemas de ecuaciones\n\n\n\n\\[\n\\begin{cases}\nx + y + z = 6 \\\\\n2x - y + z = 3 \\\\\nx + 2y - z = 4\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx - y + 2z = 5 \\\\\n2x + y - z = 4 \\\\\n-x + 3y + z = 2\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx + y + z = 3 \\\\\n2x + 2y + 2z = 6 \\\\\nx - y + z = 1\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx + 2y - z = 4 \\\\\n2x + 4y - 2z = 8 \\\\\n3x + 6y - 3z = 12\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx + y + z = 2 \\\\\nx + y + z = 5 \\\\\n2x - y + z = 3\n\\end{cases}\n\\]\n\nDado el siguiente sistema encuetre un parametro \\(a\\) para que tenga ùnica solución e infinitas\n\n\\[\n\\begin{cases}\nx + y + z = 2 \\\\\nx  - z = 1 \\\\\n4x+  ay - 2z = 5\n\\end{cases}\n\\]\n\nMezaclas Tres recipientes contienen mezclas de agua y sal. El primero tiene 1 litro de agua y 1 gramo de sal, el segundo tiene 2 litros de agua y 3 gramos de sal, y el tercero tiene 1 litro de agua y 2 gramos de sal. Si se mezclan cantidades desconocidas de cada recipiente para obtener una mezcla final con 4 litros de agua y 6 gramos de sal, ¿cuánto se debe tomar de cada recipiente?\nCompras En una tienda, 1 manzana, 1 plátano y 1 naranja cuestan $6. Dos manzanas, 1 plátano y 1 naranja cuestan $7. Una manzana, 2 plátanos y 1 naranja cuestan $8. ¿Cuál es el precio de cada fruta?\nReparto Tres amigos reparten $1000 entre sí. El primero recibe el doble que el segundo, el tercero recibe $100 menos que el primero, y entre los tres suman $1000. ¿Cuánto recibe cada uno?\nRessuelve el siguiente sistema, justifica su respuesta por que tiene ùnica solución\n\n\\[\n\\begin{cases}\nx + y + z = 6 \\\\\n2x - y + z = 3 \\\\\nx + 2y - z = 4 \\\\\n3x + y + 2z = 10\n\\end{cases}\n\\]\n\nPara resolver un sistema de ecuaciones con python se usa la lbreria numpy\n\n\nimport numpy as np\nA = np.array([[1,1,1],[2,-1,1],[1,2,-1]]) # matriz de coeficientes\nb = np.array([6,3,4]) # vector de términos independientes, este puede ser de forma de fila o e columna\nsol = np.linalg.solve(A, b)\nprint(sol)\n\n[1.57142857 2.28571429 2.14285714]\n\n\nDe los puntos del 1 al 5 cuales se puede resolver usando este codigo y justifique porque.\n\nUna matriz \\(A\\) es invertible si \\(AA^{ -1}=A^{ -1}=I\\)\n\nSupongamos que tenemos la matriz\n\\[\nA=\\begin{pmatrix}\n1 & 0 & 1 \\\\\n-1 & 2 & 4 \\\\\n0 & 1 & 3\n\\end{pmatrix}\n\\]\nsuponemos que la matriz inversa es\n\\[\nA^{-1}=\\begin{pmatrix}\na&b&c \\\\\nd&e&f& \\\\\ng & h & i\n\\end{pmatrix}\n\\]\n\n¿por que podemos decir que?\n\n\\[\nA=\\begin{pmatrix}\n1 & 0 & 1 \\\\\n-1 & 2 & 4 \\\\\n0 & 1 & 3\n\\end{pmatrix}\\begin{pmatrix}\na \\\\\nd \\\\\ng\n\\end{pmatrix}=\\begin{pmatrix}\n1 \\\\\n0 \\\\\n0\n\\end{pmatrix}\n\\]\n\nUse el hecho anteriror y el código de Phyton para encontrar la matriz inversa de \\(A\\)\n\n\nEn una economía hay 10 sectores: Agricultura (\\(x_1\\)), Minería (\\(x_2\\)), Manufactura (\\(x_3\\)), Energía (\\(x_4\\)), Construcción (\\(x_5\\)), Transporte (\\(x_6\\)), Comercio (\\(x_7\\)), Educación (\\(x_8\\)), Salud (\\(x_9\\)) y Tecnología (\\(x_{10}\\)).\n\nCada sector requiere insumos de los demás para producir. Supón que la matriz de coeficientes técnicos \\(A\\) y el vector de demanda final \\(b\\) son:\n\\[\nA = \\begin{pmatrix}\n0.1 & 0.05 & 0.02 & 0.01 & 0.03 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.02 & 0.1 & 0.03 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.01 & 0.02 & 0.1 & 0.04 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.03 & 0.01 & 0.01 & 0.02 & 0.1 & 0.04 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.02 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.01 & 0.01 & 0.01 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.04 & 0.01 & 0.01 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.01 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.04 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1\n\\end{pmatrix}\n\\]\n\\[\nb = \\begin{pmatrix} 100 \\\\ 80 \\\\ 120 \\\\ 90 \\\\ 110 \\\\ 95 \\\\ 105 \\\\ 85 \\\\ 115 \\\\ 130 \\end{pmatrix}\n\\]\nEl sistema a resolver es:\n\\[\n\\begin{cases}\nx_1 - (0.1x_1 + 0.05x_2 + ... + 0.01x_{10}) = 100 \\\\\nx_2 - (0.02x_1 + 0.1x_2 + ... + 0.01x_{10}) = 80 \\\\\n\\vdots \\\\\nx_{10} - (0.01x_1 + 0.01x_2 + ... + 0.1x_{10}) = 130\n\\end{cases}\n\\]\nDonde \\(x_i\\) es el valor de la producción total del sector \\(i\\).\n\nimport numpy as np\nA = np.array([\n    [0.1, 0.05, 0.02, 0.01, 0.03, 0.02, 0.01, 0.01, 0.01, 0.01],\n    [0.02, 0.1, 0.03, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],\n    [0.01, 0.02, 0.1, 0.04, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01],\n    [0.01, 0.01, 0.03, 0.1, 0.05, 0.02, 0.01, 0.01, 0.01, 0.01],\n    [0.03, 0.01, 0.01, 0.02, 0.1, 0.04, 0.01, 0.01, 0.01, 0.01],\n    [0.02, 0.01, 0.01, 0.01, 0.03, 0.1, 0.05, 0.01, 0.01, 0.01],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.04, 0.01, 0.01],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.05, 0.01],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.04],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1]\n])\n\nb = np.array([100, 80, 120, 90, 110, 95, 105, 85, 115, 130])\n\nSolcione el sistema de ecuaciones e interprete la solcuión",
+    "text": "Observe el siguiente sistema de ecuaciones lineales:\n\\[\n\\begin{cases}\nx + 2y + 3z = 1 \\\\\n4x + 5y + 6z = 2 \\\\\n7x + 8y + 9z = 3\n\\end{cases}\n\\]\nNote que este sistema lo podemos escribir como una ecuación matricial de la forma \\(A \\cdot x = b\\), donde: \\[\nA =\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{bmatrix}\n,\n\\quad\nx =\n\\begin{bmatrix}\nx \\\\\ny \\\\ z\n\\end{bmatrix}\n,\n\\quad\nb =\n\\begin{bmatrix}\n1 \\\\ 2 \\\\ 3\n\\end{bmatrix}\n\\]\nPara saber si este sistema tiene una solución podemos a analizar el rango de la matriz \\(A\\) y el rango de la matriz aumentada \\([A|b]\\). Para ello podemos usar la librería numpy de Python, que nos permite trabajar con álgebra lineal de manera simbólica.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n¿Qué puede concluir sobre la existencia de soluciones del sistema? Justifique su respuesta.\n¿Si el \\(rank(A) = rank([A|b]) &lt; n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) = rank([A|b]) = n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) &lt; rank([A|b])\\) cuantas soluciones tiene el sistema? Justifique su respuesta.",
     "crumbs": [
       "Matrices 2 x  2",
-      "Sistemas de ecuacionesde n x n"
+      "sistemas de ecuaciones y aplicaciones"
     ]
   },
   {
-    "objectID": "taller6.html",
-    "href": "taller6.html",
-    "title": "Taller 6 - Matrices",
+    "objectID": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua",
+    "href": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua",
+    "title": "",
     "section": "",
-    "text": "Sea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y el vector \\(\\mathbf{v} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\).\n\nCalcula \\(A\\mathbf{v}\\).\n\nCalcula \\(A^2\\mathbf{v}\\).\n\nCalcula \\(A\\mathbf{v} + A^2\\mathbf{v}\\).\n\nProblema en Contexto: Compra de Frutas\nUn comerciante de frutas desea determinar el precio de cada unidad de manzanas y naranjas. Sabe que si compra 4 manzanas y 3 naranjas, el gasto total es de $26, y que si compra 2 manzanas y 5 naranjas, el gasto es de $23.\n\nExprese este problema como un sistema de ecuaciones lineales.\n¿Cuánto costaría comprar 3 manzanas y 4 naranjas?\n\nVerifica la solución sustituyendo los valores en ambas ecuaciones.\n\nProblema en Contexto: Producción de Camisas y Pantalones\nUna fábrica produce camisas y pantalones. La producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.\n\n¿Cuál es el beneficio de producir 50 camisas y 50 pantalones?\nVerifica la solución sustituyendo los valores en ambas ecuaciones.\n\nSi una matriz \\(A\\) de \\(2\\times 2\\) tiene columnas linealmente independientes, ¿es cierto que \\(A\\) tiene filas linealmente independientes? Justifica tu respuesta.\nEscribe 3 formas diferentes de saber si una matriz invertible.\nSi \\(X=(3,6)\\) y \\(Y=(-2,3)\\), que representaría \\[proy_{X}Y\\] y \\[proy_{Y}X\\] Grafica la situación.\nComo podemos interpretar el determinante de una matriz? ¿Qué significa que el determinante sea igual a cero?\nLos vectores \\(\\mathbf{v}_1 = (1, 2)\\) y \\(\\mathbf{v}_2 = (-2, 1)\\) ortogonales (verifique) entonces son linealmente dependientes. De esta forma, ¿podemos decir que dos vectores ortogonales son linealmente independientes? Justifica tu respuesta. El reciproco ¿es cierto?\nSea el sistema de ecuaciones lineales \\[Ax=b\\] y \\(A\\) una matriz cuadrada de \\(2\\times 2\\) con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de \\(A\\) es igual a cero?\nSi forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.\nSi se forma una matriz con dos vectores linealmente dependientes, ¿es cierto que la matriz no es invertible? Justifica tu respuesta.\nEscribe un ejemplo de un sistema de ecuaciones lineales que no tiene solución. ¿Qué significa esto en términos de la geometría de los vectores?\nEscribe un sistema que tenga infinitas soluciones. ¿Qué significa esto en términos de la geometría de los vectores?\nEscribe un ejemplo de un sistema de ecuaciones que no sea consistente. ¿Qué significa esto en términos de la geometría de los vectores?",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "Matrices  y sistemas de ecuaciones"
-    ]
-  },
-  {
-    "objectID": "taller6.html#ejercicios-computacionales",
-    "href": "taller6.html#ejercicios-computacionales",
-    "title": "Taller 6 - Matrices",
-    "section": "Ejercicios computacionales",
-    "text": "Ejercicios computacionales",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "Matrices  y sistemas de ecuaciones"
-    ]
-  },
-  {
-    "objectID": "taller5.html",
-    "href": "taller5.html",
-    "title": "Taller 5 - Matrices$",
-    "section": "",
-    "text": "Sean las matrices \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y \\(B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\).\n\nCalcule \\(A + B\\) y \\(A - B\\).\n\nCalcule \\(AB\\) y \\(BA\\). (Son iguales? Justifica tu respuesta).\nCalcule \\(A^2\\) y \\(B^2\\).\n\nCalcule el determinante de \\(A\\) y de \\(B\\).\n\nSea el vector \\(\\mathbf{v} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\).\n\nCalcule \\(A\\mathbf{v}\\) y \\(B\\mathbf{v}\\).\n\nCalcule \\(A^2\\mathbf{v}\\) y \\(B^2\\mathbf{v}\\).\n\nCalcule \\(A\\mathbf{v} + B\\mathbf{v}\\).\n\nBusca un numero \\(a\\) tal que la matriz \\(A=\\begin{pmatrix} 1 & 2 \\\\ 3 & a \\end{pmatrix}\\) sea invertible. ¿Qué sucede si \\(a=6\\)? ¿Por qué?\n¿Qué relación existe entre el determinante de una matriz y su invertibilidad? Justifica tu respuesta.\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y la matriz \\(B=\\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\), que dimensiones debe tener \\(X\\) para que se cumpla la igualdad \\(AX=B\\)? ¿Es posible encontrar \\(X\\)?\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2&2 \\\\ 3 & 4&-1 \\end{pmatrix}\\) y la matriz \\(B=\\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\\\ 9 & 10 \\end{pmatrix}\\), calcula si es posible \\(AB\\) y \\(BA\\). ¿Qué dimensiones tienen estas matrices? ¿Qué significa esto en términos de la multiplicación de matrices?\nExpresa la multiplicación de matrices como una combinación lineal de sus columnas. ¿Qué significa esto en términos de la geometría de los vectores?",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "Matrices 1"
-    ]
-  },
-  {
-    "objectID": "taller5.html#problemas-computacionales",
-    "href": "taller5.html#problemas-computacionales",
-    "title": "Taller 5 - Matrices$",
-    "section": "Problemas computacionales",
-    "text": "Problemas computacionales\nProblema 1\nSean las matrices \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\), \\(B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\), \\(x=\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}\\) y \\(y=\\begin{pmatrix} 2 \\\\ -4 \\end{pmatrix}\\). Calcule: - \\(A + B\\) - \\(A - B\\) - \\(AB\\) - \\(A(x + y)\\)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nProblema 2\nCon base el siguiente ejemplo\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\).\n\nCalcule \\(A^8\\)\nCalcule \\(A^{-1}\\)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nencuentre el valor de\n\\[3A^8 + 2A^{-1}\\]\nProblema 3\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) calcule el determinante de \\(A\\) y de \\(A^2\\). ¿Qué relación existe entre estos dos determinantes? Justifica tu respuesta.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Qué relación hay entre del determinante de una matriz y su matriz inversa? Justifica tu respuesta.",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "Matrices 1"
-    ]
-  },
-  {
-    "objectID": "Enganche_1.html",
-    "href": "Enganche_1.html",
-    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
-    "section": "",
-    "text": "Un jugador situado en \\((1,1)\\) dispara un proyectil láser que viaja según el vector de dirección \\(\\vec d=(4,3)\\). Un enemigo 2D se modela como un círculo de radio \\(r=2\\) centrado en \\((13,11)\\).\nNuestro objetivo es decidir si el proyectil golpea al enemigo, usando únicamente conceptos elementales de geometría analítica y álgebra lineal.",
-    "crumbs": [
-      "Vectores en el Plano",
-      "Actividad Inicial"
-    ]
-  },
-  {
-    "objectID": "Enganche_1.html#tu-misión-15-minutos",
-    "href": "Enganche_1.html#tu-misión-15-minutos",
-    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
-    "section": "Tu misión (15 minutos)",
-    "text": "Tu misión (15 minutos)\nSin usar herramientas de geometría avanzada ni fórmulas que no conozcas, ¿cómo podrías determinar si el proyectil golpeará al enemigo?\nInstrucciones:\n\nPiensa en una estrategia, un método o un “algoritmo” para responder a la pregunta: ¿hay colisión?\nDescribe tu idea de la manera más clara posible.\nPuedes usar dibujos, diagramas o explicar los pasos que seguirías.",
-    "crumbs": [
-      "Vectores en el Plano",
-      "Actividad Inicial"
-    ]
-  },
-  {
-    "objectID": "actividad_computacional_1.html",
-    "href": "actividad_computacional_1.html",
-    "title": "Taller 2 - Rectas en \\(R^2\\)",
-    "section": "",
-    "text": "La empresa RoboDelivery ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.\n\n\nComo ingeniero, debes diseñar algoritmos que permitan:\n\nOptimizar rutas entre puntos de distribución en el plano urbano.\nEvitar obstáculos como avenidas principales y zonas peatonales.\nConsiderar fuerzas ambientales como viento lateral que afecta la estabilidad.\nCalcular distancias precisas para la planificación de batería.\nDeterminar zonas de cobertura y rutas de respaldo.\n\n\n\n\n\n🏥 Centros de Distribución: Tres puntos estratégicos en el mapa urbano:\n\nCentro A: Farmacia Cruz Verde (centro histórico)\nCentro B: Centro de Salud Norte (barrio El Peñón)\nCentro C: Hospital Universitario (zona sur)\n\n🌬️ Fuerzas Ambientales: Vectores que afectan la navegación:\n\nViento Norte: Corriente dominante que empuja hacia el sur.\nViento Este: Corriente transversal que empuja hacia el oeste.\n\n🚧 Obstáculos Lineales: Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.\n\n\n\n\n\nVectores de posición: Coordenadas \\((x, y)\\) de cada centro.\nVectores de desplazamiento: Rutas entre centros.\nSuma vectorial: Combinación de movimientos y fuerzas.\nProducto escalar: Análisis de direcciones favorables/desfavorables.\nProducto punto: Determinación de ángulos entre rutas.\nProyecciones: Componentes útiles de fuerzas ambientales.\nRectas: Modelado de calles y obstáculos.\nDistancias: Optimización energética y temporal.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n⚠️ Reglas Importantes\n\nSOLO modifica los valores en la sección “PARÁMETROS DEL ESTUDIANTE”.\nNO cambies ninguna otra parte del código.\nEjecuta cada celda en orden secuencial.\nDocumenta todos tus cálculos manuales.\nInterpreta resultados en contexto de logística urbana.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "actividad_computacional_1.html#escenario-sistema-de-robots-de-entrega-urbana",
-    "href": "actividad_computacional_1.html#escenario-sistema-de-robots-de-entrega-urbana",
-    "title": "Taller 2 - Rectas en \\(R^2\\)",
-    "section": "",
-    "text": "La empresa RoboDelivery ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.\n\n\nComo ingeniero, debes diseñar algoritmos que permitan:\n\nOptimizar rutas entre puntos de distribución en el plano urbano.\nEvitar obstáculos como avenidas principales y zonas peatonales.\nConsiderar fuerzas ambientales como viento lateral que afecta la estabilidad.\nCalcular distancias precisas para la planificación de batería.\nDeterminar zonas de cobertura y rutas de respaldo.\n\n\n\n\n\n🏥 Centros de Distribución: Tres puntos estratégicos en el mapa urbano:\n\nCentro A: Farmacia Cruz Verde (centro histórico)\nCentro B: Centro de Salud Norte (barrio El Peñón)\nCentro C: Hospital Universitario (zona sur)\n\n🌬️ Fuerzas Ambientales: Vectores que afectan la navegación:\n\nViento Norte: Corriente dominante que empuja hacia el sur.\nViento Este: Corriente transversal que empuja hacia el oeste.\n\n🚧 Obstáculos Lineales: Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.\n\n\n\n\n\nVectores de posición: Coordenadas \\((x, y)\\) de cada centro.\nVectores de desplazamiento: Rutas entre centros.\nSuma vectorial: Combinación de movimientos y fuerzas.\nProducto escalar: Análisis de direcciones favorables/desfavorables.\nProducto punto: Determinación de ángulos entre rutas.\nProyecciones: Componentes útiles de fuerzas ambientales.\nRectas: Modelado de calles y obstáculos.\nDistancias: Optimización energética y temporal.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n⚠️ Reglas Importantes\n\nSOLO modifica los valores en la sección “PARÁMETROS DEL ESTUDIANTE”.\nNO cambies ninguna otra parte del código.\nEjecuta cada celda en orden secuencial.\nDocumenta todos tus cálculos manuales.\nInterpreta resultados en contexto de logística urbana.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "taller3.html",
-    "href": "taller3.html",
-    "title": "Taller 3- Vectores en \\(R^2\\)",
-    "section": "",
-    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
-    "crumbs": [
-      "Vectores en el Plano",
-      "Taller 3"
-    ]
-  },
-  {
-    "objectID": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
-    "href": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
-    "title": "Taller 3- Vectores en \\(R^2\\)",
-    "section": "",
-    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
-    "crumbs": [
-      "Vectores en el Plano",
-      "Taller 3"
-    ]
+    "text": "Note\n\n\n\nUna red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos de control. Según el principio de conservación de caudal, en cada nodo, la cantidad de agua que entra menos la que sale debe igualar un valor fijo, que puede representar una demanda o un aporte externo (positivo o negativo).\nCada nodo impone una ecuación lineal basada en el balance de caudal. Dado que hay 5 nodos y 7 canales, se plantea un sistema de 5 ecuaciones lineales con 7 incógnitas.\n\n\n\n\n\nRepresentar el sistema lineal generado por la red.\nVerificar si el sistema tiene solución.\nDeterminar si la solución es única, inexistente o infinita.\nEn caso de infinitas soluciones, describir la solución general de forma paramétrica.\n\n\n\n\nEl sistema tiene la forma:\n\\[\nA \\cdot x = b\n\\]\ndonde:\n\n\\(A \\in \\mathbb{R}^{5 \\times 7}\\) es la matriz de conexión de la red.\n\\(x = [x_1, x_2, x_3, x_4, x_5, x_6, x_7]^T\\) representa los caudales por canal.\n\\(b = [b_1, b_2, b_3, b_4, b_5]^T\\) representa las demandas o aportes en los nodos.\n\n\n\n\nSupongamos la siguiente estructura de flujo entre nodos y canales:\n\nNodo 1: \\(x_1 - x_2 - x_3 = b_1\\)\nNodo 2: \\(x_2 - x_4 = b_2\\)\nNodo 3: \\(x_3 + x_4 - x_5 = b_3\\)\nNodo 4: \\(x_5 - x_6 = b_4\\)\nNodo 5: \\(x_6 - x_7 = b_5\\)\n\nEste sistema puede expresarse en forma matricial como:\n\\[\n\\begin{bmatrix}\n1 & -1 & -1 & 0 & 0 & 0 & 0 \\\\\\\\\n0 & 1 & 0 & -1 & 0 & 0 & 0 \\\\\\\\\n0 & 0 & 1 & 1 & -1 & 0 & 0 \\\\\\\\\n0 & 0 & 0 & 0 & 1 & -1 & 0 \\\\\\\\\n0 & 0 & 0 & 0 & 0 & 1 & -1 \\\\\\\\\n\\end{bmatrix}\n\\cdot\n\\begin{bmatrix}\nx_1 \\\\\\\\ x_2 \\\\\\\\ x_3 \\\\\\\\ x_4 \\\\\\\\ x_5 \\\\\\\\ x_6 \\\\\\\\ x_7\n\\end{bmatrix}\n=\n\\begin{bmatrix}\nb_1 \\\\\\\\ b_2 \\\\\\\\ b_3 \\\\\\\\ b_4 \\\\\\\\ b_5\n\\end{bmatrix}\n\\]\n\n\n\n\nSi \\(\\mathrm{rango}(A) = \\mathrm{rango}(A|b) &lt; 7\\), el sistema tiene infinitas soluciones.\nEl espacio solución será de dimensión \\(7 - \\mathrm{rango}(A)\\).\nSe debe encontrar una solución particular \\(x_p\\) y expresar la solución general como:\n\n\\[\nx = x_p + \\alpha v_1 + \\beta v_2 + \\dots\n\\]\ndonde \\(v_i\\) son vectores del núcleo de \\(A\\)."
   },
   {
     "objectID": "taller4.html",
@@ -177,6 +62,28 @@
     ]
   },
   {
+    "objectID": "taller6.html",
+    "href": "taller6.html",
+    "title": "Taller 6 - Matrices",
+    "section": "",
+    "text": "Sea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y el vector \\(\\mathbf{v} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\).\n\nCalcula \\(A\\mathbf{v}\\).\n\nCalcula \\(A^2\\mathbf{v}\\).\n\nCalcula \\(A\\mathbf{v} + A^2\\mathbf{v}\\).\n\nProblema en Contexto: Compra de Frutas\nUn comerciante de frutas desea determinar el precio de cada unidad de manzanas y naranjas. Sabe que si compra 4 manzanas y 3 naranjas, el gasto total es de $26, y que si compra 2 manzanas y 5 naranjas, el gasto es de $23.\n\nExprese este problema como un sistema de ecuaciones lineales.\n¿Cuánto costaría comprar 3 manzanas y 4 naranjas?\n\nVerifica la solución sustituyendo los valores en ambas ecuaciones.\n\nProblema en Contexto: Producción de Camisas y Pantalones\nUna fábrica produce camisas y pantalones. La producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.\n\n¿Cuál es el beneficio de producir 50 camisas y 50 pantalones?\nVerifica la solución sustituyendo los valores en ambas ecuaciones.\n\nSi una matriz \\(A\\) de \\(2\\times 2\\) tiene columnas linealmente independientes, ¿es cierto que \\(A\\) tiene filas linealmente independientes? Justifica tu respuesta.\nEscribe 3 formas diferentes de saber si una matriz invertible.\nSi \\(X=(3,6)\\) y \\(Y=(-2,3)\\), que representaría \\[proy_{X}Y\\] y \\[proy_{Y}X\\] Grafica la situación.\nComo podemos interpretar el determinante de una matriz? ¿Qué significa que el determinante sea igual a cero?\nLos vectores \\(\\mathbf{v}_1 = (1, 2)\\) y \\(\\mathbf{v}_2 = (-2, 1)\\) ortogonales (verifique) entonces son linealmente dependientes. De esta forma, ¿podemos decir que dos vectores ortogonales son linealmente independientes? Justifica tu respuesta. El reciproco ¿es cierto?\nSea el sistema de ecuaciones lineales \\[Ax=b\\] y \\(A\\) una matriz cuadrada de \\(2\\times 2\\) con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de \\(A\\) es igual a cero?\nSi forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.\nSi se forma una matriz con dos vectores linealmente dependientes, ¿es cierto que la matriz no es invertible? Justifica tu respuesta.\nEscribe un ejemplo de un sistema de ecuaciones lineales que no tiene solución. ¿Qué significa esto en términos de la geometría de los vectores?\nEscribe un sistema que tenga infinitas soluciones. ¿Qué significa esto en términos de la geometría de los vectores?\nEscribe un ejemplo de un sistema de ecuaciones que no sea consistente. ¿Qué significa esto en términos de la geometría de los vectores?",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "Matrices  y sistemas de ecuaciones"
+    ]
+  },
+  {
+    "objectID": "taller6.html#ejercicios-computacionales",
+    "href": "taller6.html#ejercicios-computacionales",
+    "title": "Taller 6 - Matrices",
+    "section": "Ejercicios computacionales",
+    "text": "Ejercicios computacionales",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "Matrices  y sistemas de ecuaciones"
+    ]
+  },
+  {
     "objectID": "taller1.html#vectores-en-r2",
     "href": "taller1.html#vectores-en-r2",
     "title": "Taller 1 - Vectores en \\(R^2\\)",
@@ -199,6 +106,145 @@
     ]
   },
   {
+    "objectID": "taller7.html",
+    "href": "taller7.html",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "",
+    "text": "Usando el método de Gauss, resuleva los siguientes sistemas y argumente si tiene solución o no. (En caso de tener soluciòn por favor encuentrela) Solcuión de sistemas de ecuaciones\n\n\n\n\\[\n\\begin{cases}\nx + y + z = 6 \\\\\n2x - y + z = 3 \\\\\nx + 2y - z = 4\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx - y + 2z = 5 \\\\\n2x + y - z = 4 \\\\\n-x + 3y + z = 2\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx + y + z = 3 \\\\\n2x + 2y + 2z = 6 \\\\\nx - y + z = 1\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx + 2y - z = 4 \\\\\n2x + 4y - 2z = 8 \\\\\n3x + 6y - 3z = 12\n\\end{cases}\n\\]\n\n\n\n\\[\n\\begin{cases}\nx + y + z = 2 \\\\\nx + y + z = 5 \\\\\n2x - y + z = 3\n\\end{cases}\n\\]\n\nDado el siguiente sistema encuetre un parametro \\(a\\) para que tenga ùnica solución e infinitas\n\n\\[\n\\begin{cases}\nx + y + z = 2 \\\\\nx  - z = 1 \\\\\n4x+  ay - 2z = 5\n\\end{cases}\n\\]\n\nMezaclas Tres recipientes contienen mezclas de agua y sal. El primero tiene 1 litro de agua y 1 gramo de sal, el segundo tiene 2 litros de agua y 3 gramos de sal, y el tercero tiene 1 litro de agua y 2 gramos de sal. Si se mezclan cantidades desconocidas de cada recipiente para obtener una mezcla final con 4 litros de agua y 6 gramos de sal, ¿cuánto se debe tomar de cada recipiente?\nCompras En una tienda, 1 manzana, 1 plátano y 1 naranja cuestan $6. Dos manzanas, 1 plátano y 1 naranja cuestan $7. Una manzana, 2 plátanos y 1 naranja cuestan $8. ¿Cuál es el precio de cada fruta?\nReparto Tres amigos reparten $1000 entre sí. El primero recibe el doble que el segundo, el tercero recibe $100 menos que el primero, y entre los tres suman $1000. ¿Cuánto recibe cada uno?\nRessuelve el siguiente sistema, justifica su respuesta por que tiene ùnica solución\n\n\\[\n\\begin{cases}\nx + y + z = 6 \\\\\n2x - y + z = 3 \\\\\nx + 2y - z = 4 \\\\\n3x + y + 2z = 10\n\\end{cases}\n\\]\n\nPara resolver un sistema de ecuaciones con python se usa la lbreria numpy\n\n\nimport numpy as np\nA = np.array([[1,1,1],[2,-1,1],[1,2,-1]]) # matriz de coeficientes\nb = np.array([6,3,4]) # vector de términos independientes, este puede ser de forma de fila o e columna\nsol = np.linalg.solve(A, b)\nprint(sol)\n\n[1.57142857 2.28571429 2.14285714]\n\n\nDe los puntos del 1 al 5 cuales se puede resolver usando este codigo y justifique porque.\n\nUna matriz \\(A\\) es invertible si \\(AA^{ -1}=A^{ -1}=I\\)\n\nSupongamos que tenemos la matriz\n\\[\nA=\\begin{pmatrix}\n1 & 0 & 1 \\\\\n-1 & 2 & 4 \\\\\n0 & 1 & 3\n\\end{pmatrix}\n\\]\nsuponemos que la matriz inversa es\n\\[\nA^{-1}=\\begin{pmatrix}\na&b&c \\\\\nd&e&f& \\\\\ng & h & i\n\\end{pmatrix}\n\\]\n\n¿por que podemos decir que?\n\n\\[\nA=\\begin{pmatrix}\n1 & 0 & 1 \\\\\n-1 & 2 & 4 \\\\\n0 & 1 & 3\n\\end{pmatrix}\\begin{pmatrix}\na \\\\\nd \\\\\ng\n\\end{pmatrix}=\\begin{pmatrix}\n1 \\\\\n0 \\\\\n0\n\\end{pmatrix}\n\\]\n\nUse el hecho anteriror y el código de Phyton para encontrar la matriz inversa de \\(A\\)\n\n\nEn una economía hay 10 sectores: Agricultura (\\(x_1\\)), Minería (\\(x_2\\)), Manufactura (\\(x_3\\)), Energía (\\(x_4\\)), Construcción (\\(x_5\\)), Transporte (\\(x_6\\)), Comercio (\\(x_7\\)), Educación (\\(x_8\\)), Salud (\\(x_9\\)) y Tecnología (\\(x_{10}\\)).\n\nCada sector requiere insumos de los demás para producir. Supón que la matriz de coeficientes técnicos \\(A\\) y el vector de demanda final \\(b\\) son:\n\\[\nA = \\begin{pmatrix}\n0.1 & 0.05 & 0.02 & 0.01 & 0.03 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.02 & 0.1 & 0.03 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.01 & 0.02 & 0.1 & 0.04 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.03 & 0.01 & 0.01 & 0.02 & 0.1 & 0.04 & 0.01 & 0.01 & 0.01 & 0.01 \\\\\n0.02 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.01 & 0.01 & 0.01 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.04 & 0.01 & 0.01 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.05 & 0.01 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1 & 0.04 \\\\\n0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.03 & 0.1\n\\end{pmatrix}\n\\]\n\\[\nb = \\begin{pmatrix} 100 \\\\ 80 \\\\ 120 \\\\ 90 \\\\ 110 \\\\ 95 \\\\ 105 \\\\ 85 \\\\ 115 \\\\ 130 \\end{pmatrix}\n\\]\nEl sistema a resolver es:\n\\[\n\\begin{cases}\nx_1 - (0.1x_1 + 0.05x_2 + ... + 0.01x_{10}) = 100 \\\\\nx_2 - (0.02x_1 + 0.1x_2 + ... + 0.01x_{10}) = 80 \\\\\n\\vdots \\\\\nx_{10} - (0.01x_1 + 0.01x_2 + ... + 0.1x_{10}) = 130\n\\end{cases}\n\\]\nDonde \\(x_i\\) es el valor de la producción total del sector \\(i\\).\n\nimport numpy as np\nA = np.array([\n    [0.1, 0.05, 0.02, 0.01, 0.03, 0.02, 0.01, 0.01, 0.01, 0.01],\n    [0.02, 0.1, 0.03, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],\n    [0.01, 0.02, 0.1, 0.04, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01],\n    [0.01, 0.01, 0.03, 0.1, 0.05, 0.02, 0.01, 0.01, 0.01, 0.01],\n    [0.03, 0.01, 0.01, 0.02, 0.1, 0.04, 0.01, 0.01, 0.01, 0.01],\n    [0.02, 0.01, 0.01, 0.01, 0.03, 0.1, 0.05, 0.01, 0.01, 0.01],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.04, 0.01, 0.01],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.05, 0.01],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1, 0.04],\n    [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.1]\n])\n\nb = np.array([100, 80, 120, 90, 110, 95, 105, 85, 115, 130])\n\nSolcione el sistema de ecuaciones e interprete la solcuión",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "Sistemas de ecuacionesde n x n"
+    ]
+  },
+  {
+    "objectID": "Enganche_1.html",
+    "href": "Enganche_1.html",
+    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
+    "section": "",
+    "text": "Un jugador situado en \\((1,1)\\) dispara un proyectil láser que viaja según el vector de dirección \\(\\vec d=(4,3)\\). Un enemigo 2D se modela como un círculo de radio \\(r=2\\) centrado en \\((13,11)\\).\nNuestro objetivo es decidir si el proyectil golpea al enemigo, usando únicamente conceptos elementales de geometría analítica y álgebra lineal.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Actividad Inicial"
+    ]
+  },
+  {
+    "objectID": "Enganche_1.html#tu-misión-15-minutos",
+    "href": "Enganche_1.html#tu-misión-15-minutos",
+    "title": "Actividad motivacional - Álgebra Lineal en los Videojuegos",
+    "section": "Tu misión (15 minutos)",
+    "text": "Tu misión (15 minutos)\nSin usar herramientas de geometría avanzada ni fórmulas que no conozcas, ¿cómo podrías determinar si el proyectil golpeará al enemigo?\nInstrucciones:\n\nPiensa en una estrategia, un método o un “algoritmo” para responder a la pregunta: ¿hay colisión?\nDescribe tu idea de la manera más clara posible.\nPuedes usar dibujos, diagramas o explicar los pasos que seguirías.",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Actividad Inicial"
+    ]
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html",
+    "href": "borradores/actividad_r2_proyecciones.html",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "Contexto. RoboDelivery opera robots de entrega en una ciudad idealizada en el plano \\(\\mathbb{R}^2\\). Los centros A, B y C están definidos por sus coordenadas \\((x,y)\\) en kilómetros. El sistema sufre dos vientos (Norte → empuja hacia el Sur y Este → empuja hacia el Oeste), modelados como vectores. Hay obstáculos lineales (calles/avenidas) modelados como rectas.\nRegla de oro: Solo cambia las variables en la sección “Variables que puedes modificar” del script actividad_r2_proyecciones.py. El resto del código no necesita edición: realiza los cálculos y muestra resultados.\n\n\n\nOperar vectores en \\(\\mathbb{R}^2\\): suma, producto punto, norma, ángulos.\nAplicar proyección de un vector sobre otro y su interpretación física.\nModelar rutas como vectores de desplazamiento y obstáculos como rectas.\nConectar el signo de la proyección con viento a favor/contra.\nUsar magnitudes vectoriales para una estimación energética simple.\n\n\n\n\n\nP1. Distancias de rutas. Con tus coordenadas de A, B y C, ¿cuáles son las distancias (km) de A→B, B→C y A→C? &gt; Cambia solo las coordenadas de A, B, C y observa los resultados.\nP2. Ángulos y vientos. ¿Cuál es el ángulo (°) entre cada ruta y cada viento? &gt; Cambia solo la intensidad de cada viento. ¿Qué ruta es más “alineada” (ángulo pequeño) con el viento Norte? ¿Y con el Este?\nP3. Proyecciones de viento sobre rutas. Para la ruta A→B, ¿la proyección del viento resultante (Norte+Este) es positiva (viento a favor) o negativa (viento en contra)? &gt; Cambia solo las intensidades de los vientos y explica el signo de la proyección.\nP4. Cruce con obstáculos. Con tu recta-obstáculo \\(y = y_0\\) (o \\(x = x_0\\)), ¿la ruta B→C la cruza? &gt; Cambia solo el valor de y_obstaculo o x_obstaculo y verifica el booleano de cruce.\nP5. Energía estimada. Suponiendo velocidad base constante y penalización por viento en contra proporcional a la proyección escalar (solo si es negativa), ¿qué energía (Wh) consumen las rutas? &gt; Cambia solo vel_base_kmh, energia_por_km_Wh y penalizacion_Wh_por_mps_por_km y compara rutas.\n\nSugerencia: Si la proyección escalar del viento resultante sobre la ruta es \\(p\\) (m/s), entonces usamos \\(p_-= \\min(p,0)\\) para penalizar solo viento en contra.\n\n\n\n\n\n\nAbre actividad_r2_proyecciones.py.\nEdita únicamente la sección Variables que puedes modificar.\nEjecuta el script y responde las 5 preguntas con base en la salida.\n(Opcional) Guarda capturas de la salida para tu reporte.\n\n¡Listo! No necesitas tocar funciones ni fórmulas."
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html#objetivos-de-aprendizaje-2º-semestre-de-ingeniería",
+    "href": "borradores/actividad_r2_proyecciones.html#objetivos-de-aprendizaje-2º-semestre-de-ingeniería",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "Operar vectores en \\(\\mathbb{R}^2\\): suma, producto punto, norma, ángulos.\nAplicar proyección de un vector sobre otro y su interpretación física.\nModelar rutas como vectores de desplazamiento y obstáculos como rectas.\nConectar el signo de la proyección con viento a favor/contra.\nUsar magnitudes vectoriales para una estimación energética simple."
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html#preguntas-el-script-imprime-resultados-con-base-en-tus-variables",
+    "href": "borradores/actividad_r2_proyecciones.html#preguntas-el-script-imprime-resultados-con-base-en-tus-variables",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "P1. Distancias de rutas. Con tus coordenadas de A, B y C, ¿cuáles son las distancias (km) de A→B, B→C y A→C? &gt; Cambia solo las coordenadas de A, B, C y observa los resultados.\nP2. Ángulos y vientos. ¿Cuál es el ángulo (°) entre cada ruta y cada viento? &gt; Cambia solo la intensidad de cada viento. ¿Qué ruta es más “alineada” (ángulo pequeño) con el viento Norte? ¿Y con el Este?\nP3. Proyecciones de viento sobre rutas. Para la ruta A→B, ¿la proyección del viento resultante (Norte+Este) es positiva (viento a favor) o negativa (viento en contra)? &gt; Cambia solo las intensidades de los vientos y explica el signo de la proyección.\nP4. Cruce con obstáculos. Con tu recta-obstáculo \\(y = y_0\\) (o \\(x = x_0\\)), ¿la ruta B→C la cruza? &gt; Cambia solo el valor de y_obstaculo o x_obstaculo y verifica el booleano de cruce.\nP5. Energía estimada. Suponiendo velocidad base constante y penalización por viento en contra proporcional a la proyección escalar (solo si es negativa), ¿qué energía (Wh) consumen las rutas? &gt; Cambia solo vel_base_kmh, energia_por_km_Wh y penalizacion_Wh_por_mps_por_km y compara rutas.\n\nSugerencia: Si la proyección escalar del viento resultante sobre la ruta es \\(p\\) (m/s), entonces usamos \\(p_-= \\min(p,0)\\) para penalizar solo viento en contra."
+  },
+  {
+    "objectID": "borradores/actividad_r2_proyecciones.html#cómo-trabajar",
+    "href": "borradores/actividad_r2_proyecciones.html#cómo-trabajar",
+    "title": "Actividad guiada (R²): Rutas, Vientos y Proyecciones",
+    "section": "",
+    "text": "Abre actividad_r2_proyecciones.py.\nEdita únicamente la sección Variables que puedes modificar.\nEjecuta el script y responde las 5 preguntas con base en la salida.\n(Opcional) Guarda capturas de la salida para tu reporte.\n\n¡Listo! No necesitas tocar funciones ni fórmulas."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Temas",
+    "section": "",
+    "text": "Aquí encontraras algunos ejercicios y actividades para el curso de Álgebra Lineal, los ejercicios están isnpirados en el libro de texto en los libros, Anton (2010),Grossman (2018), Kolman & Hill (2004). Esta lista de ejercicios son una guía de estudio y no son una lista exhaustiva de los temas que se verán en el curso. Adicionalmente se incluyen algunos ejercicios computacionales que pueden ser de utilidad para la comprensión de los temas los cuales se pueden ejecutar desde el mismo visor del navegador. Estos ejercicios serán usados como insumo de la actividades computacionales.",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
+    "objectID": "about.html#contenido",
+    "href": "about.html#contenido",
+    "title": "Temas",
+    "section": "Contenido",
+    "text": "Contenido\n\nActividad Inicial- Introducción a Python\nTaller 1 - Vectores en \\(R^2\\)\nTaller 2 - Rectas en \\(R^2\\)\nTaller 3 - Vectores, Rectas y Planos en \\(R^3\\)\nTaller 4 - Subespacios, proyecciones, norma y distancia \\(\\mathbb{R}^2\\)\ntaller 5\ntaller 6\ntaller 7 Sistemas de ecuaciones nxn parte A",
+    "crumbs": [
+      "Contenido"
+    ]
+  },
+  {
+    "objectID": "taller3.html",
+    "href": "taller3.html",
+    "title": "Taller 3- Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 3"
+    ]
+  },
+  {
+    "objectID": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
+    "href": "taller3.html#vectores-rectas-y-planos-en-mathbbr3",
+    "title": "Taller 3- Vectores en \\(R^2\\)",
+    "section": "",
+    "text": "Estos ejercicios repasan los conceptos fundamentales de vectores en \\(\\mathbb{R}^3\\), ecuaciones de la recta y del plano. Se hace hincapié en el uso de combinaciones lineales, el producto punto y la resolución de sistemas lineales para derivar normales y direcciones.\n\n\n\n\n\n\n\n\n\nFigure 1: Representación de una recta que interseca un plano en \\(\\mathbb{R}^3\\).\n\n\n\n\n\n\n\n\nProblema 1 Sea \\(\\mathbf{u}=(1,2,3)\\) y \\(\\mathbf{v}=(4,-1,2)\\).\n\nCalcule \\(2\\mathbf{u}-3\\mathbf{v}\\).\n\nVerifique que \\(\\mathbf{u}\\) y \\(\\mathbf{v}\\) no son paralelos examinando si existe \\(k\\) con \\(\\mathbf{u}=k\\mathbf{v}\\).\n\n\nProblema 2 Encuentre la longitud de \\(\\mathbf{w}=(-2,4,4)\\) y un vector unitario en la misma dirección.\n\nProblema 3 Dados \\(\\mathbf{a}=(2,1,-2)\\) y \\(\\mathbf{b}=(1,-1,4)\\), determine el ángulo entre ellos usando el producto punto.\nProblema 4 Proyecte \\(\\mathbf{b}\\) sobre \\(\\mathbf{a}\\) con los datos del ejercicio anterior.\nProblema 5 La recta \\(r\\) pasa por \\(P_0(1,-1,2)\\) y tiene vector dirección \\(\\mathbf{d}=(3,0,-1)\\).\n\n\nEscriba la ecuación paramétrica y la ecuación simétrica de \\(r\\).\n\nCompruebe si el punto \\(Q(4,-1,1)\\) pertenece a \\(r\\).\n\nProblema 6 Encuentre el punto de intersección (si existe) entre la recta del problema 5 y el plano \\(x+2y+3z=6\\).\nProblema 7 Obtenga la ecuación del plano que pasa por \\(P_1(0,1,2)\\) y tiene vector normal \\(\\mathbf{n}=(2,-1,2)\\).\nProblema 8 Dados los puntos \\(A(1,0,0)\\), \\(B(1,2,1)\\) y \\(C(0,1,3)\\), halle la ecuación del plano que los contiene sin usar producto cruz resolviendo el sistema para los coeficientes \\(A,B,C\\) en \\(Ax+By+Cz=D\\).\nProblema 9 Calcule la distancia del punto \\(P(2,1,5)\\) al plano \\(3x-2y+6z=12\\).\nProblema 10 Determine la ecuación de la recta que es perpendicular al plano del ejercicio 8 y pasa por el punto medio de \\(AC\\).",
+    "crumbs": [
+      "Vectores en el Plano",
+      "Taller 3"
+    ]
+  },
+  {
+    "objectID": "actividad_computacional_1.html",
+    "href": "actividad_computacional_1.html",
+    "title": "Taller 2 - Rectas en \\(R^2\\)",
+    "section": "",
+    "text": "La empresa RoboDelivery ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.\n\n\nComo ingeniero, debes diseñar algoritmos que permitan:\n\nOptimizar rutas entre puntos de distribución en el plano urbano.\nEvitar obstáculos como avenidas principales y zonas peatonales.\nConsiderar fuerzas ambientales como viento lateral que afecta la estabilidad.\nCalcular distancias precisas para la planificación de batería.\nDeterminar zonas de cobertura y rutas de respaldo.\n\n\n\n\n\n🏥 Centros de Distribución: Tres puntos estratégicos en el mapa urbano:\n\nCentro A: Farmacia Cruz Verde (centro histórico)\nCentro B: Centro de Salud Norte (barrio El Peñón)\nCentro C: Hospital Universitario (zona sur)\n\n🌬️ Fuerzas Ambientales: Vectores que afectan la navegación:\n\nViento Norte: Corriente dominante que empuja hacia el sur.\nViento Este: Corriente transversal que empuja hacia el oeste.\n\n🚧 Obstáculos Lineales: Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.\n\n\n\n\n\nVectores de posición: Coordenadas \\((x, y)\\) de cada centro.\nVectores de desplazamiento: Rutas entre centros.\nSuma vectorial: Combinación de movimientos y fuerzas.\nProducto escalar: Análisis de direcciones favorables/desfavorables.\nProducto punto: Determinación de ángulos entre rutas.\nProyecciones: Componentes útiles de fuerzas ambientales.\nRectas: Modelado de calles y obstáculos.\nDistancias: Optimización energética y temporal.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n⚠️ Reglas Importantes\n\nSOLO modifica los valores en la sección “PARÁMETROS DEL ESTUDIANTE”.\nNO cambies ninguna otra parte del código.\nEjecuta cada celda en orden secuencial.\nDocumenta todos tus cálculos manuales.\nInterpreta resultados en contexto de logística urbana.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "actividad_computacional_1.html#escenario-sistema-de-robots-de-entrega-urbana",
+    "href": "actividad_computacional_1.html#escenario-sistema-de-robots-de-entrega-urbana",
+    "title": "Taller 2 - Rectas en \\(R^2\\)",
+    "section": "",
+    "text": "La empresa RoboDelivery ha sido contratada por la Alcaldía de Cali para implementar un sistema de robots terrestres autónomos que transporten medicamentos entre farmacias y centros de salud en situaciones de emergencia o alta demanda.\n\n\nComo ingeniero, debes diseñar algoritmos que permitan:\n\nOptimizar rutas entre puntos de distribución en el plano urbano.\nEvitar obstáculos como avenidas principales y zonas peatonales.\nConsiderar fuerzas ambientales como viento lateral que afecta la estabilidad.\nCalcular distancias precisas para la planificación de batería.\nDeterminar zonas de cobertura y rutas de respaldo.\n\n\n\n\n\n🏥 Centros de Distribución: Tres puntos estratégicos en el mapa urbano:\n\nCentro A: Farmacia Cruz Verde (centro histórico)\nCentro B: Centro de Salud Norte (barrio El Peñón)\nCentro C: Hospital Universitario (zona sur)\n\n🌬️ Fuerzas Ambientales: Vectores que afectan la navegación:\n\nViento Norte: Corriente dominante que empuja hacia el sur.\nViento Este: Corriente transversal que empuja hacia el oeste.\n\n🚧 Obstáculos Lineales: Calles y avenidas bloqueadas, representadas como rectas que el robot debe evitar o bordear.\n\n\n\n\n\nVectores de posición: Coordenadas \\((x, y)\\) de cada centro.\nVectores de desplazamiento: Rutas entre centros.\nSuma vectorial: Combinación de movimientos y fuerzas.\nProducto escalar: Análisis de direcciones favorables/desfavorables.\nProducto punto: Determinación de ángulos entre rutas.\nProyecciones: Componentes útiles de fuerzas ambientales.\nRectas: Modelado de calles y obstáculos.\nDistancias: Optimización energética y temporal.\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n⚠️ Reglas Importantes\n\nSOLO modifica los valores en la sección “PARÁMETROS DEL ESTUDIANTE”.\nNO cambies ninguna otra parte del código.\nEjecuta cada celda en orden secuencial.\nDocumenta todos tus cálculos manuales.\nInterpreta resultados en contexto de logística urbana.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "taller5.html",
+    "href": "taller5.html",
+    "title": "Taller 5 - Matrices$",
+    "section": "",
+    "text": "Sean las matrices \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y \\(B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\).\n\nCalcule \\(A + B\\) y \\(A - B\\).\n\nCalcule \\(AB\\) y \\(BA\\). (Son iguales? Justifica tu respuesta).\nCalcule \\(A^2\\) y \\(B^2\\).\n\nCalcule el determinante de \\(A\\) y de \\(B\\).\n\nSea el vector \\(\\mathbf{v} = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}\\).\n\nCalcule \\(A\\mathbf{v}\\) y \\(B\\mathbf{v}\\).\n\nCalcule \\(A^2\\mathbf{v}\\) y \\(B^2\\mathbf{v}\\).\n\nCalcule \\(A\\mathbf{v} + B\\mathbf{v}\\).\n\nBusca un numero \\(a\\) tal que la matriz \\(A=\\begin{pmatrix} 1 & 2 \\\\ 3 & a \\end{pmatrix}\\) sea invertible. ¿Qué sucede si \\(a=6\\)? ¿Por qué?\n¿Qué relación existe entre el determinante de una matriz y su invertibilidad? Justifica tu respuesta.\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) y la matriz \\(B=\\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\), que dimensiones debe tener \\(X\\) para que se cumpla la igualdad \\(AX=B\\)? ¿Es posible encontrar \\(X\\)?\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2&2 \\\\ 3 & 4&-1 \\end{pmatrix}\\) y la matriz \\(B=\\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\\\ 9 & 10 \\end{pmatrix}\\), calcula si es posible \\(AB\\) y \\(BA\\). ¿Qué dimensiones tienen estas matrices? ¿Qué significa esto en términos de la multiplicación de matrices?\nExpresa la multiplicación de matrices como una combinación lineal de sus columnas. ¿Qué significa esto en términos de la geometría de los vectores?",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "Matrices 1"
+    ]
+  },
+  {
+    "objectID": "taller5.html#problemas-computacionales",
+    "href": "taller5.html#problemas-computacionales",
+    "title": "Taller 5 - Matrices$",
+    "section": "Problemas computacionales",
+    "text": "Problemas computacionales\nProblema 1\nSean las matrices \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\), \\(B = \\begin{pmatrix} 5 & 6 \\\\ 7 & 8 \\end{pmatrix}\\), \\(x=\\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}\\) y \\(y=\\begin{pmatrix} 2 \\\\ -4 \\end{pmatrix}\\). Calcule: - \\(A + B\\) - \\(A - B\\) - \\(AB\\) - \\(A(x + y)\\)\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nProblema 2\nCon base el siguiente ejemplo\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\).\n\nCalcule \\(A^8\\)\nCalcule \\(A^{-1}\\)\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nencuentre el valor de\n\\[3A^8 + 2A^{-1}\\]\nProblema 3\nSea la matriz \\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\) calcule el determinante de \\(A\\) y de \\(A^2\\). ¿Qué relación existe entre estos dos determinantes? Justifica tu respuesta.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n¿Qué relación hay entre del determinante de una matriz y su matriz inversa? Justifica tu respuesta.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "Matrices 1"
+    ]
+  },
+  {
     "objectID": "taller2.html#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad",
     "href": "taller2.html#ecuación-de-la-recta-y-relaciones-de-paralelismoperpendicularidad",
     "title": "Taller 2 - Rectas en \\(R^2\\)",
@@ -218,6 +264,108 @@
     "crumbs": [
       "Vectores en el Plano",
       "Taller 2"
+    ]
+  },
+  {
+    "objectID": "taller8.html#problema-1-modelo-de-flujo-en-una-red-de-distribución-de-agua",
+    "href": "taller8.html#problema-1-modelo-de-flujo-en-una-red-de-distribución-de-agua",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Problema 1: Modelo de Flujo en una Red de Distribución de Agua",
+    "text": "Problema 1: Modelo de Flujo en una Red de Distribución de Agua\nUna red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\n\nObjetivo\n\nPlantear el sistema de ecuaciones lineales que representa el balance de caudal en cada nodo.\nEscribir el sistema en forma matricial \\(A \\cdot x = b\\).\nAnalizar la existencia de soluciones: determinar si el sistema es compatible (tiene solución), y si tiene una única solución o infinitas soluciones.\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nSe aplica la conservación de caudal en cada nodo:\n\nNodo A\n\nEntra: \\(x_7\\)\nSale: \\(x_1\\)\nEcuación:\n\\[x_7 - x_1 = b_1\\]\n\n\n\nNodo B\n\nEntra: \\(x_1\\)\nSale: \\(x_2\\), \\(x_3\\)\nEcuación:\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\n\nNodo C\n\nEntra: \\(x_2\\)\nSale: \\(x_4\\), \\(x_6\\)\nEcuación:\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\n\nNodo D\n\nEntra: \\(x_3\\), \\(x_4\\)\nSale: \\(x_5\\)\nEcuación:\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\n\nNodo E\n\nEntra: \\(x_5\\), \\(x_6\\)\nSale: \\(x_7\\)\nEcuación:\n\\[x_5 + x_6 - x_7 = b_5\\]\n\n\n\n\n\nForma matricial del sistema\nEl sistema de ecuaciones puede escribirse como:\n\\[\nA =\n\\begin{bmatrix}\n-1 &  0 &  0 &  0 &  0 &  0 &  1 \\\\\\\\\n1 & -1 & -1 &  0 &  0 &  0 &  0 \\\\\\\\\n0 &  1 &  0 & -1 &  0 & -1 &  0 \\\\\\\\\n0 &  0 &  1 &  1 & -1 &  0 &  0 \\\\\\\\\n0 &  0 &  0 &  0 &  1 &  1 & -1 \\\\\\\\\n\\end{bmatrix}\n,\n\\quad\nx =\n\\begin{bmatrix}\nx_1 \\\\\\\\ x_2 \\\\\\\\ x_3 \\\\\\\\ x_4 \\\\\\\\ x_5 \\\\\\\\ x_6 \\\\\\\\ x_7\n\\end{bmatrix}\n,\n\\quad\nb =\n\\begin{bmatrix}\nb_1 \\\\\\\\ b_2 \\\\\\\\ b_3 \\\\\\\\ b_4 \\\\\\\\ b_5\n\\end{bmatrix}\n\\]\n\n\n\nNotas\n\nLa matriz \\(A\\) tiene tamaño \\(5 \\times 7\\), lo que indica que el sistema tiene más incógnitas que ecuaciones.\nPor tanto, si el sistema es compatible (es decir, si \\(\\text{rango}(A) = \\text{rango}([A|b])\\)), entonces tendrá infinitas soluciones.\nEl espacio de soluciones tendrá dimensión \\(7 - \\text{rango}(A)\\).\n\n\n\n\n¿Qué debes hacer?\n\nImplementar el sistema en Python con SymPy o manualmente.\nDeterminar el rango de \\(A\\) y el rango de la matriz aumentada \\([A|b]\\).\nEn caso de infinitas soluciones, hallar una solución particular y expresar la solución general como:\n\n\\[\nx = x_p + \\alpha v_1 + \\beta v_2 + \\cdots\n\\]\ndonde los vectores \\(v_i\\) forman una base del espacio nulo de \\(A\\)."
+  },
+  {
+    "objectID": "taller8.html#solución-de-un-sistema-de-ecuaciones",
+    "href": "taller8.html#solución-de-un-sistema-de-ecuaciones",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "",
+    "text": "Observe el siguiente sistema de ecuaciones lineales:\n\\[\n\\begin{cases}\nx + 2y + 3z = 1 \\\\\n4x + 5y + 6z = 2 \\\\\n7x + 8y + 9z = 3\n\\end{cases}\n\\]\nNote que este sistema lo podemos escribir como una ecuación matricial de la forma \\(A \\cdot x = b\\), donde: \\[\nA =\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{bmatrix}\n,\n\\quad\nx =\n\\begin{bmatrix}\nx \\\\\ny \\\\ z\n\\end{bmatrix}\n,\n\\quad\nb =\n\\begin{bmatrix}\n1 \\\\ 2 \\\\ 3\n\\end{bmatrix}\n\\]\nPara saber si este sistema tiene una solución podemos a analizar el rango de la matriz \\(A\\) y el rango de la matriz aumentada \\([A|b]\\). Para ello podemos usar la librería numpy de Python, que nos permite trabajar con álgebra lineal de manera simbólica.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n¿Qué puede concluir sobre la existencia de soluciones del sistema? Justifique su respuesta.\n¿Si el \\(rank(A) = rank([A|b]) &lt; n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) = rank([A|b]) = n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) &lt; rank([A|b])\\) cuantas soluciones tiene el sistema? Justifique su respuesta.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución",
+    "href": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Usar python para resolver sistemas de ecuaciones con única solución",
+    "text": "Usar python para resolver sistemas de ecuaciones con única solución\nSea el sistema de ecuaciones lineales:\n\\[\n\\begin{cases}\n2x + 3y + z = 1 \\\\\n4x + y + 2z = 2 \\\\\n3x + 2y + 3z = 3\n\\end{cases}\n\\]\n\n¿Por qué el anterior sistema tiene única solución?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#problema-2-sistemas-de-ecuaciones-lineales",
+    "href": "taller8.html#problema-2-sistemas-de-ecuaciones-lineales",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Problema 2: Sistemas de Ecuaciones Lineales",
+    "text": "Problema 2: Sistemas de Ecuaciones Lineales"
+  },
+  {
+    "objectID": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones",
+    "href": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Usar python para resolver sistemas de ecuaciones con infinitas soluciones",
+    "text": "Usar python para resolver sistemas de ecuaciones con infinitas soluciones\nSea el sistema de ecuaciones lineales:\n\\[ \\begin{cases}\nx + 2y + 3z = 1 \\\\\n4x + 5y + 6z = 2 \\\\\n5x + 7y + 9z &= 3\n\\end{cases}\n\\]\n\n¿Por qué el anterior sistema tiene infinitas soluciones?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote que la la matriz \\(U\\) que se imprime tiene una fila de ceros, lo que indica que el sistema tiene infinitas soluciones.\npara visualizar las soluciones podemos usar el siguiente código:\n\nimport numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)\n\n\n\n## visualizacion de la matriz aumentada en forma escalonada\nimport matplotlib.pyplot as plt\n# Crear matriz binaria: 0 si el valor es exactamente 0, 1 si es diferente\nU_binaria = (np.abs(U) &gt; 1e-10).astype(int)  # tolerancia para evitar errores numéricos\n\n# Visualizar\nplt.imshow(U_binaria, cmap='Greys', interpolation='nearest')\nplt.title(\"Matriz estructural de U (blanco = 0, negro ≠ 0)\")\nplt.xticks(np.arange(U.shape[1]), [f'Col {i+1}' for i in range(U.shape[1])])\nplt.yticks(np.arange(U.shape[0]), [f'Fila {i+1}' for i in range(U.shape[0])])\nplt.grid(False)\nplt.show()\n\nMatriz U de la descomposición LU:\n [[ 3.00000000e+00  7.00000000e+00  2.00000000e+00  1.30000000e+01]\n [ 0.00000000e+00  3.33333333e-01 -3.33333333e-01  3.33333333e-01]\n [ 0.00000000e+00  0.00000000e+00  9.99200722e-16  0.00000000e+00]]\n\n\n\n\n\n\n\n\n\nNote que de esta forma tenemos que el sistema se convierte en:\n\\[ \\begin{cases}\n3x + 7y + 2z = 13 \\\\\n0x+0.333y+ 0.333z=0.333\\\\\n0x + 0y + 0z = 0\n\\end{cases}\n\\] de esta forma podemos expresar las variables en función de una variable libre, por ejemplo \\(z=t\\) y despejar \\(x\\) y \\(y\\) en función de \\(t\\). \\[ \\begin{cases}\nx =\\frac{5t+5}{3} \\\\\ny = 1- t \\\\\nz = t\n\\end{cases}\n\\]\n## Problema 2: Sistemas de Ecuaciones Lineales",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única",
+    "href": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)",
+    "text": "Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)\nUna red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\nAdemás, se conocen dos restricciones adicionales impuestas por sensores del sistema:\n\nEl caudal en el canal 2 es igual al doble del caudal en el canal 3:\n\\(x_2 = 2x_3\\)\nEl caudal total de entrada al sistema (por canal 7) es igual a 10 litros por segundo:\n\\(x_7 = 10\\)\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nConservación de caudal en cada nodo:\n\nNodo A\n\\[x_7 - x_1 = b_1\\]\n\n\nNodo B\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\nNodo C\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\nNodo D\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\nNodo E\n\\[x_5 + x_6 - x_7 = b_5\\]\nRestricciones adicionales:\n\n\nRestricción 1:\n\\[x_2 - 2x_3 = 0\\]\n\n\nRestricción 2:\n\\[x_7 = 10\\]\n\n\n\nForma matricial del sistema\n$$ Una red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nSe aplica la conservación de caudal en cada nodo:\n\nNodo A\n\nEntra: \\(x_7\\)\nSale: \\(x_1\\)\nEcuación:\n\\[x_7 - x_1 = b_1\\]\n\n\n\nNodo B\n\nEntra: \\(x_1\\)\nSale: \\(x_2\\), \\(x_3\\)\nEcuación:\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\n\nNodo C\n\nEntra: \\(x_2\\)\nSale: \\(x_4\\), \\(x_6\\)\nEcuación:\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\n\nNodo D\n\nEntra: \\(x_3\\), \\(x_4\\)\nSale: \\(x_5\\)\nEcuación:\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\n\nNodo E\n\nEntra: \\(x_5\\), \\(x_6\\)\nSale: \\(x_7\\)\nEcuación:\n\\[x_5 + x_6 - x_7 = b_5\\]\n\n\nPlantear el sistema de 7 ecuaciones lineales con 7 incógnitas que representa el comportamiento hidráulico de la red.\nEscribir el sistema en forma matricial \\(A \\cdot x = b\\)\nVerificar si sistema tiene una única solución.\nResolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes \\(b = [0, -5, 0, 0, 5]\\) (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s).",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#problema-3-sistemas-de-ecuaciones-lineales",
+    "href": "taller8.html#problema-3-sistemas-de-ecuaciones-lineales",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Problema 3: Sistemas de Ecuaciones Lineales",
+    "text": "Problema 3: Sistemas de Ecuaciones Lineales",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#enunciado-análisis-de-flujos-en-una-red-logística-nacional",
+    "href": "taller8.html#enunciado-análisis-de-flujos-en-una-red-logística-nacional",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "📦 Enunciado: Análisis de Flujos en una Red Logística Nacional",
+    "text": "📦 Enunciado: Análisis de Flujos en una Red Logística Nacional\nLa empresa AgriRed Logística S.A.S. gestiona una red de distribución de alimentos en Colombia, compuesta por 8 centros logísticos ubicados en diferentes departamentos: Antioquia, Cundinamarca, Valle del Cauca, Bolívar, Santander, Tolima, Nariño y Atlántico. Cada centro logístico maneja diariamente un volumen de alimentos (en toneladas), que se transfiere entre centros según rutas establecidas o se destina a abastecer hospitales, escuelas y comunidades rurales.\nLa empresa desea garantizar que los flujos entre centros cumplan con ciertas restricciones operativas, entre ellas:\n\nCapacidad máxima de ciertas rutas,\nRequerimientos mínimos de abastecimiento en algunos nodos,\nY equilibrio entre lo que se recibe y lo que se despacha.\n\nEl equipo técnico ha identificado 7 ecuaciones de balance basadas en el análisis de la operación, pero debido a la complejidad de la red, hay más rutas posibles (8) que restricciones disponibles (7). Por tanto, algunas rutas pueden ajustarse libremente sin romper las reglas generales.\nSe busca modelar esta red como un sistema lineal de 7 ecuaciones con 8 incógnitas, donde cada incógnita representa el flujo (en toneladas) a través de una ruta principal o hacia un centro de consumo.\nSe ha comprobado que:\n\nEl sistema tiene infinitas soluciones y 6 variables libres, lo que implica una alta flexibilidad operativa,\nY que al aplicar reducción de Gauss con pivoteo parcial, la matriz triangular superior \\(U\\) de la matriz aumentada \\([A|b]\\) contiene solo números enteros, lo que facilita su análisis visual.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#objetivo",
+    "href": "taller8.html#objetivo",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "🔧 Objetivo",
+    "text": "🔧 Objetivo\nTu tarea es usar este sistema para:\n\nDeterminar la estructura de soluciones posibles.\nIdentificar qué rutas pueden modificarse libremente sin afectar el cumplimiento global.\nVisualizar gráficamente la estructura de la matriz \\(U\\), donde los ceros aparezcan en blanco y los valores distintos de cero en negro, para identificar de forma clara qué ecuaciones aportan restricciones efectivas.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#detalles-técnicos",
+    "href": "taller8.html#detalles-técnicos",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "🧮 Detalles técnicos",
+    "text": "🧮 Detalles técnicos\nCada incógnita \\(x_i\\) representa el flujo diario (en toneladas) de alimentos a través de una de las 8 principales rutas:\n\n\n\nVariable\nRuta / Uso\n\n\n\n\n\\(x_1\\)\nCentro 1 (Antioquia) → Centro 2 (Cundinamarca)\n\n\n\\(x_2\\)\nCentro 2 → Centro 3 (Valle)\n\n\n\\(x_3\\)\nCentro 1 → Centro 3\n\n\n\\(x_4\\)\nCentro 4 (Bolívar) → Hospitales locales\n\n\n\\(x_5\\)\nCentro 5 (Santander) → Comunidades rurales\n\n\n\\(x_6\\)\nCentro 6 (Tolima) → Centro 1\n\n\n\\(x_7\\)\nCentro 7 (Nariño) → Plantas de procesamiento\n\n\n\\(x_8\\)\nCentro 8 (Atlántico) → Escuelas rurales\n\n\n\nEl sistema está dado por las siguientes ecuaciones de balance logístico, derivadas de las observaciones operativas:\n\\[\n\\begin{aligned}\n(1):\\quad & x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\\\\n(2):\\quad & 2x_1 + x_2 + 4x_3 + 0x_4 + x_5 + x_6 + x_7 + 3x_8 = 12 \\\\\n(3):\\quad & 3x_1 + 3x_2 + 5x_3 + x_4 + 4x_5 + 2x_6 + x_7 + 5x_8 = 22 \\\\\n(4):\\quad & x_2 - 2x_3 + 2x_4 + 5x_5 + x_6 - x_7 + x_8 = 8 \\\\\n(5):\\quad & x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\\\\n(6):\\quad & -2x_1 - x_2 - 4x_3 - x_5 - x_6 - x_7 - 3x_8 = -12 \\\\\n(7):\\quad & 11x_1 + 10x_2 + 19x_3 + 3x_4 + 13x_5 + 7x_6 + 4x_7 + 18x_8 = 78 \\\\\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
     ]
   }
 ]

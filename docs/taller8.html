@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Taller 6 - Matrices</title>
+<title>Taller 7 - Sistemas de ecauciones</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -228,7 +262,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\n# Coeficientes del sistema de ecuaciones\nA = np.array([[10, 5], [8, 7]])  # <--\nmodifique aquí\nb = np.array([35, 34])            # <--\nmodifique aquí\n# Resuelve el sistema de ecuaciones\nsolution = np.linalg.solve(A, b)\ncoffee_price, tea_price = solution\nprint(f\"Precio del café: ${coffee_price:.2f}\")\nprint(f\"Precio del té: ${tea_price:.2f}\")\n# Costo de 3 tazas de café y 4 de té\ntotal_cost = 3 * coffee_price + 4 * tea_price\nprint(f\"Costo de 3 tazas de café y 4 de té: ${total_cost:.2f}\")","options":{"out-width":"700px","out-height":"","classes":"","label":"","message":"true","results":"markup","read-only":"false","fig-cap":"","comment":"","warning":"true","fig-height":5,"output":"true","autorun":"","fig-width":7,"dpi":72,"context":"interactive"}},{"id":2,"code":"import numpy as np\n# Coeficientes del sistema de ecuaciones\nA = np.array([[10, 10], [10, 15]])  # <-- modifique aquí\nb = np.array([45, 50])               # <-- modifique aquí\n# Resuelve el sistema de ecuaciones\nsolution = np.linalg.solve(A, b)\npencil_price, notebook_price = solution     # <-- modifique aquí          \n\nprint(f\"Precio del lápiz: ${pencil_price:.2f}\")\nprint(f\"Precio del cuaderno: ${notebook_price:.2f}\")\n# Costo de 5 lápices y 7 cuadernos\ntotal_cost = 5 * pencil_price + 7 * notebook_price\nprint(f\"Costo de 5 lápices y 7 cuadernos: ${total_cost:.2f}\") ","options":{"out-width":"700px","out-height":"","classes":"","label":"","message":"true","results":"markup","read-only":"false","fig-cap":"","comment":"","warning":"true","fig-height":5,"output":"true","autorun":"","fig-width":7,"dpi":72,"context":"interactive"}},{"id":3,"code":"import numpy as np\n# Coeficientes del sistema de ecuaciones\nA = np.array([[20, 20], [30, 20]])  # <--\nmodifique aquí\nb = np.array([4500, 4000])           # <--  \nmodifique aquí\n# Resuelve el sistema de ecuaciones\nsolution = np.linalg.solve(A, b)\nproduct_A_price, product_B_price = solution\nprint(f\"Beneficio por unidad de A: ${product_A_price:.2f}\")\nprint(f\"Beneficio por unidad de B: ${product_B_price:.2f}\")\n# Beneficio de 25 unidades de A y 25 de B\ntotal_benefit = 25 * product_A_price + 25 * product_B_price\nprint(f\"Beneficio de 25 unidades de A y 25 de B: ${total_benefit:.2f}\") ","options":{"out-width":"700px","out-height":"","classes":"","label":"","message":"true","results":"markup","read-only":"false","fig-cap":"","comment":"","warning":"true","fig-height":5,"output":"true","autorun":"","fig-width":7,"dpi":72,"context":"interactive"}}];
+globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nfrom numpy.linalg import matrix_rank\n# Definimos la matriz A y el vector b\nA = np.array([[1, 2, 3],\n                [4, 5, 6],  \n                [7, 8, 9]])\nb = np.array([1, 2, 3])\n# Calculamos el rango de A\nrango_A = matrix_rank(A)\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n# Calculamos el rango de la matriz aumentada\nrango_Ab = matrix_rank(Ab)\nprint(\"el rango de A\",rango_A)\nprint(\"El rango de A|b\",rango_Ab) ","options":{"results":"markup","label":"","context":"interactive","dpi":72,"message":"true","read-only":"false","warning":"true","autorun":"","comment":"","classes":"","fig-height":5,"fig-width":7,"fig-cap":"","output":"true","out-height":"","out-width":"700px"}},{"id":2,"code":"import numpy as np\nA = np.array([[2, 3, 1],\n                [4, 1, 2],\n                [3, 2, 3]]) # matriz de coeficientes\nb = np.array([1, 2, 3]) # vector de términos independientes\nsol = np.linalg.solve(A, b) # solución del sistema\nprint(\"La solución del sistema es:\", sol)","options":{"results":"markup","label":"","context":"interactive","dpi":72,"message":"true","read-only":"false","warning":"true","autorun":"","comment":"","classes":"","fig-height":5,"fig-width":7,"fig-cap":"","output":"true","out-height":"","out-width":"700px"}},{"id":3,"code":"import numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)","options":{"results":"markup","label":"","context":"interactive","dpi":72,"message":"true","read-only":"false","warning":"true","autorun":"","comment":"","classes":"","fig-height":5,"fig-width":7,"fig-cap":"","output":"true","out-height":"","out-width":"700px"}}];
 
 
 </script>
@@ -461,7 +495,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller6.html">Matrices y sistemas de ecuaciones</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller8.html">sistemas de ecuaciones y aplicaciones</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -545,7 +579,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taller6.html" class="sidebar-item-text sidebar-link active">
+  <a href="./taller6.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrices y sistemas de ecuaciones</span></a>
   </div>
 </li>
@@ -553,6 +587,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./taller7.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sistemas de ecuacionesde n x n</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taller8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">sistemas de ecuaciones y aplicaciones</span></a>
   </div>
 </li>
       </ul>
@@ -567,8 +607,21 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ejercicios-computacionales" id="toc-ejercicios-computacionales" class="nav-link active" data-scroll-target="#ejercicios-computacionales">Ejercicios computacionales</a></li>
-  <li><a href="#ejemplo-1-sistema-de-ecuaciones-2x2" id="toc-ejemplo-1-sistema-de-ecuaciones-2x2" class="nav-link" data-scroll-target="#ejemplo-1-sistema-de-ecuaciones-2x2">Ejemplo 1: Sistema de ecuaciones 2x2</a></li>
+  <li><a href="#solución-de-un-sistema-de-ecuaciones" id="toc-solución-de-un-sistema-de-ecuaciones" class="nav-link active" data-scroll-target="#solución-de-un-sistema-de-ecuaciones">Solución de un sistema de ecuaciones</a></li>
+  <li><a href="#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución" id="toc-usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución" class="nav-link" data-scroll-target="#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución">Usar python para resolver sistemas de ecuaciones con única solución</a></li>
+  <li><a href="#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones" id="toc-usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones" class="nav-link" data-scroll-target="#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones">Usar python para resolver sistemas de ecuaciones con infinitas soluciones</a></li>
+  <li><a href="#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única" id="toc-problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única" class="nav-link" data-scroll-target="#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única">Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)</a>
+  <ul class="collapse">
+  <li><a href="#descripción-de-la-red" id="toc-descripción-de-la-red" class="nav-link" data-scroll-target="#descripción-de-la-red">Descripción de la red</a></li>
+  <li><a href="#planteamiento-del-sistema-de-ecuaciones" id="toc-planteamiento-del-sistema-de-ecuaciones" class="nav-link" data-scroll-target="#planteamiento-del-sistema-de-ecuaciones">Planteamiento del sistema de ecuaciones</a></li>
+  <li><a href="#forma-matricial-del-sistema" id="toc-forma-matricial-del-sistema" class="nav-link" data-scroll-target="#forma-matricial-del-sistema">Forma matricial del sistema</a></li>
+  <li><a href="#descripción-de-la-red-1" id="toc-descripción-de-la-red-1" class="nav-link" data-scroll-target="#descripción-de-la-red-1">Descripción de la red</a></li>
+  <li><a href="#planteamiento-del-sistema-de-ecuaciones-1" id="toc-planteamiento-del-sistema-de-ecuaciones-1" class="nav-link" data-scroll-target="#planteamiento-del-sistema-de-ecuaciones-1">Planteamiento del sistema de ecuaciones</a></li>
+  </ul></li>
+  <li><a href="#problema-3-sistemas-de-ecuaciones-lineales" id="toc-problema-3-sistemas-de-ecuaciones-lineales" class="nav-link" data-scroll-target="#problema-3-sistemas-de-ecuaciones-lineales">Problema 3: Sistemas de Ecuaciones Lineales</a></li>
+  <li><a href="#enunciado-análisis-de-flujos-en-una-red-logística-nacional" id="toc-enunciado-análisis-de-flujos-en-una-red-logística-nacional" class="nav-link" data-scroll-target="#enunciado-análisis-de-flujos-en-una-red-logística-nacional">📦 Enunciado: Análisis de Flujos en una Red Logística Nacional</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">🔧 Objetivo</a></li>
+  <li><a href="#detalles-técnicos" id="toc-detalles-técnicos" class="nav-link" data-scroll-target="#detalles-técnicos">🧮 Detalles técnicos</a></li>
   </ul>
 </nav>
     </div>
@@ -585,9 +638,9 @@ window.Quarto = {
   });
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller6.html">Matrices y sistemas de ecuaciones</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./taller5.html">Matrices 2 x 2</a></li><li class="breadcrumb-item"><a href="./taller8.html">sistemas de ecuaciones y aplicaciones</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Taller 6 - Matrices</h1>
+<h1 class="title">Taller 7 - Sistemas de ecauciones</h1>
 </div>
 
 
@@ -604,68 +657,442 @@ window.Quarto = {
 </header>
 
 
-<ol type="1">
-<li><p>Sea la matriz <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> y el vector <span class="math inline">\(\mathbf{v} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}\)</span>.</p>
-<ol type="1">
-<li>Calcula <span class="math inline">\(A\mathbf{v}\)</span>.<br>
-</li>
-<li>Calcula <span class="math inline">\(A^2\mathbf{v}\)</span>.<br>
-</li>
-<li>Calcula <span class="math inline">\(A\mathbf{v} + A^2\mathbf{v}\)</span>.</li>
-</ol></li>
-<li><p><strong>Problema en Contexto: Compra de Frutas</strong></p>
-<p>Un comerciante de frutas desea determinar el precio de cada unidad de manzanas y naranjas. Sabe que si compra 4 manzanas y 3 naranjas, el gasto total es de $26, y que si compra 2 manzanas y 5 naranjas, el gasto es de $23.</p>
-<ol type="a">
-<li>Exprese este problema como un sistema de ecuaciones lineales.</li>
-<li>¿Cuánto costaría comprar 3 manzanas y 4 naranjas?<br>
-</li>
-<li>Verifica la solución sustituyendo los valores en ambas ecuaciones.</li>
-</ol></li>
-<li><p><strong>Problema en Contexto: Producción de Camisas y Pantalones</strong></p>
-<p>Una fábrica produce camisas y pantalones. La producción de una camisa requiere 2 horas de trabajo y la de un pantalón 1 hora. El tiempo total de trabajo disponible es de 100 horas por semana. Si la fábrica produce 40 camisas y 60 pantalones, el beneficio semanal es de 3000 dólares, y si produce 60 camisas y 40 pantalones, el beneficio es de 3100 dólares.</p>
-<ol type="a">
-<li>¿Cuál es el beneficio de producir 50 camisas y 50 pantalones?</li>
-<li>Verifica la solución sustituyendo los valores en ambas ecuaciones.</li>
-</ol></li>
-<li><p>Si una matriz <span class="math inline">\(A\)</span> de <span class="math inline">\(2\times 2\)</span> tiene columnas linealmente independientes, ¿es cierto que <span class="math inline">\(A\)</span> tiene filas linealmente independientes? Justifica tu respuesta.</p></li>
-<li><p>Escribe 3 formas diferentes de saber si una matriz invertible.</p></li>
-<li><p>Si <span class="math inline">\(X=(3,6)\)</span> y <span class="math inline">\(Y=(-2,3)\)</span>, que representaría <span class="math display">\[proy_{X}Y\]</span> y <span class="math display">\[proy_{Y}X\]</span> Grafica la situación.</p></li>
-<li><p>Como podemos interpretar el determinante de una matriz? ¿Qué significa que el determinante sea igual a cero?</p></li>
-<li><p>Los vectores <span class="math inline">\(\mathbf{v}_1 = (1, 2)\)</span> y <span class="math inline">\(\mathbf{v}_2 = (-2, 1)\)</span> ortogonales (verifique) entonces son linealmente dependientes. De esta forma, ¿podemos decir que dos vectores ortogonales son linealmente independientes? Justifica tu respuesta. El reciproco ¿es cierto?</p></li>
-<li><p>Sea el sistema de ecuaciones lineales <span class="math display">\[Ax=b\]</span> y <span class="math inline">\(A\)</span> una matriz cuadrada de <span class="math inline">\(2\times 2\)</span> con determinante distinto de cero. ¿Cuál es la condición para que el sistema tenga solución única? Justifica tu respuesta. ¿Qué sucede si el determinante de <span class="math inline">\(A\)</span> es igual a cero?</p></li>
-<li><p>Si forma una matriz con dos vectores linealmente independientes, ¿es cierto que la matriz es invertible? Justifica tu respuesta.</p></li>
-<li><p>Si se forma una matriz con dos vectores linealmente dependientes, ¿es cierto que la matriz no es invertible? Justifica tu respuesta.</p></li>
-<li><p>Escribe un ejemplo de un sistema de ecuaciones lineales que no tiene solución. ¿Qué significa esto en términos de la geometría de los vectores?</p></li>
-<li><p>Escribe un sistema que tenga infinitas soluciones. ¿Qué significa esto en términos de la geometría de los vectores?</p></li>
-<li><p>Escribe un ejemplo de un sistema de ecuaciones que no sea consistente. ¿Qué significa esto en términos de la geometría de los vectores?</p></li>
-</ol>
-<section id="ejercicios-computacionales" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicios-computacionales">Ejercicios computacionales</h2>
-</section>
-<section id="ejemplo-1-sistema-de-ecuaciones-2x2" class="level1">
-<h1>Ejemplo 1: Sistema de ecuaciones 2x2</h1>
-<p>Suponga que una cafetería vende café y té. Un día, se vendieron 10 tazas de café y 5 de té por un total de $35. Otro día, se vendieron 8 tazas de café y 7 de té por un total de $34.</p>
-<ol type="a">
-<li><p>Exprese el problema como un sistema de ecuaciones lineales.</p></li>
-<li><p>Resuelva el sistema para encontrar el precio de cada taza de café y de té.</p></li>
-<li><p>¿Cuánto costaría comprar 3 tazas de café y 4 de té?</p></li>
-</ol>
+<section id="solución-de-un-sistema-de-ecuaciones" class="level2">
+<h2 class="anchored" data-anchor-id="solución-de-un-sistema-de-ecuaciones">Solución de un sistema de ecuaciones</h2>
+<p>Observe el siguiente sistema de ecuaciones lineales:</p>
+<p><span class="math display">\[
+\begin{cases}
+x + 2y + 3z = 1 \\
+4x + 5y + 6z = 2 \\
+7x + 8y + 9z = 3
+\end{cases}
+\]</span></p>
+<p>Note que este sistema lo podemos escribir como una ecuación matricial de la forma <span class="math inline">\(A \cdot x = b\)</span>, donde: <span class="math display">\[
+A =
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{bmatrix}
+,
+\quad
+x =
+\begin{bmatrix}
+x \\
+y \\ z
+\end{bmatrix}
+,
+\quad
+b =
+\begin{bmatrix}
+1 \\ 2 \\ 3
+\end{bmatrix}
+\]</span></p>
+<p>Para saber si este sistema tiene una solución podemos a analizar el rango de la matriz <span class="math inline">\(A\)</span> y el rango de la matriz aumentada <span class="math inline">\([A|b]\)</span>. Para ello podemos usar la librería <code>numpy</code> de Python, que nos permite trabajar con álgebra lineal de manera simbólica.</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><strong>Problema 1 : Sistema de ecuaciones 2x2</strong></p>
-<p>Suponga que una tienda vende lápices y cuadernos. Un día, se vendieron 15 lápices y 10 cuadernos por un total de $45. Otro día, se vendieron 10 lápices y 15 cuadernos por un total de $50. a) Exprese el problema como un sistema de ecuaciones lineales. b) Resuelva el sistema para encontrar el precio de cada lápiz y de cada cuaderno c) ¿Cuánto costaría comprar 5 lápices y 7 cuadernos? d) Modifique el código para que refleje su solución.</p>
+<ul>
+<li><p>¿Qué puede concluir sobre la existencia de soluciones del sistema? Justifique su respuesta.</p></li>
+<li><p>¿Si el <span class="math inline">\(rank(A) = rank([A|b]) &lt; n\)</span> (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.</p></li>
+<li><p>Si el <span class="math inline">\(rank(A) = rank([A|b]) = n\)</span> (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.</p></li>
+<li><p>Si el <span class="math inline">\(rank(A) &lt; rank([A|b])\)</span> cuantas soluciones tiene el sistema? Justifique su respuesta.</p></li>
+</ul>
+</section>
+<section id="usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución" class="level2">
+<h2 class="anchored" data-anchor-id="usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución">Usar python para resolver sistemas de ecuaciones con única solución</h2>
+<p>Sea el sistema de ecuaciones lineales:</p>
+<p><span class="math display">\[
+\begin{cases}
+2x + 3y + z = 1 \\
+4x + y + 2z = 2 \\
+3x + 2y + 3z = 3
+\end{cases}
+\]</span></p>
+<ul>
+<li>¿Por qué el anterior sistema tiene única solución?</li>
+</ul>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><strong>Problema 3</strong></p>
-<p>Una empresa produce dos productos: A y B. La producción de una unidad de A requiere 3 horas de trabajo y la de una unidad de B requiere 2 horas. La empresa tiene un total de 120 horas de trabajo disponibles por semana. Si la empresa produce 20 unidades de A y 30 unidades de B, el beneficio semanal es de $4000, y si produce 30 unidades de A y 20 unidades de B, el beneficio es de $4500.</p>
-<ol type="a">
-<li>Exprese el problema como un sistema de ecuaciones lineales.</li>
-<li>Resuelva el sistema para encontrar el beneficio por unidad de cada producto.</li>
-<li>¿Cuál es el beneficio de producir 25 unidades de A y 25 unidades de B?</li>
-<li>Modifique el código para que refleje su solución.</li>
-</ol>
+</section>
+<section id="usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones" class="level2">
+<h2 class="anchored" data-anchor-id="usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones">Usar python para resolver sistemas de ecuaciones con infinitas soluciones</h2>
+<p>Sea el sistema de ecuaciones lineales:</p>
+<p><span class="math display">\[ \begin{cases}
+x + 2y + 3z = 1 \\
+4x + 5y + 6z = 2 \\
+5x + 7y + 9z &amp;= 3
+\end{cases}
+\]</span></p>
+<ul>
+<li>¿Por qué el anterior sistema tiene infinitas soluciones?</li>
+</ul>
 <div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Note que la la matriz <span class="math inline">\(U\)</span> que se imprime tiene una fila de ceros, lo que indica que el sistema tiene infinitas soluciones.</p>
+<p>para visualizar las soluciones podemos usar el siguiente código:</p>
+<div id="d75ae59c" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.linalg <span class="im">as</span> la</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">1</span>],</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                [<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>]]) <span class="co"># matriz de coeficientes</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">13</span>]) <span class="co"># vector de términos independientes</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Construimos la matriz aumentada [A|b]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Ab <span class="op">=</span> np.column_stack((A, b))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>_,_,U<span class="op">=</span>la.lu(Ab) <span class="co"># descomposición LU</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz U de la descomposición LU:</span><span class="ch">\n</span><span class="st">"</span>, U)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">## visualizacion de la matriz aumentada en forma escalonada</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear matriz binaria: 0 si el valor es exactamente 0, 1 si es diferente</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>U_binaria <span class="op">=</span> (np.<span class="bu">abs</span>(U) <span class="op">&gt;</span> <span class="fl">1e-10</span>).astype(<span class="bu">int</span>)  <span class="co"># tolerancia para evitar errores numéricos</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.imshow(U_binaria, cmap<span class="op">=</span><span class="st">'Greys'</span>, interpolation<span class="op">=</span><span class="st">'nearest'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Matriz estructural de U (blanco = 0, negro ≠ 0)"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.xticks(np.arange(U.shape[<span class="dv">1</span>]), [<span class="ss">f'Col </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(U.shape[<span class="dv">1</span>])])</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.yticks(np.arange(U.shape[<span class="dv">0</span>]), [<span class="ss">f'Fila </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(U.shape[<span class="dv">0</span>])])</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">False</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matriz U de la descomposición LU:
+ [[ 3.00000000e+00  7.00000000e+00  2.00000000e+00  1.30000000e+01]
+ [ 0.00000000e+00  3.33333333e-01 -3.33333333e-01  3.33333333e-01]
+ [ 0.00000000e+00  0.00000000e+00  9.99200722e-16  0.00000000e+00]]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="taller8_files/figure-html/cell-2-output-2.png" width="556" height="431" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note que de esta forma tenemos que el sistema se convierte en:</p>
+<p><span class="math display">\[ \begin{cases}
+3x + 7y + 2z = 13 \\
+0x+0.333y+ 0.333z=0.333\\
+0x + 0y + 0z = 0
+\end{cases}
+\]</span> de esta forma podemos expresar las variables en función de una variable libre, por ejemplo <span class="math inline">\(z=t\)</span> y despejar <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span> en función de <span class="math inline">\(t\)</span>. <span class="math display">\[ \begin{cases}
+x =\frac{5t+5}{3} \\
+y = 1- t \\
+z = t
+\end{cases}
+\]</span><br>
+## Problema 2: Sistemas de Ecuaciones Lineales</p>
+</section>
+<section id="problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única" class="level2">
+<h2 class="anchored" data-anchor-id="problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única">Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)</h2>
+<p>Una red hidráulica está compuesta por <strong>7 canales</strong> que distribuyen agua entre <strong>5 nodos</strong>: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable <span class="math inline">\(x_i\)</span>, donde <span class="math inline">\(x_1, x_2, \dots, x_7\)</span> son los caudales de los canales.</p>
+<p>Según el <strong>principio de conservación de caudal</strong>, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante <span class="math inline">\(b_i\)</span>, que representa una <strong>demanda (si es positiva)</strong> o un <strong>aporte externo (si es negativa)</strong>.</p>
+<p>Además, se conocen dos restricciones adicionales impuestas por sensores del sistema:</p>
+<ul>
+<li>El <strong>caudal en el canal 2 es igual al doble del caudal en el canal 3</strong>:<br>
+<span class="math inline">\(x_2 = 2x_3\)</span></li>
+<li>El <strong>caudal total de entrada al sistema</strong> (por canal 7) es igual a 10 litros por segundo:<br>
+<span class="math inline">\(x_7 = 10\)</span></li>
+</ul>
+<section id="descripción-de-la-red" class="level3">
+<h3 class="anchored" data-anchor-id="descripción-de-la-red">Descripción de la red</h3>
+<p>Los canales conectan los nodos de la siguiente manera:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Canal</th>
+<th>Desde</th>
+<th>Hacia</th>
+<th>Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A</td>
+<td>B</td>
+<td><span class="math inline">\(x_1\)</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>B</td>
+<td>C</td>
+<td><span class="math inline">\(x_2\)</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>B</td>
+<td>D</td>
+<td><span class="math inline">\(x_3\)</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>C</td>
+<td>D</td>
+<td><span class="math inline">\(x_4\)</span></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>D</td>
+<td>E</td>
+<td><span class="math inline">\(x_5\)</span></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>C</td>
+<td>E</td>
+<td><span class="math inline">\(x_6\)</span></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>E</td>
+<td>A</td>
+<td><span class="math inline">\(x_7\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="planteamiento-del-sistema-de-ecuaciones" class="level3">
+<h3 class="anchored" data-anchor-id="planteamiento-del-sistema-de-ecuaciones">Planteamiento del sistema de ecuaciones</h3>
+<p>Conservación de caudal en cada nodo:</p>
+<section id="nodo-a" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-a">Nodo A</h4>
+<p><span class="math display">\[x_7 - x_1 = b_1\]</span></p>
+</section>
+<section id="nodo-b" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-b">Nodo B</h4>
+<p><span class="math display">\[x_1 - x_2 - x_3 = b_2\]</span></p>
+</section>
+<section id="nodo-c" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-c">Nodo C</h4>
+<p><span class="math display">\[x_2 - x_4 - x_6 = b_3\]</span></p>
+</section>
+<section id="nodo-d" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-d">Nodo D</h4>
+<p><span class="math display">\[x_3 + x_4 - x_5 = b_4\]</span></p>
+</section>
+<section id="nodo-e" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-e">Nodo E</h4>
+<p><span class="math display">\[x_5 + x_6 - x_7 = b_5\]</span></p>
+<p>Restricciones adicionales:</p>
+</section>
+<section id="restricción-1" class="level4">
+<h4 class="anchored" data-anchor-id="restricción-1">Restricción 1:</h4>
+<p><span class="math display">\[x_2 - 2x_3 = 0\]</span></p>
+</section>
+<section id="restricción-2" class="level4">
+<h4 class="anchored" data-anchor-id="restricción-2">Restricción 2:</h4>
+<p><span class="math display">\[x_7 = 10\]</span></p>
+</section>
+</section>
+<section id="forma-matricial-del-sistema" class="level3">
+<h3 class="anchored" data-anchor-id="forma-matricial-del-sistema">Forma matricial del sistema</h3>
+<p>$$ Una red hidráulica está compuesta por <strong>7 canales</strong> que distribuyen agua entre <strong>5 nodos</strong>: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable <span class="math inline">\(x_i\)</span>, donde <span class="math inline">\(x_1, x_2, \dots, x_7\)</span> son los caudales de los canales.</p>
+<p>Según el <strong>principio de conservación de caudal</strong>, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante <span class="math inline">\(b_i\)</span>, que representa una <strong>demanda (si es positiva)</strong> o un <strong>aporte externo (si es negativa)</strong>.</p>
+</section>
+<section id="descripción-de-la-red-1" class="level3">
+<h3 class="anchored" data-anchor-id="descripción-de-la-red-1">Descripción de la red</h3>
+<p>Los canales conectan los nodos de la siguiente manera:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Canal</th>
+<th>Desde</th>
+<th>Hacia</th>
+<th>Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A</td>
+<td>B</td>
+<td><span class="math inline">\(x_1\)</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>B</td>
+<td>C</td>
+<td><span class="math inline">\(x_2\)</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>B</td>
+<td>D</td>
+<td><span class="math inline">\(x_3\)</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>C</td>
+<td>D</td>
+<td><span class="math inline">\(x_4\)</span></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>D</td>
+<td>E</td>
+<td><span class="math inline">\(x_5\)</span></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>C</td>
+<td>E</td>
+<td><span class="math inline">\(x_6\)</span></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>E</td>
+<td>A</td>
+<td><span class="math inline">\(x_7\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="planteamiento-del-sistema-de-ecuaciones-1" class="level3">
+<h3 class="anchored" data-anchor-id="planteamiento-del-sistema-de-ecuaciones-1">Planteamiento del sistema de ecuaciones</h3>
+<p>Se aplica la conservación de caudal en cada nodo:</p>
+<section id="nodo-a-1" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-a-1">Nodo A</h4>
+<ul>
+<li>Entra: <span class="math inline">\(x_7\)</span></li>
+<li>Sale: <span class="math inline">\(x_1\)</span><br>
+<strong>Ecuación:</strong><br>
+<span class="math display">\[x_7 - x_1 = b_1\]</span></li>
+</ul>
+</section>
+<section id="nodo-b-1" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-b-1">Nodo B</h4>
+<ul>
+<li>Entra: <span class="math inline">\(x_1\)</span></li>
+<li>Sale: <span class="math inline">\(x_2\)</span>, <span class="math inline">\(x_3\)</span><br>
+<strong>Ecuación:</strong><br>
+<span class="math display">\[x_1 - x_2 - x_3 = b_2\]</span></li>
+</ul>
+</section>
+<section id="nodo-c-1" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-c-1">Nodo C</h4>
+<ul>
+<li>Entra: <span class="math inline">\(x_2\)</span></li>
+<li>Sale: <span class="math inline">\(x_4\)</span>, <span class="math inline">\(x_6\)</span><br>
+<strong>Ecuación:</strong><br>
+<span class="math display">\[x_2 - x_4 - x_6 = b_3\]</span></li>
+</ul>
+</section>
+<section id="nodo-d-1" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-d-1">Nodo D</h4>
+<ul>
+<li>Entra: <span class="math inline">\(x_3\)</span>, <span class="math inline">\(x_4\)</span></li>
+<li>Sale: <span class="math inline">\(x_5\)</span><br>
+<strong>Ecuación:</strong><br>
+<span class="math display">\[x_3 + x_4 - x_5 = b_4\]</span></li>
+</ul>
+</section>
+<section id="nodo-e-1" class="level4">
+<h4 class="anchored" data-anchor-id="nodo-e-1">Nodo E</h4>
+<ul>
+<li>Entra: <span class="math inline">\(x_5\)</span>, <span class="math inline">\(x_6\)</span></li>
+<li>Sale: <span class="math inline">\(x_7\)</span><br>
+<strong>Ecuación:</strong><br>
+<span class="math display">\[x_5 + x_6 - x_7 = b_5\]</span></li>
+</ul>
+<ol type="1">
+<li>Plantear el sistema de <strong>7 ecuaciones lineales con 7 incógnitas</strong> que representa el comportamiento hidráulico de la red.</li>
+<li>Escribir el sistema en forma matricial <span class="math inline">\(A \cdot x = b\)</span></li>
+<li>Verificar si sistema tiene <strong>una única solución</strong>.</li>
+<li>Resolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes <span class="math inline">\(b = [0, -5, 0, 0, 5]\)</span> (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s).</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="problema-3-sistemas-de-ecuaciones-lineales" class="level2">
+<h2 class="anchored" data-anchor-id="problema-3-sistemas-de-ecuaciones-lineales">Problema 3: Sistemas de Ecuaciones Lineales</h2>
+</section>
+<section id="enunciado-análisis-de-flujos-en-una-red-logística-nacional" class="level2">
+<h2 class="anchored" data-anchor-id="enunciado-análisis-de-flujos-en-una-red-logística-nacional">📦 Enunciado: Análisis de Flujos en una Red Logística Nacional</h2>
+<p>La empresa <strong>AgriRed Logística S.A.S.</strong> gestiona una red de distribución de alimentos en Colombia, compuesta por <strong>8 centros logísticos</strong> ubicados en diferentes departamentos: Antioquia, Cundinamarca, Valle del Cauca, Bolívar, Santander, Tolima, Nariño y Atlántico. Cada centro logístico maneja diariamente un volumen de alimentos (en toneladas), que se transfiere entre centros según rutas establecidas o se destina a abastecer hospitales, escuelas y comunidades rurales.</p>
+<p>La empresa desea garantizar que los flujos entre centros cumplan con ciertas <strong>restricciones operativas</strong>, entre ellas:</p>
+<ul>
+<li>Capacidad máxima de ciertas rutas,</li>
+<li>Requerimientos mínimos de abastecimiento en algunos nodos,</li>
+<li>Y equilibrio entre lo que se recibe y lo que se despacha.</li>
+</ul>
+<p>El equipo técnico ha identificado <strong>7 ecuaciones de balance</strong> basadas en el análisis de la operación, pero debido a la complejidad de la red, <strong>hay más rutas posibles (8) que restricciones disponibles (7)</strong>. Por tanto, algunas rutas pueden ajustarse libremente sin romper las reglas generales.</p>
+<p>Se busca <strong>modelar esta red</strong> como un <strong>sistema lineal de 7 ecuaciones con 8 incógnitas</strong>, donde cada incógnita representa el flujo (en toneladas) a través de una ruta principal o hacia un centro de consumo.</p>
+<p>Se ha comprobado que:</p>
+<ul>
+<li>El sistema tiene <strong>infinitas soluciones</strong> y <strong>6 variables libres</strong>, lo que implica una <strong>alta flexibilidad operativa</strong>,</li>
+<li>Y que al aplicar <strong>reducción de Gauss con pivoteo parcial</strong>, la <strong>matriz triangular superior <span class="math inline">\(U\)</span> de la matriz aumentada <span class="math inline">\([A|b]\)</span> contiene solo números enteros</strong>, lo que facilita su análisis visual.</li>
+</ul>
+<hr>
+</section>
+<section id="objetivo" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo">🔧 Objetivo</h2>
+<p>Tu tarea es usar este sistema para:</p>
+<ol type="1">
+<li>Determinar la estructura de soluciones posibles.</li>
+<li>Identificar qué rutas pueden modificarse libremente sin afectar el cumplimiento global.</li>
+<li>Visualizar gráficamente la estructura de la matriz <span class="math inline">\(U\)</span>, donde los <strong>ceros aparezcan en blanco</strong> y los <strong>valores distintos de cero en negro</strong>, para identificar de forma clara qué ecuaciones aportan restricciones efectivas.</li>
+</ol>
+<hr>
+</section>
+<section id="detalles-técnicos" class="level2">
+<h2 class="anchored" data-anchor-id="detalles-técnicos">🧮 Detalles técnicos</h2>
+<p>Cada incógnita <span class="math inline">\(x_i\)</span> representa el flujo diario (en toneladas) de alimentos a través de una de las 8 principales rutas:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Ruta / Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_1\)</span></td>
+<td>Centro 1 (Antioquia) → Centro 2 (Cundinamarca)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_2\)</span></td>
+<td>Centro 2 → Centro 3 (Valle)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_3\)</span></td>
+<td>Centro 1 → Centro 3</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_4\)</span></td>
+<td>Centro 4 (Bolívar) → Hospitales locales</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_5\)</span></td>
+<td>Centro 5 (Santander) → Comunidades rurales</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_6\)</span></td>
+<td>Centro 6 (Tolima) → Centro 1</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_7\)</span></td>
+<td>Centro 7 (Nariño) → Plantas de procesamiento</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_8\)</span></td>
+<td>Centro 8 (Atlántico) → Escuelas rurales</td>
+</tr>
+</tbody>
+</table>
+<p>El sistema está dado por las siguientes <strong>ecuaciones de balance logístico</strong>, derivadas de las observaciones operativas:</p>
+<p><span class="math display">\[
+\begin{aligned}
+(1):\quad &amp; x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\
+(2):\quad &amp; 2x_1 + x_2 + 4x_3 + 0x_4 + x_5 + x_6 + x_7 + 3x_8 = 12 \\
+(3):\quad &amp; 3x_1 + 3x_2 + 5x_3 + x_4 + 4x_5 + 2x_6 + x_7 + 5x_8 = 22 \\
+(4):\quad &amp; x_2 - 2x_3 + 2x_4 + 5x_5 + x_6 - x_7 + x_8 = 8 \\
+(5):\quad &amp; x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\
+(6):\quad &amp; -2x_1 - x_2 - 4x_3 - x_5 - x_6 - x_7 - 3x_8 = -12 \\
+(7):\quad &amp; 11x_1 + 10x_2 + 19x_3 + 3x_4 + 13x_5 + 7x_6 + 4x_7 + 18x_8 = 78 \\
+\end{aligned}
+\]</span></p>
 
 
 </section>

@@ -28,6 +28,8 @@ website:
             text: Matrices  y sistemas de ecuaciones
           - href: taller7.qmd
             text: Sistemas de ecuacionesde n x n
+          - href: taller8.qmd
+            text: sistemas de ecuaciones y aplicaciones
           
 format:
   html:
