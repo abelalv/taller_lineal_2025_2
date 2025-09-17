@@ -11,11 +11,92 @@
     ]
   },
   {
-    "objectID": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua",
-    "href": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua",
-    "title": "",
+    "objectID": "taller8.html#solución-de-un-sistema-de-ecuaciones",
+    "href": "taller8.html#solución-de-un-sistema-de-ecuaciones",
+    "title": "Taller 7 - Sistemas de ecauciones",
     "section": "",
-    "text": "Note\n\n\n\nUna red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos de control. Según el principio de conservación de caudal, en cada nodo, la cantidad de agua que entra menos la que sale debe igualar un valor fijo, que puede representar una demanda o un aporte externo (positivo o negativo).\nCada nodo impone una ecuación lineal basada en el balance de caudal. Dado que hay 5 nodos y 7 canales, se plantea un sistema de 5 ecuaciones lineales con 7 incógnitas.\n\n\n\n\n\nRepresentar el sistema lineal generado por la red.\nVerificar si el sistema tiene solución.\nDeterminar si la solución es única, inexistente o infinita.\nEn caso de infinitas soluciones, describir la solución general de forma paramétrica.\n\n\n\n\nEl sistema tiene la forma:\n\\[\nA \\cdot x = b\n\\]\ndonde:\n\n\\(A \\in \\mathbb{R}^{5 \\times 7}\\) es la matriz de conexión de la red.\n\\(x = [x_1, x_2, x_3, x_4, x_5, x_6, x_7]^T\\) representa los caudales por canal.\n\\(b = [b_1, b_2, b_3, b_4, b_5]^T\\) representa las demandas o aportes en los nodos.\n\n\n\n\nSupongamos la siguiente estructura de flujo entre nodos y canales:\n\nNodo 1: \\(x_1 - x_2 - x_3 = b_1\\)\nNodo 2: \\(x_2 - x_4 = b_2\\)\nNodo 3: \\(x_3 + x_4 - x_5 = b_3\\)\nNodo 4: \\(x_5 - x_6 = b_4\\)\nNodo 5: \\(x_6 - x_7 = b_5\\)\n\nEste sistema puede expresarse en forma matricial como:\n\\[\n\\begin{bmatrix}\n1 & -1 & -1 & 0 & 0 & 0 & 0 \\\\\\\\\n0 & 1 & 0 & -1 & 0 & 0 & 0 \\\\\\\\\n0 & 0 & 1 & 1 & -1 & 0 & 0 \\\\\\\\\n0 & 0 & 0 & 0 & 1 & -1 & 0 \\\\\\\\\n0 & 0 & 0 & 0 & 0 & 1 & -1 \\\\\\\\\n\\end{bmatrix}\n\\cdot\n\\begin{bmatrix}\nx_1 \\\\\\\\ x_2 \\\\\\\\ x_3 \\\\\\\\ x_4 \\\\\\\\ x_5 \\\\\\\\ x_6 \\\\\\\\ x_7\n\\end{bmatrix}\n=\n\\begin{bmatrix}\nb_1 \\\\\\\\ b_2 \\\\\\\\ b_3 \\\\\\\\ b_4 \\\\\\\\ b_5\n\\end{bmatrix}\n\\]\n\n\n\n\nSi \\(\\mathrm{rango}(A) = \\mathrm{rango}(A|b) &lt; 7\\), el sistema tiene infinitas soluciones.\nEl espacio solución será de dimensión \\(7 - \\mathrm{rango}(A)\\).\nSe debe encontrar una solución particular \\(x_p\\) y expresar la solución general como:\n\n\\[\nx = x_p + \\alpha v_1 + \\beta v_2 + \\dots\n\\]\ndonde \\(v_i\\) son vectores del núcleo de \\(A\\)."
+    "text": "Observe el siguiente sistema de ecuaciones lineales:\n\\[\n\\begin{cases}\nx + 2y + 3z = 1 \\\\\n4x + 5y + 6z = 2 \\\\\n7x + 8y + 9z = 3\n\\end{cases}\n\\]\nNote que este sistema lo podemos escribir como una ecuación matricial de la forma \\(A \\cdot x = b\\), donde: \\[\nA =\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{bmatrix}\n,\n\\quad\nx =\n\\begin{bmatrix}\nx \\\\\ny \\\\ z\n\\end{bmatrix}\n,\n\\quad\nb =\n\\begin{bmatrix}\n1 \\\\ 2 \\\\ 3\n\\end{bmatrix}\n\\]\nPara saber si este sistema tiene una solución podemos a analizar el rango de la matriz \\(A\\) y el rango de la matriz aumentada \\([A|b]\\). Para ello podemos usar la librería numpy de Python, que nos permite trabajar con álgebra lineal de manera simbólica.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n¿Qué puede concluir sobre la existencia de soluciones del sistema? Justifique su respuesta.\n¿Si el \\(rank(A) = rank([A|b]) &lt; n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) = rank([A|b]) = n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) &lt; rank([A|b])\\) cuantas soluciones tiene el sistema? Justifique su respuesta.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución",
+    "href": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Usar python para resolver sistemas de ecuaciones con única solución",
+    "text": "Usar python para resolver sistemas de ecuaciones con única solución\nSea el sistema de ecuaciones lineales:\n\\[\n\\begin{cases}\n2x + 3y + z = 1 \\\\\n4x + y + 2z = 2 \\\\\n3x + 2y + 3z = 3\n\\end{cases}\n\\]\n\n¿Por qué el anterior sistema tiene única solución?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones",
+    "href": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Usar python para resolver sistemas de ecuaciones con infinitas soluciones",
+    "text": "Usar python para resolver sistemas de ecuaciones con infinitas soluciones\nSea el sistema de ecuaciones lineales:\n\\[ \\begin{cases}\nx + 2y + z = 4 \\\\\n2x + 5y + z = 9 \\\\\n3x + 7y + 2z &= 13\n\\end{cases}\n\\]\n\n¿Por qué el anterior sistema tiene infinitas soluciones?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote que la la matriz \\(U\\) que se imprime tiene una fila de ceros, lo que indica que el sistema tiene infinitas soluciones.\npara visualizar las soluciones podemos usar el siguiente código:\n\nimport numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)\n\n\n\n## visualizacion de la matriz aumentada en forma escalonada\nimport matplotlib.pyplot as plt\n# Crear matriz binaria: 0 si el valor es exactamente 0, 1 si es diferente\nU_binaria = (np.abs(U) &gt; 1e-10).astype(int)  # tolerancia para evitar errores numéricos\n\n# Visualizar\nplt.imshow(U_binaria, cmap='Greys', interpolation='nearest')\nplt.title(\"Matriz estructural de U (blanco = 0, negro ≠ 0)\")\nplt.xticks(np.arange(U.shape[1]), [f'Col {i+1}' for i in range(U.shape[1])])\nplt.yticks(np.arange(U.shape[0]), [f'Fila {i+1}' for i in range(U.shape[0])])\nplt.grid(False)\nplt.show()\n\nMatriz U de la descomposición LU:\n [[ 3.00000000e+00  7.00000000e+00  2.00000000e+00  1.30000000e+01]\n [ 0.00000000e+00  3.33333333e-01 -3.33333333e-01  3.33333333e-01]\n [ 0.00000000e+00  0.00000000e+00  9.99200722e-16  0.00000000e+00]]\n\n\n\n\n\n\n\n\n\nNote que de esta forma tenemos que el sistema se convierte en:\n\\[ \\begin{cases}\n3x + 7y + 2z = 13 \\\\\n0x+0.333y+ 0.333z=0.333\\\\\n0x + 0y + 0z = 0\n\\end{cases}\n\\] de esta forma podemos expresar las variables en función de una variable libre, por ejemplo \\(z=t\\) y despejar \\(x\\) y \\(y\\) en función de \\(t\\). \\[ \\begin{cases}\nx =\\frac{5t+5}{3} \\\\\ny = 1- t \\\\\nz = t\n\\end{cases}\n\\]\n## Problema 2: Sistemas de Ecuaciones Lineales",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única",
+    "href": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)",
+    "text": "Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)\nUna red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\nAdemás, se conocen dos restricciones adicionales impuestas por sensores del sistema:\n\nEl caudal en el canal 2 es igual al doble del caudal en el canal 3:\n\\(x_2 = 2x_3\\)\nEl caudal total de entrada al sistema (por canal 7) es igual a 10 litros por segundo:\n\\(x_7 = 10\\)\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nConservación de caudal en cada nodo:\n\nNodo A\n\\[x_7 - x_1 = b_1\\]\n\n\nNodo B\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\nNodo C\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\nNodo D\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\nNodo E\n\\[x_5 + x_6 - x_7 = b_5\\]\nRestricciones adicionales:\n\n\nRestricción 1:\n\\[x_2 - 2x_3 = 0\\]\n\n\nRestricción 2:\n\\[x_7 = 10\\]\n\n\n\nForma matricial del sistema\n$$ Una red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nSe aplica la conservación de caudal en cada nodo:\n\nNodo A\n\nEntra: \\(x_7\\)\nSale: \\(x_1\\)\nEcuación:\n\\[x_7 - x_1 = b_1\\]\n\n\n\nNodo B\n\nEntra: \\(x_1\\)\nSale: \\(x_2\\), \\(x_3\\)\nEcuación:\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\n\nNodo C\n\nEntra: \\(x_2\\)\nSale: \\(x_4\\), \\(x_6\\)\nEcuación:\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\n\nNodo D\n\nEntra: \\(x_3\\), \\(x_4\\)\nSale: \\(x_5\\)\nEcuación:\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\n\nNodo E\n\nEntra: \\(x_5\\), \\(x_6\\)\nSale: \\(x_7\\)\nEcuación:\n\\[x_5 + x_6 - x_7 = b_5\\]\n\n\nPlantear el sistema de 7 ecuaciones lineales con 7 incógnitas que representa el comportamiento hidráulico de la red.\nEscribir el sistema en forma matricial \\(A \\cdot x = b\\)\nVerificar si sistema tiene una única solución.\nResolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes \\(b = [0, -5, 0, 0, 5]\\) (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s).",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#problema-3-sistemas-de-ecuaciones-lineales",
+    "href": "taller8.html#problema-3-sistemas-de-ecuaciones-lineales",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "Problema 3: Sistemas de Ecuaciones Lineales",
+    "text": "Problema 3: Sistemas de Ecuaciones Lineales",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#enunciado-análisis-de-flujos-en-una-red-logística-nacional",
+    "href": "taller8.html#enunciado-análisis-de-flujos-en-una-red-logística-nacional",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "📦 Enunciado: Análisis de Flujos en una Red Logística Nacional",
+    "text": "📦 Enunciado: Análisis de Flujos en una Red Logística Nacional\nLa empresa AgriRed Logística S.A.S. gestiona una red de distribución de alimentos en Colombia, compuesta por 8 centros logísticos ubicados en diferentes departamentos: Antioquia, Cundinamarca, Valle del Cauca, Bolívar, Santander, Tolima, Nariño y Atlántico. Cada centro logístico maneja diariamente un volumen de alimentos (en toneladas), que se transfiere entre centros según rutas establecidas o se destina a abastecer hospitales, escuelas y comunidades rurales.\nLa empresa desea garantizar que los flujos entre centros cumplan con ciertas restricciones operativas, entre ellas:\n\nCapacidad máxima de ciertas rutas,\nRequerimientos mínimos de abastecimiento en algunos nodos,\nY equilibrio entre lo que se recibe y lo que se despacha.\n\nEl equipo técnico ha identificado 7 ecuaciones de balance basadas en el análisis de la operación, pero debido a la complejidad de la red, hay más rutas posibles (8) que restricciones disponibles (7). Por tanto, algunas rutas pueden ajustarse libremente sin romper las reglas generales.\nSe busca modelar esta red como un sistema lineal de 7 ecuaciones con 8 incógnitas, donde cada incógnita representa el flujo (en toneladas) a través de una ruta principal o hacia un centro de consumo.\nSe ha comprobado que:\n\nEl sistema tiene infinitas soluciones y 6 variables libres, lo que implica una alta flexibilidad operativa,\nY que al aplicar reducción de Gauss con pivoteo parcial, la matriz triangular superior \\(U\\) de la matriz aumentada \\([A|b]\\) contiene solo números enteros, lo que facilita su análisis visual.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#objetivo",
+    "href": "taller8.html#objetivo",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "🔧 Objetivo",
+    "text": "🔧 Objetivo\nTu tarea es usar este sistema para:\n\nDeterminar la estructura de soluciones posibles.\nIdentificar qué rutas pueden modificarse libremente sin afectar el cumplimiento global.\nVisualizar gráficamente la estructura de la matriz \\(U\\), donde los ceros aparezcan en blanco y los valores distintos de cero en negro, para identificar de forma clara qué ecuaciones aportan restricciones efectivas.",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
+  },
+  {
+    "objectID": "taller8.html#detalles-técnicos",
+    "href": "taller8.html#detalles-técnicos",
+    "title": "Taller 7 - Sistemas de ecauciones",
+    "section": "🧮 Detalles técnicos",
+    "text": "🧮 Detalles técnicos\nCada incógnita \\(x_i\\) representa el flujo diario (en toneladas) de alimentos a través de una de las 8 principales rutas:\n\n\n\nVariable\nRuta / Uso\n\n\n\n\n\\(x_1\\)\nCentro 1 (Antioquia) → Centro 2 (Cundinamarca)\n\n\n\\(x_2\\)\nCentro 2 → Centro 3 (Valle)\n\n\n\\(x_3\\)\nCentro 1 → Centro 3\n\n\n\\(x_4\\)\nCentro 4 (Bolívar) → Hospitales locales\n\n\n\\(x_5\\)\nCentro 5 (Santander) → Comunidades rurales\n\n\n\\(x_6\\)\nCentro 6 (Tolima) → Centro 1\n\n\n\\(x_7\\)\nCentro 7 (Nariño) → Plantas de procesamiento\n\n\n\\(x_8\\)\nCentro 8 (Atlántico) → Escuelas rurales\n\n\n\nEl sistema está dado por las siguientes ecuaciones de balance logístico, derivadas de las observaciones operativas:\n\\[\n\\begin{aligned}\n(1):\\quad & x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\\\\n(2):\\quad & 2x_1 + x_2 + 4x_3 + 0x_4 + x_5 + x_6 + x_7 + 3x_8 = 12 \\\\\n(3):\\quad & 3x_1 + 3x_2 + 5x_3 + x_4 + 4x_5 + 2x_6 + x_7 + 5x_8 = 22 \\\\\n(4):\\quad & x_2 - 2x_3 + 2x_4 + 5x_5 + x_6 - x_7 + x_8 = 8 \\\\\n(5):\\quad & x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\\\\n(6):\\quad & -2x_1 - x_2 - 4x_3 - x_5 - x_6 - x_7 - 3x_8 = -12 \\\\\n(7):\\quad & 11x_1 + 10x_2 + 19x_3 + 3x_4 + 13x_5 + 7x_6 + 4x_7 + 18x_8 = 78 \\\\\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Matrices 2 x  2",
+      "sistemas de ecuaciones y aplicaciones"
+    ]
   },
   {
     "objectID": "taller4.html",
@@ -264,108 +345,6 @@
     "crumbs": [
       "Vectores en el Plano",
       "Taller 2"
-    ]
-  },
-  {
-    "objectID": "taller8.html#problema-1-modelo-de-flujo-en-una-red-de-distribución-de-agua",
-    "href": "taller8.html#problema-1-modelo-de-flujo-en-una-red-de-distribución-de-agua",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "Problema 1: Modelo de Flujo en una Red de Distribución de Agua",
-    "text": "Problema 1: Modelo de Flujo en una Red de Distribución de Agua\nUna red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\n\nObjetivo\n\nPlantear el sistema de ecuaciones lineales que representa el balance de caudal en cada nodo.\nEscribir el sistema en forma matricial \\(A \\cdot x = b\\).\nAnalizar la existencia de soluciones: determinar si el sistema es compatible (tiene solución), y si tiene una única solución o infinitas soluciones.\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nSe aplica la conservación de caudal en cada nodo:\n\nNodo A\n\nEntra: \\(x_7\\)\nSale: \\(x_1\\)\nEcuación:\n\\[x_7 - x_1 = b_1\\]\n\n\n\nNodo B\n\nEntra: \\(x_1\\)\nSale: \\(x_2\\), \\(x_3\\)\nEcuación:\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\n\nNodo C\n\nEntra: \\(x_2\\)\nSale: \\(x_4\\), \\(x_6\\)\nEcuación:\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\n\nNodo D\n\nEntra: \\(x_3\\), \\(x_4\\)\nSale: \\(x_5\\)\nEcuación:\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\n\nNodo E\n\nEntra: \\(x_5\\), \\(x_6\\)\nSale: \\(x_7\\)\nEcuación:\n\\[x_5 + x_6 - x_7 = b_5\\]\n\n\n\n\n\nForma matricial del sistema\nEl sistema de ecuaciones puede escribirse como:\n\\[\nA =\n\\begin{bmatrix}\n-1 &  0 &  0 &  0 &  0 &  0 &  1 \\\\\\\\\n1 & -1 & -1 &  0 &  0 &  0 &  0 \\\\\\\\\n0 &  1 &  0 & -1 &  0 & -1 &  0 \\\\\\\\\n0 &  0 &  1 &  1 & -1 &  0 &  0 \\\\\\\\\n0 &  0 &  0 &  0 &  1 &  1 & -1 \\\\\\\\\n\\end{bmatrix}\n,\n\\quad\nx =\n\\begin{bmatrix}\nx_1 \\\\\\\\ x_2 \\\\\\\\ x_3 \\\\\\\\ x_4 \\\\\\\\ x_5 \\\\\\\\ x_6 \\\\\\\\ x_7\n\\end{bmatrix}\n,\n\\quad\nb =\n\\begin{bmatrix}\nb_1 \\\\\\\\ b_2 \\\\\\\\ b_3 \\\\\\\\ b_4 \\\\\\\\ b_5\n\\end{bmatrix}\n\\]\n\n\n\nNotas\n\nLa matriz \\(A\\) tiene tamaño \\(5 \\times 7\\), lo que indica que el sistema tiene más incógnitas que ecuaciones.\nPor tanto, si el sistema es compatible (es decir, si \\(\\text{rango}(A) = \\text{rango}([A|b])\\)), entonces tendrá infinitas soluciones.\nEl espacio de soluciones tendrá dimensión \\(7 - \\text{rango}(A)\\).\n\n\n\n\n¿Qué debes hacer?\n\nImplementar el sistema en Python con SymPy o manualmente.\nDeterminar el rango de \\(A\\) y el rango de la matriz aumentada \\([A|b]\\).\nEn caso de infinitas soluciones, hallar una solución particular y expresar la solución general como:\n\n\\[\nx = x_p + \\alpha v_1 + \\beta v_2 + \\cdots\n\\]\ndonde los vectores \\(v_i\\) forman una base del espacio nulo de \\(A\\)."
-  },
-  {
-    "objectID": "taller8.html#solución-de-un-sistema-de-ecuaciones",
-    "href": "taller8.html#solución-de-un-sistema-de-ecuaciones",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "",
-    "text": "Observe el siguiente sistema de ecuaciones lineales:\n\\[\n\\begin{cases}\nx + 2y + 3z = 1 \\\\\n4x + 5y + 6z = 2 \\\\\n7x + 8y + 9z = 3\n\\end{cases}\n\\]\nNote que este sistema lo podemos escribir como una ecuación matricial de la forma \\(A \\cdot x = b\\), donde: \\[\nA =\n\\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{bmatrix}\n,\n\\quad\nx =\n\\begin{bmatrix}\nx \\\\\ny \\\\ z\n\\end{bmatrix}\n,\n\\quad\nb =\n\\begin{bmatrix}\n1 \\\\ 2 \\\\ 3\n\\end{bmatrix}\n\\]\nPara saber si este sistema tiene una solución podemos a analizar el rango de la matriz \\(A\\) y el rango de la matriz aumentada \\([A|b]\\). Para ello podemos usar la librería numpy de Python, que nos permite trabajar con álgebra lineal de manera simbólica.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n¿Qué puede concluir sobre la existencia de soluciones del sistema? Justifique su respuesta.\n¿Si el \\(rank(A) = rank([A|b]) &lt; n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) = rank([A|b]) = n\\) (número de incógnitas) cuantas soluciones tiene el sistema? Justifique su respuesta.\nSi el \\(rank(A) &lt; rank([A|b])\\) cuantas soluciones tiene el sistema? Justifique su respuesta.",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
-    ]
-  },
-  {
-    "objectID": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución",
-    "href": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "Usar python para resolver sistemas de ecuaciones con única solución",
-    "text": "Usar python para resolver sistemas de ecuaciones con única solución\nSea el sistema de ecuaciones lineales:\n\\[\n\\begin{cases}\n2x + 3y + z = 1 \\\\\n4x + y + 2z = 2 \\\\\n3x + 2y + 3z = 3\n\\end{cases}\n\\]\n\n¿Por qué el anterior sistema tiene única solución?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
-    ]
-  },
-  {
-    "objectID": "taller8.html#problema-2-sistemas-de-ecuaciones-lineales",
-    "href": "taller8.html#problema-2-sistemas-de-ecuaciones-lineales",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "Problema 2: Sistemas de Ecuaciones Lineales",
-    "text": "Problema 2: Sistemas de Ecuaciones Lineales"
-  },
-  {
-    "objectID": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones",
-    "href": "taller8.html#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "Usar python para resolver sistemas de ecuaciones con infinitas soluciones",
-    "text": "Usar python para resolver sistemas de ecuaciones con infinitas soluciones\nSea el sistema de ecuaciones lineales:\n\\[ \\begin{cases}\nx + 2y + 3z = 1 \\\\\n4x + 5y + 6z = 2 \\\\\n5x + 7y + 9z &= 3\n\\end{cases}\n\\]\n\n¿Por qué el anterior sistema tiene infinitas soluciones?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote que la la matriz \\(U\\) que se imprime tiene una fila de ceros, lo que indica que el sistema tiene infinitas soluciones.\npara visualizar las soluciones podemos usar el siguiente código:\n\nimport numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)\n\n\n\n## visualizacion de la matriz aumentada en forma escalonada\nimport matplotlib.pyplot as plt\n# Crear matriz binaria: 0 si el valor es exactamente 0, 1 si es diferente\nU_binaria = (np.abs(U) &gt; 1e-10).astype(int)  # tolerancia para evitar errores numéricos\n\n# Visualizar\nplt.imshow(U_binaria, cmap='Greys', interpolation='nearest')\nplt.title(\"Matriz estructural de U (blanco = 0, negro ≠ 0)\")\nplt.xticks(np.arange(U.shape[1]), [f'Col {i+1}' for i in range(U.shape[1])])\nplt.yticks(np.arange(U.shape[0]), [f'Fila {i+1}' for i in range(U.shape[0])])\nplt.grid(False)\nplt.show()\n\nMatriz U de la descomposición LU:\n [[ 3.00000000e+00  7.00000000e+00  2.00000000e+00  1.30000000e+01]\n [ 0.00000000e+00  3.33333333e-01 -3.33333333e-01  3.33333333e-01]\n [ 0.00000000e+00  0.00000000e+00  9.99200722e-16  0.00000000e+00]]\n\n\n\n\n\n\n\n\n\nNote que de esta forma tenemos que el sistema se convierte en:\n\\[ \\begin{cases}\n3x + 7y + 2z = 13 \\\\\n0x+0.333y+ 0.333z=0.333\\\\\n0x + 0y + 0z = 0\n\\end{cases}\n\\] de esta forma podemos expresar las variables en función de una variable libre, por ejemplo \\(z=t\\) y despejar \\(x\\) y \\(y\\) en función de \\(t\\). \\[ \\begin{cases}\nx =\\frac{5t+5}{3} \\\\\ny = 1- t \\\\\nz = t\n\\end{cases}\n\\]\n## Problema 2: Sistemas de Ecuaciones Lineales",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
-    ]
-  },
-  {
-    "objectID": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única",
-    "href": "taller8.html#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)",
-    "text": "Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)\nUna red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\nAdemás, se conocen dos restricciones adicionales impuestas por sensores del sistema:\n\nEl caudal en el canal 2 es igual al doble del caudal en el canal 3:\n\\(x_2 = 2x_3\\)\nEl caudal total de entrada al sistema (por canal 7) es igual a 10 litros por segundo:\n\\(x_7 = 10\\)\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nConservación de caudal en cada nodo:\n\nNodo A\n\\[x_7 - x_1 = b_1\\]\n\n\nNodo B\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\nNodo C\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\nNodo D\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\nNodo E\n\\[x_5 + x_6 - x_7 = b_5\\]\nRestricciones adicionales:\n\n\nRestricción 1:\n\\[x_2 - 2x_3 = 0\\]\n\n\nRestricción 2:\n\\[x_7 = 10\\]\n\n\n\nForma matricial del sistema\n$$ Una red hidráulica está compuesta por 7 canales que distribuyen agua entre 5 nodos: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable \\(x_i\\), donde \\(x_1, x_2, \\dots, x_7\\) son los caudales de los canales.\nSegún el principio de conservación de caudal, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante \\(b_i\\), que representa una demanda (si es positiva) o un aporte externo (si es negativa).\n\n\nDescripción de la red\nLos canales conectan los nodos de la siguiente manera:\n\n\n\nCanal\nDesde\nHacia\nVariable\n\n\n\n\n1\nA\nB\n\\(x_1\\)\n\n\n2\nB\nC\n\\(x_2\\)\n\n\n3\nB\nD\n\\(x_3\\)\n\n\n4\nC\nD\n\\(x_4\\)\n\n\n5\nD\nE\n\\(x_5\\)\n\n\n6\nC\nE\n\\(x_6\\)\n\n\n7\nE\nA\n\\(x_7\\)\n\n\n\n\n\nPlanteamiento del sistema de ecuaciones\nSe aplica la conservación de caudal en cada nodo:\n\nNodo A\n\nEntra: \\(x_7\\)\nSale: \\(x_1\\)\nEcuación:\n\\[x_7 - x_1 = b_1\\]\n\n\n\nNodo B\n\nEntra: \\(x_1\\)\nSale: \\(x_2\\), \\(x_3\\)\nEcuación:\n\\[x_1 - x_2 - x_3 = b_2\\]\n\n\n\nNodo C\n\nEntra: \\(x_2\\)\nSale: \\(x_4\\), \\(x_6\\)\nEcuación:\n\\[x_2 - x_4 - x_6 = b_3\\]\n\n\n\nNodo D\n\nEntra: \\(x_3\\), \\(x_4\\)\nSale: \\(x_5\\)\nEcuación:\n\\[x_3 + x_4 - x_5 = b_4\\]\n\n\n\nNodo E\n\nEntra: \\(x_5\\), \\(x_6\\)\nSale: \\(x_7\\)\nEcuación:\n\\[x_5 + x_6 - x_7 = b_5\\]\n\n\nPlantear el sistema de 7 ecuaciones lineales con 7 incógnitas que representa el comportamiento hidráulico de la red.\nEscribir el sistema en forma matricial \\(A \\cdot x = b\\)\nVerificar si sistema tiene una única solución.\nResolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes \\(b = [0, -5, 0, 0, 5]\\) (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s).",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
-    ]
-  },
-  {
-    "objectID": "taller8.html#problema-3-sistemas-de-ecuaciones-lineales",
-    "href": "taller8.html#problema-3-sistemas-de-ecuaciones-lineales",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "Problema 3: Sistemas de Ecuaciones Lineales",
-    "text": "Problema 3: Sistemas de Ecuaciones Lineales",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
-    ]
-  },
-  {
-    "objectID": "taller8.html#enunciado-análisis-de-flujos-en-una-red-logística-nacional",
-    "href": "taller8.html#enunciado-análisis-de-flujos-en-una-red-logística-nacional",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "📦 Enunciado: Análisis de Flujos en una Red Logística Nacional",
-    "text": "📦 Enunciado: Análisis de Flujos en una Red Logística Nacional\nLa empresa AgriRed Logística S.A.S. gestiona una red de distribución de alimentos en Colombia, compuesta por 8 centros logísticos ubicados en diferentes departamentos: Antioquia, Cundinamarca, Valle del Cauca, Bolívar, Santander, Tolima, Nariño y Atlántico. Cada centro logístico maneja diariamente un volumen de alimentos (en toneladas), que se transfiere entre centros según rutas establecidas o se destina a abastecer hospitales, escuelas y comunidades rurales.\nLa empresa desea garantizar que los flujos entre centros cumplan con ciertas restricciones operativas, entre ellas:\n\nCapacidad máxima de ciertas rutas,\nRequerimientos mínimos de abastecimiento en algunos nodos,\nY equilibrio entre lo que se recibe y lo que se despacha.\n\nEl equipo técnico ha identificado 7 ecuaciones de balance basadas en el análisis de la operación, pero debido a la complejidad de la red, hay más rutas posibles (8) que restricciones disponibles (7). Por tanto, algunas rutas pueden ajustarse libremente sin romper las reglas generales.\nSe busca modelar esta red como un sistema lineal de 7 ecuaciones con 8 incógnitas, donde cada incógnita representa el flujo (en toneladas) a través de una ruta principal o hacia un centro de consumo.\nSe ha comprobado que:\n\nEl sistema tiene infinitas soluciones y 6 variables libres, lo que implica una alta flexibilidad operativa,\nY que al aplicar reducción de Gauss con pivoteo parcial, la matriz triangular superior \\(U\\) de la matriz aumentada \\([A|b]\\) contiene solo números enteros, lo que facilita su análisis visual.",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
-    ]
-  },
-  {
-    "objectID": "taller8.html#objetivo",
-    "href": "taller8.html#objetivo",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "🔧 Objetivo",
-    "text": "🔧 Objetivo\nTu tarea es usar este sistema para:\n\nDeterminar la estructura de soluciones posibles.\nIdentificar qué rutas pueden modificarse libremente sin afectar el cumplimiento global.\nVisualizar gráficamente la estructura de la matriz \\(U\\), donde los ceros aparezcan en blanco y los valores distintos de cero en negro, para identificar de forma clara qué ecuaciones aportan restricciones efectivas.",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
-    ]
-  },
-  {
-    "objectID": "taller8.html#detalles-técnicos",
-    "href": "taller8.html#detalles-técnicos",
-    "title": "Taller 7 - Sistemas de ecauciones",
-    "section": "🧮 Detalles técnicos",
-    "text": "🧮 Detalles técnicos\nCada incógnita \\(x_i\\) representa el flujo diario (en toneladas) de alimentos a través de una de las 8 principales rutas:\n\n\n\nVariable\nRuta / Uso\n\n\n\n\n\\(x_1\\)\nCentro 1 (Antioquia) → Centro 2 (Cundinamarca)\n\n\n\\(x_2\\)\nCentro 2 → Centro 3 (Valle)\n\n\n\\(x_3\\)\nCentro 1 → Centro 3\n\n\n\\(x_4\\)\nCentro 4 (Bolívar) → Hospitales locales\n\n\n\\(x_5\\)\nCentro 5 (Santander) → Comunidades rurales\n\n\n\\(x_6\\)\nCentro 6 (Tolima) → Centro 1\n\n\n\\(x_7\\)\nCentro 7 (Nariño) → Plantas de procesamiento\n\n\n\\(x_8\\)\nCentro 8 (Atlántico) → Escuelas rurales\n\n\n\nEl sistema está dado por las siguientes ecuaciones de balance logístico, derivadas de las observaciones operativas:\n\\[\n\\begin{aligned}\n(1):\\quad & x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\\\\n(2):\\quad & 2x_1 + x_2 + 4x_3 + 0x_4 + x_5 + x_6 + x_7 + 3x_8 = 12 \\\\\n(3):\\quad & 3x_1 + 3x_2 + 5x_3 + x_4 + 4x_5 + 2x_6 + x_7 + 5x_8 = 22 \\\\\n(4):\\quad & x_2 - 2x_3 + 2x_4 + 5x_5 + x_6 - x_7 + x_8 = 8 \\\\\n(5):\\quad & x_1 + 2x_2 + x_3 + x_4 + 3x_5 + x_6 + 0x_7 + 2x_8 = 10 \\\\\n(6):\\quad & -2x_1 - x_2 - 4x_3 - x_5 - x_6 - x_7 - 3x_8 = -12 \\\\\n(7):\\quad & 11x_1 + 10x_2 + 19x_3 + 3x_4 + 13x_5 + 7x_6 + 4x_7 + 18x_8 = 78 \\\\\n\\end{aligned}\n\\]",
-    "crumbs": [
-      "Matrices 2 x  2",
-      "sistemas de ecuaciones y aplicaciones"
     ]
   }
 ]

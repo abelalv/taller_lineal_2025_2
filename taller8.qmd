@@ -100,9 +100,9 @@ print("La solución del sistema es:", sol)
 Sea el sistema de ecuaciones lineales:
 
 $$ \begin{cases}
-x + 2y + 3z = 1 \\
-4x + 5y + 6z = 2 \\
-5x + 7y + 9z &= 3 
+x + 2y + z = 4 \\
+2x + 5y + z = 9 \\
+3x + 7y + 2z &= 13 
 \end{cases} 
 $$
 

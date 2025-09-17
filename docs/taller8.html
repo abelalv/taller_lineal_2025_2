@@ -262,7 +262,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"code":"import numpy as np\nfrom numpy.linalg import matrix_rank\n# Definimos la matriz A y el vector b\nA = np.array([[1, 2, 3],\n                [4, 5, 6],  \n                [7, 8, 9]])\nb = np.array([1, 2, 3])\n# Calculamos el rango de A\nrango_A = matrix_rank(A)\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n# Calculamos el rango de la matriz aumentada\nrango_Ab = matrix_rank(Ab)\nprint(\"el rango de A\",rango_A)\nprint(\"El rango de A|b\",rango_Ab) ","options":{"results":"markup","label":"","context":"interactive","dpi":72,"message":"true","read-only":"false","warning":"true","autorun":"","comment":"","classes":"","fig-height":5,"fig-width":7,"fig-cap":"","output":"true","out-height":"","out-width":"700px"}},{"id":2,"code":"import numpy as np\nA = np.array([[2, 3, 1],\n                [4, 1, 2],\n                [3, 2, 3]]) # matriz de coeficientes\nb = np.array([1, 2, 3]) # vector de términos independientes\nsol = np.linalg.solve(A, b) # solución del sistema\nprint(\"La solución del sistema es:\", sol)","options":{"results":"markup","label":"","context":"interactive","dpi":72,"message":"true","read-only":"false","warning":"true","autorun":"","comment":"","classes":"","fig-height":5,"fig-width":7,"fig-cap":"","output":"true","out-height":"","out-width":"700px"}},{"id":3,"code":"import numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)","options":{"results":"markup","label":"","context":"interactive","dpi":72,"message":"true","read-only":"false","warning":"true","autorun":"","comment":"","classes":"","fig-height":5,"fig-width":7,"fig-cap":"","output":"true","out-height":"","out-width":"700px"}}];
+globalThis.qpyodideCellDetails = [{"id":1,"options":{"warning":"true","message":"true","fig-width":7,"comment":"","output":"true","context":"interactive","read-only":"false","out-width":"700px","fig-cap":"","label":"","classes":"","dpi":72,"autorun":"","results":"markup","out-height":"","fig-height":5},"code":"import numpy as np\nfrom numpy.linalg import matrix_rank\n# Definimos la matriz A y el vector b\nA = np.array([[1, 2, 3],\n                [4, 5, 6],  \n                [7, 8, 9]])\nb = np.array([1, 2, 3])\n# Calculamos el rango de A\nrango_A = matrix_rank(A)\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n# Calculamos el rango de la matriz aumentada\nrango_Ab = matrix_rank(Ab)\nprint(\"el rango de A\",rango_A)\nprint(\"El rango de A|b\",rango_Ab) "},{"id":2,"options":{"warning":"true","message":"true","fig-width":7,"comment":"","output":"true","context":"interactive","read-only":"false","out-width":"700px","fig-cap":"","label":"","classes":"","dpi":72,"autorun":"","results":"markup","out-height":"","fig-height":5},"code":"import numpy as np\nA = np.array([[2, 3, 1],\n                [4, 1, 2],\n                [3, 2, 3]]) # matriz de coeficientes\nb = np.array([1, 2, 3]) # vector de términos independientes\nsol = np.linalg.solve(A, b) # solución del sistema\nprint(\"La solución del sistema es:\", sol)"},{"id":3,"options":{"warning":"true","message":"true","fig-width":7,"comment":"","output":"true","context":"interactive","read-only":"false","out-width":"700px","fig-cap":"","label":"","classes":"","dpi":72,"autorun":"","results":"markup","out-height":"","fig-height":5},"code":"import numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)"}];
 
 
 </script>
@@ -718,9 +718,9 @@ b =
 <h2 class="anchored" data-anchor-id="usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones">Usar python para resolver sistemas de ecuaciones con infinitas soluciones</h2>
 <p>Sea el sistema de ecuaciones lineales:</p>
 <p><span class="math display">\[ \begin{cases}
-x + 2y + 3z = 1 \\
-4x + 5y + 6z = 2 \\
-5x + 7y + 9z &amp;= 3
+x + 2y + z = 4 \\
+2x + 5y + z = 9 \\
+3x + 7y + 2z &amp;= 13
 \end{cases}
 \]</span></p>
 <ul>
@@ -730,7 +730,7 @@ x + 2y + 3z = 1 \\
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Note que la la matriz <span class="math inline">\(U\)</span> que se imprime tiene una fila de ceros, lo que indica que el sistema tiene infinitas soluciones.</p>
 <p>para visualizar las soluciones podemos usar el siguiente código:</p>
-<div id="d75ae59c" class="cell" data-execution_count="1">
+<div id="48d11b08" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.linalg <span class="im">as</span> la</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>],</span>
