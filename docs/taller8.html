@@ -262,7 +262,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"id":1,"options":{"warning":"true","message":"true","fig-width":7,"comment":"","output":"true","context":"interactive","read-only":"false","out-width":"700px","fig-cap":"","label":"","classes":"","dpi":72,"autorun":"","results":"markup","out-height":"","fig-height":5},"code":"import numpy as np\nfrom numpy.linalg import matrix_rank\n# Definimos la matriz A y el vector b\nA = np.array([[1, 2, 3],\n                [4, 5, 6],  \n                [7, 8, 9]])\nb = np.array([1, 2, 3])\n# Calculamos el rango de A\nrango_A = matrix_rank(A)\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n# Calculamos el rango de la matriz aumentada\nrango_Ab = matrix_rank(Ab)\nprint(\"el rango de A\",rango_A)\nprint(\"El rango de A|b\",rango_Ab) "},{"id":2,"options":{"warning":"true","message":"true","fig-width":7,"comment":"","output":"true","context":"interactive","read-only":"false","out-width":"700px","fig-cap":"","label":"","classes":"","dpi":72,"autorun":"","results":"markup","out-height":"","fig-height":5},"code":"import numpy as np\nA = np.array([[2, 3, 1],\n                [4, 1, 2],\n                [3, 2, 3]]) # matriz de coeficientes\nb = np.array([1, 2, 3]) # vector de términos independientes\nsol = np.linalg.solve(A, b) # solución del sistema\nprint(\"La solución del sistema es:\", sol)"},{"id":3,"options":{"warning":"true","message":"true","fig-width":7,"comment":"","output":"true","context":"interactive","read-only":"false","out-width":"700px","fig-cap":"","label":"","classes":"","dpi":72,"autorun":"","results":"markup","out-height":"","fig-height":5},"code":"import numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)"}];
+globalThis.qpyodideCellDetails = [{"id":1,"options":{"label":"","context":"interactive","classes":"","output":"true","fig-height":5,"comment":"","dpi":72,"fig-cap":"","warning":"true","message":"true","results":"markup","autorun":"","out-height":"","read-only":"false","fig-width":7,"out-width":"700px"},"code":"import numpy as np\nfrom numpy.linalg import matrix_rank\n# Definimos la matriz A y el vector b\nA = np.array([[1, 2, 3],\n                [4, 5, 6],  \n                [7, 8, 9]])\nb = np.array([1, 2, 3])\n# Calculamos el rango de A\nrango_A = matrix_rank(A)\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n# Calculamos el rango de la matriz aumentada\nrango_Ab = matrix_rank(Ab)\nprint(\"el rango de A\",rango_A)\nprint(\"El rango de A|b\",rango_Ab) "},{"id":2,"options":{"label":"","context":"interactive","classes":"","output":"true","fig-height":5,"comment":"","dpi":72,"fig-cap":"","warning":"true","message":"true","results":"markup","autorun":"","out-height":"","read-only":"false","fig-width":7,"out-width":"700px"},"code":"import numpy as np\nA = np.array([[2, 3, 1],\n                [4, 1, 2],\n                [3, 2, 3]]) # matriz de coeficientes\nb = np.array([1, 2, 3]) # vector de términos independientes\nsol = np.linalg.solve(A, b) # solución del sistema\nprint(\"La solución del sistema es:\", sol)"},{"id":3,"options":{"label":"","context":"interactive","classes":"","output":"true","fig-height":5,"comment":"","dpi":72,"fig-cap":"","warning":"true","message":"true","results":"markup","autorun":"","out-height":"","read-only":"false","fig-width":7,"out-width":"700px"},"code":"import numpy as np\nimport scipy.linalg as la\nA = np.array([[1, 2, 1],\n                [2, 5, 1],\n                [3, 7, 2]]) # matriz de coeficientes\nb = np.array([4, 9, 13]) # vector de términos independientes\n# Construimos la matriz aumentada [A|b]\nAb = np.column_stack((A, b))\n_,_,U=la.lu(Ab) # descomposición LU\nprint(\"Matriz U de la descomposición LU:\\n\", U)"}];
 
 
 </script>
@@ -610,7 +610,7 @@ window.Quarto = {
   <li><a href="#solución-de-un-sistema-de-ecuaciones" id="toc-solución-de-un-sistema-de-ecuaciones" class="nav-link active" data-scroll-target="#solución-de-un-sistema-de-ecuaciones">Solución de un sistema de ecuaciones</a></li>
   <li><a href="#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución" id="toc-usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución" class="nav-link" data-scroll-target="#usar-python-para-resolver-sistemas-de-ecuaciones-con-única-solución">Usar python para resolver sistemas de ecuaciones con única solución</a></li>
   <li><a href="#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones" id="toc-usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones" class="nav-link" data-scroll-target="#usar-python-para-resolver-sistemas-de-ecuaciones-con-infinitas-soluciones">Usar python para resolver sistemas de ecuaciones con infinitas soluciones</a></li>
-  <li><a href="#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única" id="toc-problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única" class="nav-link" data-scroll-target="#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única">Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)</a>
+  <li><a href="#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua" id="toc-problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua" class="nav-link" data-scroll-target="#problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua">Problema 2: Modelo de Flujo en una Red de Distribución de Agua</a>
   <ul class="collapse">
   <li><a href="#descripción-de-la-red" id="toc-descripción-de-la-red" class="nav-link" data-scroll-target="#descripción-de-la-red">Descripción de la red</a></li>
   <li><a href="#planteamiento-del-sistema-de-ecuaciones" id="toc-planteamiento-del-sistema-de-ecuaciones" class="nav-link" data-scroll-target="#planteamiento-del-sistema-de-ecuaciones">Planteamiento del sistema de ecuaciones</a></li>
@@ -620,7 +620,6 @@ window.Quarto = {
   </ul></li>
   <li><a href="#problema-3-sistemas-de-ecuaciones-lineales" id="toc-problema-3-sistemas-de-ecuaciones-lineales" class="nav-link" data-scroll-target="#problema-3-sistemas-de-ecuaciones-lineales">Problema 3: Sistemas de Ecuaciones Lineales</a></li>
   <li><a href="#enunciado-análisis-de-flujos-en-una-red-logística-nacional" id="toc-enunciado-análisis-de-flujos-en-una-red-logística-nacional" class="nav-link" data-scroll-target="#enunciado-análisis-de-flujos-en-una-red-logística-nacional">📦 Enunciado: Análisis de Flujos en una Red Logística Nacional</a></li>
-  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">🔧 Objetivo</a></li>
   <li><a href="#detalles-técnicos" id="toc-detalles-técnicos" class="nav-link" data-scroll-target="#detalles-técnicos">🧮 Detalles técnicos</a></li>
   </ul>
 </nav>
@@ -730,7 +729,7 @@ x + 2y + z = 4 \\
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Note que la la matriz <span class="math inline">\(U\)</span> que se imprime tiene una fila de ceros, lo que indica que el sistema tiene infinitas soluciones.</p>
 <p>para visualizar las soluciones podemos usar el siguiente código:</p>
-<div id="48d11b08" class="cell" data-execution_count="1">
+<div id="a35d965a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.linalg <span class="im">as</span> la</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>],</span>
@@ -784,8 +783,8 @@ z = t
 \]</span><br>
 ## Problema 2: Sistemas de Ecuaciones Lineales</p>
 </section>
-<section id="problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única" class="level2">
-<h2 class="anchored" data-anchor-id="problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua-sistema-con-solución-única">Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)</h2>
+<section id="problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua" class="level2">
+<h2 class="anchored" data-anchor-id="problema-2-modelo-de-flujo-en-una-red-de-distribución-de-agua">Problema 2: Modelo de Flujo en una Red de Distribución de Agua</h2>
 <p>Una red hidráulica está compuesta por <strong>7 canales</strong> que distribuyen agua entre <strong>5 nodos</strong>: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable <span class="math inline">\(x_i\)</span>, donde <span class="math inline">\(x_1, x_2, \dots, x_7\)</span> son los caudales de los canales.</p>
 <p>Según el <strong>principio de conservación de caudal</strong>, en cada nodo la cantidad de agua que entra menos la que sale debe ser igual a una constante <span class="math inline">\(b_i\)</span>, que representa una <strong>demanda (si es positiva)</strong> o un <strong>aporte externo (si es negativa)</strong>.</p>
 <p>Además, se conocen dos restricciones adicionales impuestas por sensores del sistema:</p>
@@ -1000,7 +999,7 @@ z = t
 <li>Plantear el sistema de <strong>7 ecuaciones lineales con 7 incógnitas</strong> que representa el comportamiento hidráulico de la red.</li>
 <li>Escribir el sistema en forma matricial <span class="math inline">\(A \cdot x = b\)</span></li>
 <li>Verificar si sistema tiene <strong>una única solución</strong>.</li>
-<li>Resolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes <span class="math inline">\(b = [0, -5, 0, 0, 5]\)</span> (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s).</li>
+<li>Resolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes <span class="math inline">\(b_1=0,b_2= -5,b_3= 0,b_4= 0, b_5=5\)</span> (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s), si tiene infinitas soluciones, expresar las soluciones en función de las variables libres.</li>
 </ol>
 </section>
 </section>
@@ -1024,17 +1023,11 @@ z = t
 <li>El sistema tiene <strong>infinitas soluciones</strong> y <strong>6 variables libres</strong>, lo que implica una <strong>alta flexibilidad operativa</strong>,</li>
 <li>Y que al aplicar <strong>reducción de Gauss con pivoteo parcial</strong>, la <strong>matriz triangular superior <span class="math inline">\(U\)</span> de la matriz aumentada <span class="math inline">\([A|b]\)</span> contiene solo números enteros</strong>, lo que facilita su análisis visual.</li>
 </ul>
-<hr>
-</section>
-<section id="objetivo" class="level2">
-<h2 class="anchored" data-anchor-id="objetivo">🔧 Objetivo</h2>
-<p>Tu tarea es usar este sistema para:</p>
 <ol type="1">
 <li>Determinar la estructura de soluciones posibles.</li>
 <li>Identificar qué rutas pueden modificarse libremente sin afectar el cumplimiento global.</li>
 <li>Visualizar gráficamente la estructura de la matriz <span class="math inline">\(U\)</span>, donde los <strong>ceros aparezcan en blanco</strong> y los <strong>valores distintos de cero en negro</strong>, para identificar de forma clara qué ecuaciones aportan restricciones efectivas.</li>
 </ol>
-<hr>
 </section>
 <section id="detalles-técnicos" class="level2">
 <h2 class="anchored" data-anchor-id="detalles-técnicos">🧮 Detalles técnicos</h2>

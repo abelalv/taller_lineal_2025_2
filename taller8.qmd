@@ -171,7 +171,7 @@ z = t
 $$  
 ## Problema 2: Sistemas de Ecuaciones Lineales
 
-## Problema 2: Modelo de Flujo en una Red de Distribución de Agua (Sistema con Solución Única)
+## Problema 2: Modelo de Flujo en una Red de Distribución de Agua 
 
 Una red hidráulica está compuesta por **7 canales** que distribuyen agua entre **5 nodos**: A, B, C, D y E. El flujo de agua a través de cada canal se representa mediante una variable $x_i$, donde $x_1, x_2, \dots, x_7$ son los caudales de los canales.
 
@@ -297,7 +297,7 @@ $$x_5 + x_6 - x_7 = b_5$$
 1. Plantear el sistema de **7 ecuaciones lineales con 7 incógnitas** que representa el comportamiento hidráulico de la red.
 2. Escribir el sistema en forma matricial $A \cdot x = b$
 3. Verificar si sistema tiene **una única solución**.
-4. Resolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes $b = [0, -5, 0, 0, 5]$ (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s).
+4. Resolver el sistema de ecuaciones usando Python, para un vector de demandas/aportes $b_1=0,b_2= -5,b_3= 0,b_4= 0, b_5=5$ (es decir, el nodo B tiene una demanda de 5 l/s y el nodo E un aporte de 5 l/s), si tiene infinitas soluciones, expresar las soluciones en función de las variables libres.
 
 
 ## Problema 3: Sistemas de Ecuaciones Lineales
@@ -321,17 +321,13 @@ Se ha comprobado que:
 - El sistema tiene **infinitas soluciones** y **6 variables libres**, lo que implica una **alta flexibilidad operativa**,
 - Y que al aplicar **reducción de Gauss con pivoteo parcial**, la **matriz triangular superior $U$ de la matriz aumentada $[A|b]$ contiene solo números enteros**, lo que facilita su análisis visual.
 
----
 
-## 🔧 Objetivo
 
-Tu tarea es usar este sistema para:
 
 1. Determinar la estructura de soluciones posibles.
 2. Identificar qué rutas pueden modificarse libremente sin afectar el cumplimiento global.
 3. Visualizar gráficamente la estructura de la matriz $U$, donde los **ceros aparezcan en blanco** y los **valores distintos de cero en negro**, para identificar de forma clara qué ecuaciones aportan restricciones efectivas.
 
----
 
 ## 🧮 Detalles técnicos
 
